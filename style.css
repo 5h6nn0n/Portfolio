@@ -48,7 +48,74 @@ p {
     color: #cfcfcf;
     max-width: 650px;
 }
+.project-nav {
+    position: fixed;
+    top: 45%;
+    transform: translateY(-50%);
+	right: 120px;
+	
+height: 20em;
+width: 10em;
+    overflow-y: auto;
+    overflow-x: hidden;	
+	padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
+.project-nav a {
+    color: #777;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: .25s ease;
+}
+
+.project-nav a:hover {
+    color: #fff;
+    transform: translateX(-6px);
+}
+
+/* Chrome, Edge, Safari */
+.project-nav::-webkit-scrollbar {
+    width: 4px;
+}
+
+.project-nav::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.project-nav::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 999px;
+    transition: background 0.2s ease;
+}
+
+.project-nav::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+/* Firefox */
+.project-nav {
+    scrollbar-width: thin;
+    scrollbar-color: #444 transparent;
+}
+.tech-icons i {
+    font-size: 50px;
+    color: #777;
+    margin-left: 120px;
+    transition: 0.3s ease;
+}
+
+.tech-icons i:hover {
+    color: #fff;
+    transform: translateY(-50%);
+}
+.explore {
+	    display: flex;
+gap: 100px;
+	
+}
 footer {
     height: 70px;
 }

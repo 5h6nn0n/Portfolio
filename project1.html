@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+
+
+<html> 
+<head> 
+
+<header>
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Portfoio</title> <link rel="stylesheet" type="text/css" href="style.css" /> 
+ </header>
+ </head> 
+ 
+ <body>
+ <nav></nav> 
+ <main> 
+ <h1>Ubuntu to USB Tutorial</h1>
+ <h2>Install Ubuntu on your thumb drive so you can have Linux in your pocket!</h2> 
+ <div class="explore"><h3>Author: </h3><p>5h6nn0n (Shannon Alexis)</p></div> 
+ <div class="explore"><h3>Execution Date: </h3><p>Mar 21, 2025</p></div>
+ 
+<br><br> 
+ 
+ <div class="explore">
+ <h3>To complete this project you will need:</h3>
+  <p>** This tutorial assumes you are starting on Windows</p>
+  </div>
+ <ol class="explore">
+ <li>USB 3.0 Stick Type-A (preferably 64GB & up)</li>
+ <li>A funtional computer</li>
+ <li>Stable internet connection</li>
+ <li>~8 minutes for configuration</li>
+ </ol>
+
+
+<br><br>
+ 
+ <h4>START HERE</h4> 
+ <div class="explore"><p>Download Rufus for Windows x64 </p><a href="https://rufus.ie/en/#download">Here</a></div>
+ <div class="explore"><p>Download Ubuntu for desktop </p><a href="https://ubuntu.com/download/desktop">Here</a></div>
+ <p>Plug in your thumb drive and drag UBUNTU to it</p>
+
+ <br><br>
+
+ <h4>Rufus configuration</h4>
+ <p>ENIF</p>
+ <p>GPT</p>
+ <p>Set persistence amount (can be updated later)</p>
+ <p>- I chose to split my drive storage 50/50. In my 256GB drive, the persistence is set to 128GB, which means I have 128GB remaining for regular thumb drive storage too. Persistence is required to save and store data like on a regular computer. Otherwise, everything you've accomplished on the drive will be wiped each time you eject it.</p>
+ 
+<br><br>
+
+
+ <h4>Launch Setup</h4>
+ <p>Restart PC and click F2 key on boot</p>
+ <p>Change USB to first in boot order</p>
+ <p>>>> sda -- USB</p>
+ <p>>>> sda2 -- Windows</p>
+ <p>>>> sda3 -- Boot</p>
+ <p>>>> sda4 -- Html</p>
+  <p>Set enif ask admin password to never (unless you want an additional layer of security)</p>
+  <p>Secure boot mode from deploy to audit</p>
+  <p>Exit and will start up automatically</p>
+ 
+ <br><br>
+
+
+ <h4>The Installation Process</h4>
+ <p>Logged into wifi</p>
+ <p>Select encryption LVM & LUKS</p>
+ <p>Select both proprietary software</p>
+ <p>Where: sda SANDISK (or whichever brand you chose)</p>
+  
+  <br><br>
+
+
+ <h4>Authunication </h4>
+ <p>Create pass phrase (encryption)</p>
+ <p>Create Password</p>
+		<p>- Set not required to log in (unless you want an additional layer of security). </p>
+		<p>- This password will be used for app store downloads. </p>
+  <p>Create Username </p>
+ 
+
+<br><br>
+ <h3>Conclusion </h3>
+<p>For this project, I wrote down the steps I took so that it would be easier to replicate the process in case I ever forgot, not intending to release the recipe. Now you can safely open Ubuntu from any device that takes USB 3.0 type-A drives! I recommend to set the passwords, regular and admin, as required if you plan on plugging this into a device that is not exclusivly yours. Once inside, your computer data should be secured by BitLocker and will need the key to see everything that it normally does. </p>
+
+
+ <br><br>
+
+ </main>
+
+ </body>
+
+ <footer id="date"> 
+ 
+  <script>
+  document.getElementById("date").innerHTML = `&copy; ${new Date().getFullYear()} GitHub Pages | `;
+  
+  </script> 
+ 
+ <a href="index.html">5han's Portfoio Home</a>
+ </footer>
+
+ </html>

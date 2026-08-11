@@ -124,11 +124,12 @@ width: 10em;
     color: #777;
     margin-left: 120px;
     transition: 0.3s ease;
+
 }
 
 .tech-icons i:hover {
     color: #fff;
-    transform: translateY(-50%);
+    transform: translateY(-5px);
 }
 .explore {
 	    display: flex;
@@ -140,8 +141,14 @@ footer {
 	text-align: center;
 }
 
+.indent {
+	margin-left: 13.5%;
 
-
+}
+.itc {
+	font-style: italic;
+	
+}
 
 
 
@@ -175,4 +182,54 @@ a:hover {
 
 a:hover::after {
     width: 100%;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 15px;
+}
+
+tr {
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+th,
+td {
+    padding: 14px 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+th {
+    width: 35%;
+    text-align: left;
+    font-weight: 500;
+    color: #8d8d8d;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+td {
+    color: #cfcfcf;
+    font-weight: 400;
+}
+
+tr:hover {
+    background: rgba(255,255,255,0.04);
+}
+
+tr:hover th {
+    color: #c8c8c8;
+}
+
+tr:hover td {
+    color: #ffffff;
+}
+
+tr:last-child th,
+tr:last-child td {
+    border-bottom: none;
 }

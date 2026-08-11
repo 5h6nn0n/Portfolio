@@ -1,0 +1,285 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+
+<header>
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Portfoio</title> <link rel="stylesheet" type="text/css" href="style.css" /> 
+ </header>
+ </head> 
+ 
+ <body>
+ <nav></nav> 
+ <main> 
+ <h1>My First App For ZEPP </h1>
+ <h2>Expanding development horizons and overcoming setbacks: Build and publish your first smartwatch mini application with me. </h2>
+ <table><tr>
+ <th><h3>Author:</h3></th>
+ <td><p>5h6nn0n (Shannon)</p></td>
+</tr><tr> 
+<th><h3>Execution Date:</h3></th>
+ <td><p>July 18, 2026</p></td>
+ </tr></table>
+ 
+<br><br> 
+ 
+ <h4>Introduction</h4>
+ <p>ZEPP OS is Amazefit's operating system for its smartwatch devices. As opposed to Apple or Android, ZEPP has a niche userbase with fewer apps in store to compete with, making it an attractive entry point for developers. It is also a completely free process from start to finish. I will walk you through the steps on how to build and publish your first app for ZEPP!</p>
+  <br><br>
+
+ <h3>To complete this project you will juggle 4 views:</h3>
+ <ol class="explore">
+ <li>ZEPP OS Simulator</li>
+ <li>Emmulator watch screen (launched from the Sim app)</li>
+ <li>Code editor (I am using VS code for this)</li>
+ <li>Windows PowerShell</li>
+ </ol>
+ 
+ <br><br>
+ <h4>Walkthrough</h4>
+ <table>
+ <tr>
+ <th>Download ZEPP OS Simulator</th>
+<td>reccommend: simulator_2.1.1_window_x64</td>
+ <td><a target="somethingUnique" href="https://docs.zepp.com/docs/guides/tools/simulator/download/">Here</a></td>
+
+</tr><tr>
+ <th>Download Node.js</th> <td>if you don't already have it installed</td>
+ <td><a  target="somethingUnique" href="https://docs.zepp.com/docs/guides/best-practice/Basic-environment-construction/#installing-nodejs" >Here</a></td>
+ </tr>
+  </table>
+  <p>*** The package version of Node takes up more storage and includes MS VS Installer, VS Build Tools, Python Launcher, Python 3.14, and Node.js</p>
+ 
+  <br><br>
+
+
+<p>Log in or create a developer account with zepp on web</p>
+<p>Launch the zepp os simulator app and log in</p>
+<p>Click the emulator icon (top left corner) and keep it open</p>
+<br>
+<p>~ Open Windows PowerShell ~</p>
+<br>
+<p>Type: npm i @zeppos/zeus-cli -g</p>
+<p>>>> installs zeus command line package globally</p>
+
+<p>Type: zeus -v</p>
+<p>>>> shows the version number to make sure everything was installed correctly</p>
+
+<p>Type: cd downloads</p>
+<p>>>> or whichever folder you plan to put your project in and want to work from</p>
+
+<p>Type: zeus create app-name</p>
+<p>>>> this is the easiest way to start the app. replace app-name with your intended app name, which can be changed later, then answer a series of questions (up and down keys to navigate between options, press space bar to select and enter key to accept)</p>
+
+<p>Type: cd app-name</p>
+<p>>>> go to app you just created</p>
+
+<p>Type: npm install</p>
+<p>>>> creates dependency packages</p>
+
+<p>Type: zeus login</p>
+<p>>>> will prompt you to login to your zepp account. if successful, you will redirected to a localhost url. you only need to do this once as the credentials will be saved even when you exit out of powershell. </p>
+
+<p>Type: zeus build</p>
+<p>>>> creates the .zab file inside /dist/ folder</p>
+
+<p>Type: zeus status</p>
+<p>>>> shows you whether you are logged in and connected</p>
+
+<p>Type: zeus dev</p>
+<p>>>> push to zepp os simulator</p>
+
+<br>
+<p>~ Edit your app !! ~</p>
+<br>
+<p>These are the main files you will need to edit: </p>
+<p>>>> page/home/index.page.js is the main page that users see. Add any new user-facing pages & sub-folders next to this path.<p>
+<p>>>> app.json in your root folder is like the directory. If you create new pages they will need acknowledged in here to be indexed.</p>
+<br>
+<p>SHIFT + C then CTRL + C</p>
+<p>>>> cancels dev from listening for changes</p>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+  <br><br>
+
+ 
+ <h4>Personal Challenges</h4>
+ <p>NGL before starting this project, I thought the process would be a piece of cake because I had already been familiar with JavaScript through front-end web development. I was quickly humbled. These apps do not use the DOM and browser events, and there are many sides of JS I haven't explored yet. Opting for native components for mobile, JavaScript felt like an entirely new language in the Zepp OS environment. Thankfully, I was not totally lost in the sauce because there are some parallels to the syntax that I used to help anchor my understanding for this project. While not an exact translation, I made a table to compare: </p>
+ 
+ <table>
+ 
+ <th>Web / DOM / HTML</th>
+ <th>Zepp Version</th>
+ <th>Idea to apply</th>
+ 
+ 
+ <tr>
+  <td>document.createElement()</td>
+ <td>hmUI.createWidget()</td>
+ <td></td>
+ </tr>
+<tr>
+ <td>element.style.property()</td>
+ <td>widget.setProperty()</td>
+  <td></td>
+ </tr>
+ <tr>
+ <td>element.remove()</td>
+  <td>hmUI.deleteWidget()</td>
+   <td>destroys UI object to free memory</td>
+
+ </tr>
+ <tr>
+  <td>element.addEventLister()</td>
+ <td>widgetRef.addEventLister()</td>
+  <td>notes clicks/taps, specific key presses, to activate a funtion</td>
+ </tr>
+ <tr>
+ <td>element.innerHTML = 'text'</td>
+ <td>wdgetRef.setProperty()</td>
+  <td>updates the widget property</td>
+
+ </tr>
+ <tr>
+ <td>element.style.display = 'none'</td>
+ <td>widget.setProperty(hmUI.prop.VISIBLE, false)</td>
+ <td>hides codeblock, useful for forms</td>
+ </tr>
+ <tr>
+ <td>navigator.userAgentData</td>
+ <td>hmSetting.getDeviceInfo()</td>
+ </tr><tr>
+ <td>< button ></td>
+ <td>widget.BUTTON</td>
+ </tr><tr>
+ <td>< img ></td>
+ <td>widget.IMG</td>
+ </tr><tr>
+ <td>< p ></td>
+ <td>widget.TEXT</td>
+ </tr>
+ 
+ 
+ </table>
+ 
+ 
+ 
+ 
+ 
+<p></p>
+<p></p>
+<p></p>
+  
+ 
+  <br><br>
+
+ <h4>My Troubleshooting Discoveries as FAQ</h4>
+ 
+ <div class='explore'>
+ <h3>1)</h3>
+<h3>Do I need to create and push a new ZAB file everytime I make edits?</h3>
+</div>
+<p class='indent'>Zepp OS Simmulator claims to support live changes. Ctrl + S in your code editor and the emmulator will refresh automatically. Sometimes the connection ends when it's been running for long periods of time and live edits stop tracking. Make sure to check in with Powershell when you feel your recent changes haven't been refected in the Zepp Sim.
+ </p>
+<br>
+ <div class='explore'>
+
+ <h3>2)</h3>
+
+<h3>My sim connect status says logged and connected (zeus status) but connect sim failed (zeus dev)</h3>
+</div>
+<p class='indent'>Make sure the Zepp OS Simmulator app is open and running the whole time. Additionally, you can exit powershell and access the app at a latertime using zeus dev; however, deleting the app from the Sim and rebuilding will cause problems that may prevent you from reconnecting your project to the Zepp Sim.</p>
+<br>
+
+ <div class='explore'>
+
+ <h3>3)</h3>
+
+<h3>In the simulator console log I get: reference error '__$$RQR$$__' is not defined at root/class context</h3>
+</div>
+<p class='indent'>This conflict is between imports and ui. The app crashes before the page can load. Make sure you are connsistent with the api version that the app is supportted by. Triple check your imports. Make sure your variables are declared/initialized. </p>
+<br>
+
+
+ <div class='explore'>
+
+ <h3>4)</h3>
+
+<h3>The app project shows up in the simmulator list but clicking it does nothing</h3>
+</div>
+<p class='indent'>A watch model will appear next to the project name, which is the same as what you selected to build/preview in powershell. If it says GTR4, for example, it expects you to download and open using that model only. You would also need to edit the page/index.js file of the corresponding model in the app folder and use correct API version in the code. </p>
+<br>
+
+ <div class='explore'>
+
+ <h3>5)</h3>
+
+<h3>My watchface briefly appears then goes dark</h3>
+</div>
+<p class='indent'>Check your localhost connection. Do not zeus build or zeus dev if the status is disconnected or closed because it wil not launch properly. </p>
+<br>
+
+
+ <div class='explore'>
+
+ <h3>6)</h3>
+
+<h3>The terminal is only giving me three watch options to chose from when there are more dowloadable models inside the Simulator. How can I access them all? </h3>
+</div>
+<p class='indent'>Some features aren't supported on all watch models, and the selected build API (i.e., v1, v2, v3, v4) affects this too. If you pick the 'empty' template upon creation, you will have all the availible watch options to select from.</p>
+<br>
+
+<p></p>
+
+
+
+<p></p>
+<p></p>
+ 
+ <br><br>
+<h4>Resources</h4>
+
+<table>
+<tr>
+<td>ZEPP.</td> 
+<td  class="itc">Debug Mini Program.</td>
+<td> <a target="somethingUnique" href="https://docs.zepp.com/docs/guides/best-practice/debug/">https://zepp.com/debug/</a></td>
+
+</tr>
+
+<tr>
+<td>ZEPP.</td> 
+<td  class="itc">Creating Template Projects.</td>
+<td> <a target="somethingUnique" href="https://docs.zepp.com/docs/guides/quick-start/create/">https://zepp.com/create/</a></td>
+</tr>
+
+<tr>
+<td>ZEPP.</td> 
+<td  class="itc">Overall Architecture.</td>
+<td> <a target="somethingUnique" href="https://docs.zepp.com/docs/guides/architecture/arc/">https://zepp.com/architecture/</a></td>
+</tr>
+
+</table>
+
+ 
+ <br><br>
+ </main>
+
+ </body>
+
+ <footer id="date"> 
+ 
+  <script>
+  document.getElementById("date").innerHTML = `&copy; ${new Date().getFullYear()} GitHub Pages | `;
+  
+  </script> 
+ 
+ <a href="index.html">5han's Portfoio Home</a>
+ </footer>
+
+ </html>

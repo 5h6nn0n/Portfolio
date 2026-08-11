@@ -1,0 +1,107 @@
+/* apply a natural box layout model to all elements */* 
+{
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+/* reset rules */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+body {
+   line-height: 2;
+   max-width: 100%;
+   background-image: url('9954F383.GIF'); 
+   margin: 50px auto;
+   font-family: monospace;
+   color: rgb(197, 201, 190);
+   
+}
+h1 {
+   font-size: 36px;
+   text-align: center;
+   background-color: black;
+   padding: 15px;
+   margin-inline-start: 125px;
+   margin-inline-end: 125px;
+}
+p, table, ul {
+   margin-inline-start: 125px;
+   font-size: 18px;
+   text-decoration: none;
+   list-style: none;
+   background-color: rgba(0, 0, 0, 0.685);
+   margin-inline-end: 125px;
+   width: 80%;
+}
+h2 {
+   text-align: center;
+   font-size: 24px;
+   background-color: black;
+   margin-inline-start: 125px;
+   margin-inline-end: 125px;
+   color:brown;
+}
+footer {
+   font-size:x-small;
+   text-align: center;
+}
+#img {
+   display: block;
+   width: 25%;
+   overflow: hidden;
+   border: 5px dotted rgba(165, 42, 42, 0.731);
+   margin: auto;
+}
+a {
+   color:brown;
+}
+nav {
+   background-color: brown; 
+   list-style-type: none;
+   text-align: center;
+   margin-left: 0;
+   margin-right: 0;
+}
+
+nav li {
+   display: inline-block;
+   font-size: 20px;
+   padding: 20px;
+ }
+ nav a {
+  text-decoration: none;
+  display:contents ;
+  justify-content: space-around;
+  color: inherit;
+ }
+
+ nav ul li a:hover {
+  color: rgb(94, 199, 120);
+  text-shadow: black;
+}

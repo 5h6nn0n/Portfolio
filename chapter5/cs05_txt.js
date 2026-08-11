@@ -37,7 +37,6 @@ const getGeoLocation = async (isClickTarget) => {
     } catch (e) {}
   }
 
-  // If we reach here, we either already have permission, or the user specifically clicked the location button
   return new Promise((resolve) => {
     navigator.geolocation.getCurrentPosition(
       (position) => resolve(position),
@@ -147,7 +146,7 @@ async function getSpecificDeviceSnapshot(clickedTarget = null) {
       });
     }
 
-    // --- SCREEN NAME ---
+    //SCREEN 
   if (nameRaw) {
       if (nameRaw.error) {
         snapshot.push({ 
@@ -165,7 +164,7 @@ async function getSpecificDeviceSnapshot(clickedTarget = null) {
       }
     }
 
-    // geo LOCATION
+    // GEO LOCATION
     if (geoRaw) {
       if (geoRaw.error === "Requires button click") {
          snapshot.push({

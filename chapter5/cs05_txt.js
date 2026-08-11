@@ -36,7 +36,6 @@ const getGeoLocation = async (isClickTarget) => {
       if (perm.state === 'prompt') return { error: "Requires button click" };
     } catch (e) {}
   }
-
   return new Promise((resolve) => {
     navigator.geolocation.getCurrentPosition(
       (position) => resolve(position),
@@ -54,7 +53,6 @@ const getSafeScreenDetails = async (isClickTarget) => {
       if (perm.state === 'prompt') return { error: "Requires button click" };
     } catch (e) {}
   }
-
   try {
     return await window.getScreenDetails();
   } catch (error) {

@@ -16,7 +16,7 @@ async function loadBase64Image(elementId, jsonFileName) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  loadBase64Image("img-profile", "selfie.json");
-  loadBase64Image("img-award", "award.json");
-  loadBase64Image("img-cat", "cat.json");
+  loadBase64Image("img-profile", "imgs/selfie.json");
+  loadBase64Image("img-award", "imgs/award.json");
+  loadBase64Image("img-cat", "imgs/cat.json");
 });

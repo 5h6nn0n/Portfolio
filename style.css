@@ -16,7 +16,7 @@
   --font-code: 'Space Mono', monospace;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 600px) {
 
 
 body {
@@ -464,10 +464,7 @@ tr:hover td {
 
 
 
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVENESS (Screens <= 900px)
-   ========================================================================== */
-@media (max-width: 450px) {
+@media (max-width: 500px) {
  /* Base Mobile Layout */
 body {
   background-color: var(--bg-dark);

@@ -1,118 +1,104 @@
 <!DOCTYPE html> 
-
-
 <html> 
 <head> 
+	<header>
+		<meta charset="UTF-8" /> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfoio | Ubuntu</title> <link rel="stylesheet" type="text/css" href="style.css" /> 
+	</header>
+</head> 
+ 
+<body>
+<main> 
+	<h1>Ubuntu to USB Tutorial</h1>
+	<h2>Install Ubuntu on your thumb drive so you can have Linux in your pocket!</h2> 
+<br><br>
+	<div class="article-meta">
+		<span>By <strong class="author">5h6nn0n (Shannon Alexis)</strong></span>
+		<span class="dot-separator">•</span>
+		<time datetime="2025-03-21">March 21, 2025</time>
+		<span class="dot-separator">•</span>
+		<span>est 30 min project</span>
+	</div>
 
-<header>
-<meta charset="UTF-8" /> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <title>Portfoio</title> <link rel="stylesheet" type="text/css" href="style.css" /> 
- </header>
- </head> 
+	<nav class="project-nav" >
+		<h4>Contents:</h4>
+		<a href="#introduction">Introduction</a>
+		<a href="#configuration">Configuration</a>
+		<a href="#installation">Installation</a>
+		<a href="#authunication">Authunication</a>
+		<a href="#launch">Launch Setup</a>
+		<a href="#conclusion">Conclusion</a>
+	</nav>
+<br>
+	<h4>To complete this project you will need:</h4>
+  
+	<ul class="you-will-need">
+		<li><span></span>USB 3.0 Stick Type-A (preferably 64GB & up)</li>
+		<li><span></span>A funtional computer</li>
+		<li><span></span>Stable internet connection</li>
+	</ul>
+	<p>** This tutorial assumes you are starting on Windows</p>
+<br><br>
  
- <body>
- <nav></nav> 
- <main> 
- <h1>Ubuntu to USB Tutorial</h1>
- <h2>Install Ubuntu on your thumb drive so you can have Linux in your pocket!</h2> 
- 
- <table><tr>
- <th><h3>Author:</h3></th>
- <td><p>5h6nn0n (Shannon)</p></td>
-</tr><tr> 
-<th><h3>Execution Date:</h3></th>
- <td><p>Mar 21, 2025</p></td>
- </tr></table>
- 
-<br><br> 
- 
- <div class="explore">
- <h3>To complete this project you will need:</h3>
-  <p>** This tutorial assumes you are starting on Windows</p>
+<h3 id="introduction">START HERE</h3> 
+<table>
+	<tr>
+		<th>Download Rufus for Windows x64</th>
+		<th>Download Ubuntu for desktop </th>
+	</tr>
+	<tr>
+		<td><a target="somethingUnique" href="https://rufus.ie/en/#download">Here</a></td>
+		<td><a target="somethingUnique" href="https://ubuntu.com/download/desktop">Here</a></td>
+	</tr>
+</table>
+	<h4>Plug in your thumb drive and drag UBUNTU to it</h4>
+<br><br>
+<h3 id="configuration">Rufus configuration</h3>
+	<h4>Set ENIF</h4>
+	<h4>Set GPT</h4>
+	<h4>Set persistence amount (can be updated later)</h4>
+	<p class="indent-p">- I chose to split my drive storage 50/50. In my 256GB drive, the persistence is set to 128GB, which means I have 128GB remaining for regular thumb drive storage too. Persistence is required to save and store data like on a regular computer. Otherwise, everything you've accomplished on the drive will be wiped each time you eject it.</p> 
+<br><br>
+<h3 id="installation">The Installation Process</h3>
+	<h4>Logged into wifi</h4>
+	<h4>Select encryption LVM & LUKS</h4>
+	<h4>Select both proprietary software</h4>
+	<div class="explore">
+  <h4>Where: sda SANDISK</h4>
+	<p>(or whichever brand of USB you used)</p>
   </div>
- <ol class="explore">
- <li>USB 3.0 Stick Type-A (preferably 64GB & up)</li>
- <li>A funtional computer</li>
- <li>Stable internet connection</li>
- <li>~8 minutes for configuration</li>
- </ol>
-
-
 <br><br>
- 
- <h4>START HERE</h4> 
- <table><tr>
- <th>Download Rufus for Windows x64</th>
- <td><a target="somethingUnique" href="https://rufus.ie/en/#download">Here</a></td>
- </tr><tr>
- <th>Download Ubuntu for desktop </th>
- <td><a target="somethingUnique" href="https://ubuntu.com/download/desktop">Here</a></td>
- 
- </tr></table>
- <p>Plug in your thumb drive and drag UBUNTU to it</p>
-
- <br><br>
-
- <h4>Rufus configuration</h4>
- <p>ENIF</p>
- <p>GPT</p>
- <p>Set persistence amount (can be updated later)</p>
- <p>- I chose to split my drive storage 50/50. In my 256GB drive, the persistence is set to 128GB, which means I have 128GB remaining for regular thumb drive storage too. Persistence is required to save and store data like on a regular computer. Otherwise, everything you've accomplished on the drive will be wiped each time you eject it.</p>
- 
+<h3 id="authunication">Authunication </h3>
+	<h4>Create pass phrase (encryption)</h4>
+ 	<p class="indent-p">- Write this down (if set) and keep it stored in a secure location. </p>
+	<h4>Create Password</h4>
+	<p class="indent-p">- Set not required to log in (unless you want an additional layer of security). </p>
+	<p class="indent-p">- This password will be used for app store downloads. </p>
+	<h4>Create Username </h4>
 <br><br>
-
-
- <h4>Launch Setup</h4>
- <p>Restart PC and click F2 key on boot</p>
- <p>Change USB to first in boot order</p>
- <p>>>> sda -- USB</p>
- <p>>>> sda2 -- Windows</p>
- <p>>>> sda3 -- Boot</p>
- <p>>>> sda4 -- Html</p>
-  <p>Set enif ask admin password to never (unless you want an additional layer of security)</p>
-  <p>Secure boot mode from deploy to audit</p>
-  <p>Exit and will start up automatically</p>
- 
- <br><br>
-
-
- <h4>The Installation Process</h4>
- <p>Logged into wifi</p>
- <p>Select encryption LVM & LUKS</p>
- <p>Select both proprietary software</p>
- <p>Where: sda SANDISK (or whichever brand you chose)</p>
-  
-  <br><br>
-
-
- <h4>Authunication </h4>
- <p>Create pass phrase (encryption)</p>
- <p>Create Password</p>
-		<p>- Set not required to log in (unless you want an additional layer of security). </p>
-		<p>- This password will be used for app store downloads. </p>
-  <p>Create Username </p>
- 
-
+<h3 id="launch">Windows Launch Setup</h3>
+	<h4>Restart PC and click F2 key on boot</h4>
+	<h4>Change USB to first in boot order</h4>
+	<p class="indent-p">>>> sda -- USB</p>
+	<p class="indent-p">>>> sda2 -- Windows</p>
+	<p class="indent-p">>>> sda3 -- Boot</p>
+	<p class="indent-p">>>> sda4 -- Html</p>
+	<div class="explore">
+	<h4>Set enif ask admin password</h4>
+	<p>(choose Never unless you want an additional layer of security)</p>
+	</div>
+	<h4>Secure boot mode from deploy to audit</h4>
+	<h4>Exit and will start up automatically</h4>
 <br><br>
- <h3>Conclusion </h3>
-<p>For this project, I wrote down the steps I took so that it would be easier to replicate the process in case I ever forgot, not intending to release the recipe. Now you can safely open Ubuntu from any device that takes USB 3.0 type-A drives! I recommend to set the passwords, regular and admin, as required if you plan on plugging this into a device that is not exclusivly yours. Once inside, your computer data should be secured by BitLocker and will need the key to see everything that it normally does. </p>
+<h3 id="conclusion">Conclusion </h3>
+	<p class="indent-p">For this project, I wrote down the steps I took so that it would be easier to replicate the process in case I ever forgot without intending to release the recipe. Now you can safely open Ubuntu from any device that takes USB 3.0 type-A drives! I recommend to set the passwords, regular and admin, as required if you plan on plugging this into a device that is not exclusivly yours. Once inside, your computer data should be secured by BitLocker and will need the key to access your pictures, documents, etc that it normally does. I view mine as independant of the computer its connected to.</p>
 
-
- <br><br>
-
- </main>
-
- </body>
-
- <footer id="date"> 
- 
-  <script>
-  document.getElementById("date").innerHTML = `&copy; ${new Date().getFullYear()} GitHub Pages | `;
-  
-  </script> 
- 
- <a href="index.html">5han's Portfoio Home</a>
- </footer>
-
- </html>
+</main>
+</body>
+	<footer id="date" class="site-footer"> 
+		<script>document.getElementById("date").innerHTML = `&copy; ${new Date().getFullYear()} GitHub Pages `; </script> 
+		<a href="index.html">5han's Portfoio Home</a>
+		<a href="#top">Back to top ↑</a>
+	</footer>
+</html>

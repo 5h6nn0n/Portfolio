@@ -736,18 +736,7 @@ a {
     border-bottom: 1px solid var(--border-dim) !important;
   }
 
-  .project-nav .nav-title,
-  .project-nav h2,
-  .project-nav h3 {
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.08em !important;
-    color: var(--accent-orange) !important;
-    margin: 0 0 0.25rem 0 !important;
-    padding: 0 !important;
-    border: none !important;
-  }
+ 
   .project-nav a {
     display: block !important;
     width: 100% !important;

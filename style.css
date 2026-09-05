@@ -736,6 +736,12 @@ a {
     border-bottom: 1px solid var(--border-dim) !important;
   }
 
+	.project-nav h3 {
+  color: var(--text-light) !important;
+  border-left: 4px solid var(--accent-lime) !important;
+  padding-left: 0.75rem !important;
+}
+
  
   .project-nav a {
     display: block !important;

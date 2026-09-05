@@ -1,20 +1,20 @@
-// images.js
-async function loadBase64Image(elementId, jsonFilePath) {
+async function loadBase64Image(elementId, jsonFileName) {
   try {
-    const response = await fetch(jsonFilePath);
-    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
-    
-    const result = await response.json();
+    const response = await fetch(jsonFileName);
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    let rawText = await response.text();
+    rawText = rawText.replace(/^\uFEFF/, '').trim();
+    const result = JSON.parse(rawText);
+
     const imgElement = document.getElementById(elementId);
-    if (imgElement) {
-      imgElement.src = result.data;
+    if (imgElement && result.data) {
+      imgElement.src = result.data.trim();
     }
   } catch (error) {
-    console.error(`Error loading ${jsonFilePath}:`, error);
+    console.error(`Error loading ${jsonFileName}:`, error);
   }
 }
 
-// Load all 3 images when the page is ready
 document.addEventListener("DOMContentLoaded", () => {
   loadBase64Image("img-profile", "selfie.json");
   loadBase64Image("img-award", "award.json");

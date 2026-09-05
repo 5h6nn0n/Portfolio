@@ -681,29 +681,51 @@ a {
     height: 32px !important;
   }
 
-  /* 3. TABLES: Permanent, custom copper scrollbar */
+  /* TABLES */
+
   table {
     display: block !important;
     width: 100% !important;
-    overflow-x: scroll !important; /* Forces permanent horizontal scrollbar visibility */
-    white-space: nowrap !important;
-    padding-bottom: 0.5rem !important;
+    border-collapse: collapse !important;
+    margin: 1.5rem 0 !important;
+    font-size: 0.95rem !important;
     
-    /* Firefox custom scrollbar */
-    scrollbar-width: thin !important;
+    /* Permanent Scroll Bar Enforcement */
+    overflow-x: scroll !important; 
+    white-space: nowrap !important;
+    padding-bottom: 0.75rem !important;
+    
+    /* Firefox permanent scrollbar */
+    scrollbar-width: auto !important;
     scrollbar-color: var(--accent-lime) var(--code-bg) !important;
   }
- th {
-  text-align: left;
-  padding: 0.55rem;
-  color: var(--accent-orange);
-  border-bottom: 2px solid var(--accent-orange);
-  text-transform: uppercase;
-  font-size: 0.25rem;
-}
-  /* Webkit custom scrollbar (Chrome, Safari, iOS, Android) */
+
+  /* Restore Header Styling */
+  th {
+    text-align: left !important;
+    padding: 0.75rem 1rem !important;
+    color: var(--accent-orange) !important;
+    border-bottom: 2px solid var(--accent-orange) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  /* Restore Cell Styling */
+  td {
+    padding: 0.75rem 1rem !important;
+    border-bottom: 1px solid rgba(224, 228, 236, 0.1) !important;
+    color: var(--text-light) !important;
+  }
+
+  tr:hover td {
+    background-color: rgba(255, 255, 255, 0.02) !important;
+  }
+
+  /* 2. FORCE PERMANENT VISIBILITY FOR WEBKIT SCROLLBARS (iOS Safari & Android Chrome) */
   table::-webkit-scrollbar {
-    height: 6px !important; /* Visible height for horizontal bar */
+    -webkit-appearance: none !important;
+    height: 8px !important; /* Slightly thicker height ensures visibility without tapping */
     display: block !important;
   }
 
@@ -714,8 +736,9 @@ a {
   }
 
   table::-webkit-scrollbar-thumb {
-    background: var(--accent-lime) !important; /* Copper accent thumb */
+    background: var(--accent-lime) !important; /* Copper accent */
     border-radius: 4px !important;
+    min-width: 40px !important;
   }
 
   table::-webkit-scrollbar-thumb:hover {

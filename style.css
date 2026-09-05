@@ -821,7 +821,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.76rem;
+  font-size: 0.80rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-muted);

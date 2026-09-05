@@ -1,23 +1,22 @@
 // images.js
-async function loadBase64Image(elementId, textFilePath) {
+async function loadBase64Image(elementId, jsonFilePath) {
   try {
-    // 1. Read the .txt file from your project folder
-    const response = await fetch(textFilePath);
-    const base64String = await response.text();
+    const response = await fetch(jsonFilePath);
+    if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
     
-    // 2. Set the image source automatically
+    const result = await response.json();
     const imgElement = document.getElementById(elementId);
     if (imgElement) {
-      imgElement.src = base64String.trim();
+      imgElement.src = result.data;
     }
   } catch (error) {
-    console.error(`Failed to load ${textFilePath}:`, error);
+    console.error(`Error loading ${jsonFilePath}:`, error);
   }
 }
 
 // Load all 3 images when the page is ready
 document.addEventListener("DOMContentLoaded", () => {
   loadBase64Image("img-profile", "selfie.json");
-  loadBase64Image("img-award", "award.txt");
-  loadBase64Image("img-cat", "cat.txt");
+  loadBase64Image("img-award", "award.json");
+  loadBase64Image("img-cat", "cat.json");
 });

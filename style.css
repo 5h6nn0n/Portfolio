@@ -224,7 +224,6 @@ a:hover {
   flex-direction: column;
   gap: 0.80rem;
   border-left: 2px solid var(--border-dim);
-  
   scrollbar-width: thin;
   scrollbar-color: var(--accent-lime) transparent;
 }
@@ -232,7 +231,7 @@ a:hover {
 .project-nav a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   white-space: normal;    
   transition: all 0.2s ease;
@@ -822,7 +821,7 @@ a {
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.75rem;
+  font-size: 0.76rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--text-muted);

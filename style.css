@@ -693,7 +693,14 @@ a {
     scrollbar-width: thin !important;
     scrollbar-color: var(--accent-lime) var(--code-bg) !important;
   }
-
+ th {
+  text-align: left;
+  padding: 0.55rem;
+  color: var(--accent-orange);
+  border-bottom: 2px solid var(--accent-orange);
+  text-transform: uppercase;
+  font-size: 0.25rem;
+}
   /* Webkit custom scrollbar (Chrome, Safari, iOS, Android) */
   table::-webkit-scrollbar {
     height: 6px !important; /* Visible height for horizontal bar */

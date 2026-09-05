@@ -411,9 +411,9 @@ tr:hover td {
 
 /* icons for tech stack */
 .tech-icons i {
-    font-size: 25px;
+    font-size: 18px;
     color: #777;
-    margin-left: 10px;
+    margin-left: 10%;
     transition: 0.3s ease;
 
 }
@@ -639,7 +639,7 @@ a {
   gap: 0.75rem;
   text-align: center;
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-orange);
 }
 
  
@@ -762,4 +762,17 @@ a {
     border-color: var(--accent-lime) !important;
     color: var(--accent-lime) !important;
   }
+
+
+	/* icons for tech stack */
+.tech-icons i {
+    font-size: 18px;
+    color: #777;
+    margin-left: 10%;
+    transition: 0.3s ease;
+}
+.tech-icons i:hover {
+    color: #fff;
+    transform: translateY(-5px);
+}
 }

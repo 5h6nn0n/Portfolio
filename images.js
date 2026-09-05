@@ -17,7 +17,7 @@ async function loadBase64Image(elementId, textFilePath) {
 
 // Load all 3 images when the page is ready
 document.addEventListener("DOMContentLoaded", () => {
-  loadBase64Image("img-profile", "pics/selfie.txt");
-  loadBase64Image("img-award", "pics/award.txt");
-  loadBase64Image("img-cat", "pics/cat.txt");
+  loadBase64Image("img-profile", "selfie.txt");
+  loadBase64Image("img-award", "award.txt");
+  loadBase64Image("img-cat", "cat.txt");
 });

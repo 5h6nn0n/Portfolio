@@ -642,28 +642,7 @@ a {
   color: var(--text-muted);
 }
 
-/* 1. REVISED PROJECT NAV: Sleek pill badges with subtle border glow */
-  .project-nav {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0.5rem !important;
-    padding: 0 0 1rem 0 !important;
-    margin-bottom: 1.75rem !important;
-    border-bottom: 1px solid var(--border-dim) !important;
-  }
-
-  .project-nav a {
-    font-size: 0.75rem !important;
-    letter-spacing: 0.03em !important;
-    color: var(--text-light) !important;
-    background: linear-gradient(180deg, #1C2B26 0%, #131E1B 100%) !important;
-    border: 1px solid var(--border-dim) !important;
-    padding: 0.35rem 0.75rem !important;
-    border-radius: 20px !important; /* Smooth pill shape */
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  /* 2. EXPLORE CLASS FIX: Keep icons side-by-side regardless of text lines */
+ 
   .explore {
     display: flex !important;
     flex-wrap: nowrap !important; /* Prevents icons/links from wrapping under multi-line text */
@@ -743,5 +722,49 @@ a {
 
   table::-webkit-scrollbar-thumb:hover {
     background: var(--accent-orange) !important;
+  }
+
+	/*  PROJECT NAV */
+  .project-nav {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    gap: 0.5rem !important;
+    padding: 0 0 1rem 0 !important;
+    margin-bottom: 1.75rem !important;
+    border-bottom: 1px solid var(--border-dim) !important;
+  }
+
+  .project-nav .nav-title,
+  .project-nav h2,
+  .project-nav h3 {
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    color: var(--accent-orange) !important;
+    margin: 0 0 0.25rem 0 !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+  .project-nav a {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important; 
+    font-size: 0.85rem !important;
+    line-height: 1.3 !important;
+    color: var(--text-light) !important;
+    background: var(--code-bg) !important;
+    border: 1px solid var(--border-dim) !important;
+    border-radius: 6px !important;
+    padding: 0.5rem 0.75rem !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .project-nav a:hover {
+    border-color: var(--accent-lime) !important;
+    color: var(--accent-lime) !important;
   }
 }

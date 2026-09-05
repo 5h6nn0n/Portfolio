@@ -464,6 +464,10 @@ tr:hover td {
 
 
 
+
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVENESS (Screens <= 900px)
+   ========================================================================== */
 @media (max-width: 500px) {
  /* Base Mobile Layout */
 body {
@@ -534,26 +538,7 @@ a {
   transition: all 0.2s ease;
 }
 
-/* Mobile Inline Top Navigation */
-.project-nav {
-  position: static;
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.85rem;
-  padding: 0 0 0.75rem 0;
-  margin-bottom: 1.5rem;
-  border-left: none;
-  border-bottom: 2px solid var(--border-dim);
-}
 
-.project-nav a {
-  color: var(--text-muted);
-  font-size: 0.9rem;
-  font-weight: 500;
-  border-bottom: none;
-}
 
 /* Mobile Single-Column Content Rows */
 .content-row {
@@ -642,19 +627,7 @@ a {
   word-break: break-all;
 }
 
-/* Horizontal Scroll for Mobile Tables */
-table {
-  display: block;
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-}
 
-th, td {
-  padding: 0.75rem;
-}
 
 /* Footer */
 .site-footer {
@@ -668,4 +641,77 @@ th, td {
   font-size: 0.85rem;
   color: var(--text-muted);
 }
+
+/* 1. REVISED PROJECT NAV: Sleek pill badges with subtle border glow */
+  .project-nav {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+    padding: 0 0 1rem 0 !important;
+    margin-bottom: 1.75rem !important;
+    border-bottom: 1px solid var(--border-dim) !important;
+  }
+
+  .project-nav a {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.03em !important;
+    color: var(--text-light) !important;
+    background: linear-gradient(180deg, #1C2B26 0%, #131E1B 100%) !important;
+    border: 1px solid var(--border-dim) !important;
+    padding: 0.35rem 0.75rem !important;
+    border-radius: 20px !important; /* Smooth pill shape */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* 2. EXPLORE CLASS FIX: Keep icons side-by-side regardless of text lines */
+  .explore {
+    display: flex !important;
+    flex-wrap: nowrap !important; /* Prevents icons/links from wrapping under multi-line text */
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0.75rem !important;
+    overflow-x: auto !important; /* Horizontal scroll if icons exceed screen width */
+    padding-bottom: 0.5rem !important;
+  }
+
+  .explore img, 
+  .explore .icon {
+    flex-shrink: 0 !important; /* Prevents icons from squishing when text wraps */
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  /* 3. TABLES: Permanent, custom copper scrollbar */
+  table {
+    display: block !important;
+    width: 100% !important;
+    overflow-x: scroll !important; /* Forces permanent horizontal scrollbar visibility */
+    white-space: nowrap !important;
+    padding-bottom: 0.5rem !important;
+    
+    /* Firefox custom scrollbar */
+    scrollbar-width: thin !important;
+    scrollbar-color: var(--accent-lime) var(--code-bg) !important;
+  }
+
+  /* Webkit custom scrollbar (Chrome, Safari, iOS, Android) */
+  table::-webkit-scrollbar {
+    height: 6px !important; /* Visible height for horizontal bar */
+    display: block !important;
+  }
+
+  table::-webkit-scrollbar-track {
+    background: var(--code-bg) !important;
+    border-radius: 4px !important;
+    border: 1px solid var(--border-dim) !important;
+  }
+
+  table::-webkit-scrollbar-thumb {
+    background: var(--accent-lime) !important; /* Copper accent thumb */
+    border-radius: 4px !important;
+  }
+
+  table::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-orange) !important;
+  }
 }

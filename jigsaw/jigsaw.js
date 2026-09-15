@@ -1,64 +1,47 @@
-
 let lightboxTitle = "My Jigsaw Photo Album";
 
 // Declare these globally 
 let imgFiles = [];
 let imgCount = 0;
 
-async function loadBase64Image(elementId, jsonFileName) {
-  try {
-    const response = await fetch(jsonFileName);
-    if (!response.ok) {
-       console.error(`404 Not Found: Could not find ${jsonFileName}`);
-       return null;
-    }    
-    
-    // Get the raw binary data instead of text
-    const buffer = await response.arrayBuffer();
-    
-    // Explicitly tell JavaScript to decode it from PowerShell's UTF-16 LE format
-    const decoder = new TextDecoder("utf-16le");
-    let rawText = decoder.decode(buffer);
-    
-    // Strip out any hidden invisible characters (BOM) at the start of the file
-    rawText = rawText.replace(/^\uFEFF/, '').trim();
-    
-    // Now it's clean and safe to parse!
-    const result = JSON.parse(rawText);
-    const base64Data = result.data ? result.data.trim() : null;
+const encryptedSources = [
+  { path: "imgs/bee.enc", key: "F71E5544AAF4EF0674D76D534BA82661DC36FF1D60CFAF061244912ACDEA3FB8" },
+  { path: "imgs/deer.enc", key: "5D0112B955E0B4F0597D8F88F034E8F144D860CE3D6F421D0F3A57A8A70D26C3" },
+  { path: "imgs/eclipse.enc", key: "9CAB60DDA632803C13792F9D8F1D1B017B57D9DAAD15829F61F78A89BFF2FE20" },
+  { path: "imgs/flower.enc", key: "EE479A4C75104F66F928114C4C9892BF039870EEC130AE18BEED0886BA4DC698" },
+  { path: "imgs/gator.enc", key: "21507F0E4D4113CC1CD1CBEE0712D87DEF65D3635C881D140701B2599C53E463" },
+  { path: "imgs/hill.enc", key: "6EC2ABB2266D12C07627DC5082CFF59DCC88B85E2AB76D3F0F6A4E58392185B6" },
+  { path: "imgs/leaf.enc", key: "5C2A6BB9B01F6E1A7C4E2E6083AA07887DB3264E95AD27D34A95F6CB6B44CA09" },
+  { path: "imgs/tree.enc", key: "C4E62549E16AE3CB4EED8BABB9ED4456AC3B4C56A25FEB1233639F1CB8F719C7" },
+  { path: "imgs/wheel.enc", key: "B41C90876AD55B3C8B160CC2C0B2C729E8FD8CBEEC300BE47F18EED8CE839307" }
+];
 
-    if (base64Data) {
-      const imgElement = document.getElementById(elementId);
-      if (imgElement) {
-        imgElement.src = base64Data;
-      }
-      return base64Data;
-    }
-  } catch (error) {
-    console.error(`Error loading ${jsonFileName}:`, error);
-  }
-  return null;
+async function decryptImage(encUrl, hexKey) {
+  const response = await fetch(encUrl);
+  const buf = await response.arrayBuffer();
+
+  const iv = new Uint8Array(buf.slice(0, 16));
+  const ciphertext = buf.slice(16);
+
+  const keyBytes = new Uint8Array(hexKey.match(/.{1,2}/g).map(b => parseInt(b, 16)));
+  const cryptoKey = await window.crypto.subtle.importKey(
+    "raw", keyBytes, { name: "AES-CBC" }, false, ["decrypt"]
+  );
+  const decrypted = await window.crypto.subtle.decrypt(
+    { name: "AES-CBC", iv: iv }, cryptoKey, ciphertext
+  );
+
+  return URL.createObjectURL(new Blob([decrypted], { type: 'image/jpg' }));
 }
-
-document.addEventListener("DOMContentLoaded", async () => {
-  // Await all fetches concurrently so we don't proceed until they are done
-  const loadedImages = await Promise.all([
-    loadBase64Image("bee", "imgs/bee.json"),
-	loadBase64Image("deer", "imgs/deer.json"),
-  loadBase64Image("eclipse", "imgs/eclipse.json"),
-  loadBase64Image("flower", "imgs/flower.json"),
-  loadBase64Image("gator", "imgs/gator.json"),
-  loadBase64Image("hill", "imgs/hill.json"),
-  loadBase64Image("leaf", "imgs/leaf.json"),
-  loadBase64Image("tree", "imgs/tree.json"),
-  loadBase64Image("wheel", "imgs/wheel.json")
-  ]);
-
-  // Filter out any failed loads and populate the global array
-  // Populate global array
-  imgFiles = loadedImages.filter(data => data !== null);
-  imgCount = imgFiles.length;
-
+  
+// Runs once when your app loads
+async function prepareImages() {
+  for (let i = 0; i < encryptedSources.length; i++) {
+    let decryptedUrl = await decryptImage(encryptedSources[i].path, encryptedSources[i].key);
+    imgFiles.push(decryptedUrl);
+  }
+  imgCount = imgFiles.length; 
+  
   if (imgCount > 0) {
     setupGallery();
     createLightbox();
@@ -66,6 +49,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     updatePuzzleImage(imgFiles[0]);  // Forces the 1st Base64 image onto the puzzle board
     updateMetadataForImage(0);       // Loads the 1st metadata entry
   }
+}
+
+prepareImages().then(() => {
+    console.log("Images successfully decrypted! Total:", imgCount);
+    createLightbox();
 });
 
 
@@ -192,6 +180,13 @@ for (let i = 0; i < 48; i++) {
    clipPath.appendChild(pathElement);
    defs.appendChild(clipPath);
    piece.appendChild(defs);
+
+
+// 1. Get the current puzzle data from your array
+//let currentPuzzle = puzzleArray[currentIndex]; 
+
+// 2. Decrypt it and assign to customPicture
+//customPicture = await decryptImage(currentPuzzle.file, currentPuzzle.key);
 
    // The image remains unshifted because the path itself acts as a mapped coordinate window
    let svgImage = document.createElementNS("http://www.w3.org/2000/svg", "image");

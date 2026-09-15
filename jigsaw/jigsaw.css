@@ -1,0 +1,233 @@
+* {
+   -moz-box-sizing: border-box;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+}
+
+html, body, div, span, h1, h2, p, img, ul, li, figure, figcaption, header, section {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+   display: block;
+}
+
+body {
+   line-height: 1;
+   width: 1000px;
+   background-image: url('imgs/wood-bg.jpg');
+   background-repeat: repeat;
+   background-image-size: 150px;
+   margin: 0 auto;
+   font-family: Verdana, Geneva, sans-serif; 
+   padding: 25px;
+}
+
+header {
+   background: #5472B2;
+   width: 100%;
+   color: #FFFFFF;
+   font-size: 48px;
+   text-align: center;
+   line-height: 1.5em;
+}
+
+section {
+   background-color: #FFDB70;
+   padding-top: 20px;
+   padding-bottom: 20px;
+   user-select: none;
+   height: 1000px;
+   width: 100%;
+}
+
+h1 {
+   font-size: 2.6em;
+   text-align: center;
+   padding: 12px;
+
+}
+
+section h2 {
+   font-size: 2.3em;
+   text-align: center;
+   padding: 10px 0 20px 0;
+   clear: both;
+}
+
+section p {
+   width: 800px;
+   margin: 0 auto;
+   font-size: 1.3em;
+   line-height: 1.4;
+   font-family: Baskerville, "Palatino Linotype", Palatino, serif;
+}
+
+em {
+   font-style: italic;
+}
+
+/*  METADATA GRID (LEFT SIDE) */
+#container.metadata-grid {
+   float: left;
+   width: 500px; 
+   margin: 0 0 20px 80px; 
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 12px;
+   background: rgba(255, 255, 255, 0.5); 
+   padding: 15px;
+   border-radius: 6px;
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   padding-top: -30px;
+}
+
+.meta-item {
+   display: flex;
+   flex-direction: column;
+   background: rgba(255, 255, 255, 0.8);
+   padding: 8px 10px;
+   border-radius: 4px;
+}
+
+.meta-label {
+   font-size: 0.75rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   color: #555;
+}
+
+.meta-value {
+   font-size: 0.85rem;
+   color: #111;
+   word-break: break-word;
+}
+
+/* LIGHTBOX / SLIDESHOW (RIGHT SIDE) */
+   
+#lightbox {
+   position: relative;
+   float: right;    
+   width: 280px;         
+   height: 210px;            
+   margin: 0 80px 20px 0; 
+   border-radius: 4px;
+   box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+   overflow: hidden;
+}
+
+
+#lbImages {
+   display: flex;
+   width: 100%;
+   height: 100%;
+}
+
+#lbImages img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover; 
+   flex-shrink: 0;
+   cursor: pointer;
+}
+
+#lbPrev, #lbNext {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   font-size: 20px;
+   color: white;
+   background: rgba(0, 0, 0, 0.4);
+   padding: 8px 12px;
+   cursor: pointer;
+   user-select: none;
+   z-index: 10;
+}
+
+#lbPrev { left: 0; }
+#lbNext { right: 0; }
+#lbPrev:hover, #lbNext:hover { background: rgba(0, 0, 0, 0.8); }
+
+#lbCounter {
+   position: absolute;
+   top: 10px;
+   left: 10px;
+   background: rgba(0, 0, 0, 0.6);
+   color: white;
+   padding: 4px 8px;
+   border-radius: 4px;
+   font-size: 0.8em;
+   z-index: 10;
+}
+
+#lbPlay { display: none; } 
+#lbTitle { display: none; } 
+
+/* SVG PUZZLE BOARD & PIECE STYLING */
+
+#puzzleBoard {
+   clear: both; 
+   width: 800px;
+   height: 600px;
+   margin: 30px auto;
+   border: 5px solid gray;
+   background-color: yellow;
+   box-shadow: 3px 3px 15px rgba(0,0,0,0.2);
+   display: block;
+   overflow: visible; 
+   position: relative;
+   z-index: 1000;
+}
+
+#puzzleBoard g {
+   cursor: grab;
+   user-select: none;
+   filter: drop-shadow(4px 4px 6px rgba(0, 0, 0, 0.85)) 
+           drop-shadow(-2px -2px 4px rgba(255, 255, 255, 0.75));
+}
+
+#slideBox img, #lbImages img, #puzzleBoard image {
+   user-select: none;
+   -webkit-user-drag: none;
+   -webkit-touch-callout: none;
+} 
+
+#puzzleBoard g:active {
+   cursor: grabbing;
+   filter: drop-shadow(6px 6px 8px rgba(0, 0, 0, 0.95))
+           drop-shadow(-1px -1px 2px rgba(255, 255, 255, 0.9));
+}
+
+/* Styled button */
+button {
+   position: relative;
+   left: calc(50px); 
+   
+   background: linear-gradient(180deg, #6b89c7 0%, #5472B2 100%);
+   color: #FFFFFF;
+   border: 1px solid #3b538c;
+   border-radius: 4px;
+
+   padding: 6px 14px;
+   font-family: Verdana, Geneva, sans-serif;
+   font-size: 0.75rem;
+   font-weight: bold;
+   text-transform: uppercase;
+   letter-spacing: 0.5px;
+   cursor: pointer;
+
+   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25), 
+               inset 0 1px 0 rgba(255, 255, 255, 0.35);
+   transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+   background: linear-gradient(180deg, #7b99d7 0%, #5c7cc2 100%);
+   border-color: #2c4173;
+   box-shadow: 0 4px 10px rgba(84, 114, 178, 0.4), 
+               inset 0 1px 0 rgba(255, 255, 255, 0.5);
+   transform: translateX(-1px) translateY(-1px);
+}
+

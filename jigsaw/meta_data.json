@@ -1,0 +1,111 @@
+{ "meta_data" : [
+   {
+      "ID" : "1",
+	  "image": "bee_crop.jpg",
+      "Subject" : "Bumble Bee",
+      "Description" : "a field of daisies is pollinated",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "10/09/2020",
+	  "ISO" : "200",
+	  "Aperture" : "f/14",
+	  "Shutter speed" : "1/200 s",
+	  "Focal Length" : "68 mm"
+   },
+   {
+      "ID" : "2",
+	  "image": "deer_crop.jpg",
+      "Subject" : "White-tailed Deer",
+      "Description" : "a baby deer poses for portrait",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "09/24/2020",
+	  "ISO" : "800",
+	  "Aperture" : "f/5.6",
+	  "Shutter speed" : "1/500 s",
+	  "Focal Length" : "200 mm"
+   },
+   {
+      "ID" : "3",
+	  "image": "eclipse_crop.jpg",
+      "Subject" : "Solar Eclipse",
+      "Description" : "captured using solar glasses",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "08/21/2017",
+	  "ISO" : "100",
+	  "Aperture" : "f/5.6",
+	  "Shutter speed" : "1/200 s",
+	  "Focal Length" : "190 mm"
+   },
+   {
+      "ID" : "4",	  
+	  "image": "flower_crop.jpg",
+      "Subject" : "Rhododendron",
+      "Description" : "a pretty pink flower in bloom",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "06/01/2020",
+	  "ISO" : "1000",
+	  "Aperture" : "f/5.6",
+	  "Shutter speed" : "1/125 s",
+	  "Focal Length" : "55 mm"
+   },
+   {
+      "ID" : "5",
+	  "image": "gator_crop.jpg",
+      "Subject" : "Dusty Alligator",
+      "Description" : "a gator bakes in swamp heat",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "05/22/2019",
+	  "ISO" : "800",
+	  "Aperture" : "f/13",
+	  "Shutter speed" : "1/640 s",
+	  "Focal Length" : "50 mm"
+    },
+    {
+      "ID" : "6",
+	  "image": "hill_crop.jpg",
+      "Subject" : "Park Hill",
+      "Description" : "fall scenery of a tree on a hill",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "10/25/2019",
+	  "ISO" : "1600",
+	  "Aperture" : "f/10",
+	  "Shutter speed" : "1/400 s",
+	  "Focal Length" : "18 mm"
+    },
+	{
+      "ID" : "7",
+	  "image": "leaf_crop.jpg",
+      "Subject" : "Leaflet",
+      "Description" : "leaves fallen into colorful pile",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "10/21/2020",
+	  "ISO" : "800",
+	  "Aperture" : "f/10",
+	  "Shutter speed" : "1/400 s",
+	  "Focal Length" : "140 mm"
+    },
+	{
+      "ID" : "8",
+	  "image": "tree_crop.jpg",
+      "Subject" : "Tree",
+      "Description" : "a grassy tree standing tall",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "09/23/2020",
+	  "ISO" : "250",
+	  "Aperture" : "f/4",
+	  "Shutter speed" : "1/1000 s",
+	  "Focal Length" : "55 mm"
+    },
+	{
+      "ID" : "9",
+	  "image": "wheel_crop.jpg",
+      "Subject" : "Wheel",
+      "Description" : "a wheel entangled by flowers",
+      "Photographer" : "Shannon Katolsky",
+	  "Date taken" : "10/09/2020",
+	  "ISO" : "400",
+	  "Aperture" : "f/4.5",
+	  "Shutter speed" : "1/320 s",
+	  "Focal Length" : "98 mm"
+    }
+]}
+ 

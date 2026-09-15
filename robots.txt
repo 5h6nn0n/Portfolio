@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /imgs/
+Disallow: /jigsaw/
+Disallow: /*.json

@@ -181,13 +181,6 @@ for (let i = 0; i < 48; i++) {
    defs.appendChild(clipPath);
    piece.appendChild(defs);
 
-
-// 1. Get the current puzzle data from your array
-//let currentPuzzle = puzzleArray[currentIndex]; 
-
-// 2. Decrypt it and assign to customPicture
-//customPicture = await decryptImage(currentPuzzle.file, currentPuzzle.key);
-
    // The image remains unshifted because the path itself acts as a mapped coordinate window
    let svgImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
    svgImage.setAttribute("href", customPicture);

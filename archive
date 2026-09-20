@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts & Projects — Works Archive</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            purple: '#a855f7',
+                            emerald: '#10b981',
+                            amber: '#f59e0b',
+                            rose: '#f43f5e',
+                            indigo: '#6366f1'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Fraunces', 'serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- STYLES -->
+    <style>
+        :root {
+            --bg-dark: #0F1815;
+            --text-light: #EBE5D8;
+            --accent-lime: #D98352;
+            --accent-orange: #E05A47;
+            --bg-card: #172420;
+            --text-muted: #A3A393;
+            --border-dim: rgba(217, 131, 82, 0.25);
+            --code-bg: #0A110F;
+            --shadow-color: rgba(0, 0, 0, 0.5);
+
+            --font-heading: 'Fraunces', serif;
+            --font-body: 'Outfit', system-ui, -apple-system, sans-serif;
+            --font-code: 'Space Mono', monospace;
+        }
+
+        /* Light Theme Overrides */
+        html:not(.dark) {
+            --bg-dark: #F7F5F0;
+            --text-light: #1A2421;
+            --accent-lime: #C46835;
+            --accent-orange: #C94330;
+            --bg-card: #FFFFFF;
+            --text-muted: #5C6662;
+            --border-dim: rgba(196, 104, 53, 0.3);
+            --code-bg: #EAE6DF;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 1.5rem 1.5rem; 
+        }
+
+        @media (min-width: 768px) {
+            body {
+                padding: 2.5rem 3.5rem 2.5rem 3rem;
+            }
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .font-heading {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .font-code {
+            font-family: var(--font-code);
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            border-bottom: 1px solid var(--border-dim);
+            background: rgba(15, 24, 21, 0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            padding: 1rem 0;
+            display: flex;
+        }
+
+        html:not(.dark) .site-header,
+        html:not(.dark) .glass-nav {
+            background: rgba(247, 245, 240, 0.92);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--bg-light);
+        }
+		
+        .brand-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-lime), var(--accent-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-weight: 900;
+            font-family: var(--font-heading);
+            box-shadow: 0 4px 12px rgba(224, 90, 71, 0.2);
+        }
+		 
+
+        .brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .brand-text span {
+            color: var(--accent-lime);
+        }
+
+        /* Header Color Utility Classes */
+        .header-archive-badge {
+            background-color: rgba(217, 131, 82, 0.12);
+            color: var(--accent-lime);
+            border: 1px solid var(--border-dim);
+        }
+        html:not(.dark) .header-archive-badge {
+            background-color: rgba(196, 104, 53, 0.1);
+            border-color: rgba(196, 104, 53, 0.2);
+        }
+
+        .header-collab-pill {
+            background-color: var(--code-bg);
+            color: var(--text-light);
+            border: 1px solid var(--border-dim);
+        }
+
+        .theme-btn {
+            background-color: var(--code-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border-dim);
+            cursor: pointer;
+        }
+
+        .theme-btn:hover {
+            color: var(--accent-lime);
+            border-color: var(--accent-lime);
+        }
+
+        /* Robust Theme Toggle Visibility via Pure CSS */
+        html.dark #themeIconSun { display: none !important; }
+        html.dark #themeIconMoon { display: block !important; }
+        html:not(.dark) #themeIconSun { display: block !important; }
+        html:not(.dark) #themeIconMoon { display: none !important; }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            background-color: rgba(217, 131, 82, 0.1);
+            border: 1px solid var(--border-dim);
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            width: auto;
+        }
+
+        .back-home-btn:hover {
+            background-color: var(--accent-lime);
+            color: #ffffff;
+            border-color: var(--accent-lime);
+        }
+
+        /* Hero / Header Section */
+        .archive-hero {
+            padding: 2rem 0 1.5rem 0;
+            border-bottom: 1px solid var(--border-dim);
+        }
+
+        .hero-title-group {
+            max-width: 720px;
+			padding: 25px;
+        }
+
+        .page-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            background: rgba(217, 131, 82, 0.12);
+            border: 1px solid var(--border-dim);
+            color: var(--accent-lime);
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 2.25rem;
+            line-height: 1.15;
+            color: var(--text-light);
+            margin-bottom: 0.75rem;
+        }
+
+        @media (min-width: 768px) {
+            .hero-title { font-size: 3rem; }
+        }
+
+        .hero-desc {
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 400;
+            max-width: 640px;
+        }
+
+        /* Control Panel: Filters & Search */
+        .controls-section {
+            padding: 1.5rem 0 1rem 0;
+        }
+
+        .toolbar-top {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px dashed var(--border-dim);
+        }
+
+        .results-counter {
+            font-family: var(--font-code);
+            font-size: 0.825rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .results-count-badge {
+            color: var(--accent-lime);
+            font-weight: 700;
+        }
+
+        .toolbar-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .origin-switch {
+            display: inline-flex;
+            background-color: var(--code-bg);
+            padding: 0.2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-dim);
+        }
+
+        .origin-btn {
+            padding: 0.35rem 0.75rem;
+            border-radius: 5px;
+            border: none;
+            background: transparent;
+            color: var(--text-muted);
+            font-size: 0.775rem;
+            font-family: var(--font-body);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .origin-btn.active {
+            background-color: var(--bg-card);
+            color: var(--accent-lime);
+            box-shadow: 0 2px 5px var(--shadow-color);
+        }
+
+        .sort-box {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--code-bg);
+            border: 1px solid var(--border-dim);
+            padding: 0.25rem 0.6rem;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .sort-label {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .sort-select {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            outline: none;
+            cursor: pointer;
+            padding: 0.25rem 0.4rem;
+        }
+
+        .sort-select option {
+            background: var(--bg-card);
+            color: var(--text-light);
+            cursor: pointer;
+        }
+
+        .filter-tabs {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            overflow-x: auto;
+            padding-top: 0.75rem;
+            padding-bottom: 0.25rem;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .filter-tabs::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            color: var(--text-muted);
+            padding: 0.4rem 0.85rem;
+            border-radius: 6px;
+            font-size: 0.825rem;
+            font-weight: 500;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .tab-btn:hover {
+            color: var(--text-light);
+            border-color: var(--accent-lime);
+        }
+
+        .tab-btn.active {
+            background-color: var(--accent-lime);
+            color: #ffffff;
+            border-color: var(--accent-lime);
+            font-weight: 600;
+        }
+
+        .tab-count {
+            font-family: var(--font-code);
+            font-size: 0.7rem;
+            opacity: 0.8;
+            background: rgba(0,0,0,0.15);
+            padding: 0.1rem 0.35rem;
+            border-radius: 99px;
+        }
+
+        .search-box {
+            position: relative;
+            min-width: 220px;
+            flex-grow: 1;
+        }
+
+        @media (min-width: 768px) {
+            .search-box { flex-grow: 0; }
+        }
+
+        .search-input {
+            width: 100%;
+            background: var(--code-bg);
+            border: 1px solid var(--border-dim);
+            border-radius: 6px;
+            padding: 0.45rem 0.75rem 0.45rem 2.2rem;
+            color: var(--text-light);
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            border-color: var(--accent-lime);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.65rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+            width: 15px;
+            height: 15px;
+        }
+
+        /* Tags shared by Grid & Modal */
+        .tags-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+        }
+
+        .tag-pill {
+            font-family: var(--font-code);
+            font-size: 0.68rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            background-color: var(--code-bg);
+            color: var(--text-muted);
+            border: 1px solid var(--border-dim);
+            transition: transform 0.2s ease;
+        }
+
+        .tag-pill:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Buttons shared by Modal & Empty State */
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-lime);
+            color: #ffffff;
+            border: 1px solid var(--accent-lime);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-orange);
+            border-color: var(--accent-orange);
+        }
+
+        .btn-secondary {
+            background-color: var(--bg-card);
+            color: var(--text-light);
+            border: 1px solid var(--border-dim);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--accent-lime);
+            color: var(--accent-lime);
+        }
+
+        /* Grid Section & Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-cols: 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0 3rem 0;
+        }
+
+        @media (min-width: 640px) {
+            .projects-grid { grid-template-cols: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .projects-grid { grid-template-cols: repeat(3, 1fr); }
+        }
+
+        .project-card {
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+            transform-style: preserve-3d;
+            background-color: var(--bg-card);
+            border-color: var(--border-dim);
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-lime);
+            box-shadow: 0 12px 28px -8px var(--shadow-color);
+        }
+
+        .glass-card {
+            border: 1px solid var(--border-dim);
+        }
+
+        .glass-nav {
+            border-bottom: 1px solid var(--border-dim);
+        }
+
+        .glow-hover:hover {
+            box-shadow: 0 10px 30px -10px rgba(217, 131, 82, 0.25);
+        }
+
+        .icon-small { width: 14px; height: 14px; }
+        .accent-lime-color { color: var(--accent-lime); }
+
+        /* Empty State */
+        .ui-empty-state {
+            padding: 4rem 0;
+            text-align: center;
+            border-radius: 1rem;
+            border: 1px dashed var(--border-dim);
+            background-color: var(--bg-card);
+        }
+
+        .ui-empty-icon {
+            width: 4rem;
+            height: 4rem;
+            margin: 0 auto 1rem auto;
+            border-radius: 9999px;
+            background-color: var(--code-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-lime);
+        }
+
+        /* Modal Classes */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            background-color: rgba(10, 17, 15, 0.75);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-backdrop.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            max-height: 90vh;
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-dim);
+            border-radius: 16px;
+            box-shadow: 0 20px 40px var(--shadow-color);
+            overflow: hidden;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modal-backdrop.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-header {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border-dim);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .modal-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-right: 1.5rem;
+        }
+
+        .modal-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            background-color: rgba(217, 131, 82, 0.15);
+            color: var(--accent-lime);
+            font-size: 0.75rem;
+            font-weight: 600;
+            width: fit-content;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            line-height: 1.25;
+        }
+
+        .modal-date {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .close-modal-btn {
+            padding: 0.5rem;
+            border-radius: 10px;
+            background: var(--code-bg);
+            border: 1px solid var(--border-dim);
+            color: var(--text-muted);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .close-modal-btn:hover {
+            color: var(--text-light);
+            border-color: var(--accent-orange);
+        }
+
+        .modal-body {
+            padding: 1.5rem;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .modal-graphic-box {
+            width: 100%;
+            height: 180px;
+            border-radius: 12px;
+            background-color: var(--code-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 1px solid var(--border-dim);
+        }
+
+        .modal-section-title {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 0.35rem;
+        }
+
+        .modal-takeaway-box {
+            padding: 1rem;
+            border-radius: 10px;
+            background-color: var(--code-bg);
+            border: 1px solid var(--border-dim);
+        }
+
+        .modal-footer {
+            padding: 1rem 1.5rem;
+            background-color: var(--code-bg);
+            border-top: 1px solid var(--border-dim);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .modal-type-label {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .modal-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .hidden { display: none !important; }
+
+        /* Site Footer */
+        .site-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            padding-bottom: 2rem;
+            border-top: 1px solid var(--border-dim);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--accent-orange);
+        }
+
+        .footer-subtext {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body class="selection:bg-brand-500 selection:text-white">
+
+    <!-- Navigation Header -->
+    <header class="site-header sticky top-0 z-40 glass-nav w-full">
+        <div class="container nav-wrapper max-w-7xl mx-auto h-16 flex items-center justify-between">
+            <!-- Brand / Logo -->
+            <a href="#" class="brand-link">
+                <div class="brand-avatar">SK</div>
+                <div class="brand-text">5h6nn0n<span>.github.io</span></div>
+            </a>
+            
+            <!-- Archive & Showcase Badge (Always Visible Now) -->
+            <div class="flex items-center space-x-3">
+                <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full header-archive-badge">
+                    Archive & Showcase
+                </span>
+            </div>
+
+            <!-- Quick Navigation & Theme Toggle -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Available for Collaboration Pill (Always Visible Now) -->
+                <div class="flex items-center space-x-1 text-sm font-medium" style="color: var(--text-muted);">
+                    <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs header-collab-pill">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                        Available for Collaboration
+                    </span>
+                </div>
+                
+                <!-- Dark / Light Theme Toggle -->
+                <button id="themeToggle" class="p-2.5 rounded-xl transition-colors focus:outline-none theme-btn" aria-label="Toggle Theme">
+                    <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
+                    <i data-lucide="sun" id="themeIconSun" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <a href="index.html" class="back-home-btn">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                <span>Main Portfolio</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container flex-grow max-w-7xl w-full mx-auto py-8 space-y-8">
+        
+        <!-- Hero Header -->
+        <section class="archive-hero">
+            <div class="hero-title-group">
+               
+                <h1 class="hero-title">All Posts & Projects</h1>
+                <p class="hero-desc">
+                    A consolidated repository of my research papers, web tools, embedded hardware projects, and technical writeups related to business, software engineering and computer science.
+                </p>
+            </div>
+        </section>
+
+        <!-- Controls Section -->
+        <section class="controls-section">
+            <div class="toolbar-top">
+                <div class="results-counter">
+                    <i data-lucide="layers" class="accent-lime-color icon-small"></i>
+                    Showing <span class="results-count-badge" id="visibleCount">0</span> of <span id="totalCount">0</span> works
+                </div>
+
+                <div class="toolbar-right">
+                    <!-- Personal vs Academic Origin Filter -->
+                    <div class="origin-switch" id="originSwitch">
+                        <button class="origin-btn active" data-origin="all">All</button>
+                        <button class="origin-btn" data-origin="personal">Personal Work</button>
+                        <button class="origin-btn" data-origin="academic">Academic</button>
+                    </div>
+
+                    <!-- Sort Dropdown -->
+                    <div class="sort-box">
+                        <span class="sort-label">Sort:</span>
+                        <select id="sortSelect" class="sort-select">
+                            <option value="newest">Newest First</option>
+                            <option value="oldest">Oldest First</option>
+                            <option value="title">Title (A-Z)</option>
+                            <option value="featured">Featured</option>
+                        </select>
+                    </div>
+
+                    <!-- Search Box -->
+                    <div class="search-box">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="searchInput" class="search-input" placeholder="Search title, tech, tag...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="filter-tabs" id="categoryTabs">
+                <button class="tab-btn active" data-category="all">
+                    <i data-lucide="layout-grid" class="icon-small"></i> All Works <span class="tab-count" id="count-all">0</span>
+                </button>
+                <button class="tab-btn" data-category="web-programming">
+                    <i data-lucide="code" class="icon-small"></i> Full Web & Mobile Dev <span class="tab-count" id="count-web-programming">0</span>
+                </button>
+                <button class="tab-btn" data-category="research-papers">
+                    <i data-lucide="file-text" class="icon-small"></i> Case Studies <span class="tab-count" id="count-research-papers">0</span>
+                </button>
+                <button class="tab-btn" data-category="infographics">
+                    <i data-lucide="pie-chart" class="icon-small"></i> Infographics <span class="tab-count" id="count-infographics">0</span>
+                </button>
+                <button class="tab-btn" data-category="blog-posts">
+                    <i data-lucide="book-open" class="icon-small"></i> Blog Posts <span class="tab-count" id="count-blog-posts">0</span>
+                </button>
+                <button class="tab-btn" data-category="experiments">
+                    <i data-lucide="flask-conical" class="icon-small"></i> Discussion Board <span class="tab-count" id="count-experiments">0</span>
+                </button>
+                <button class="tab-btn" data-category="other">
+                    <i data-lucide="candlestick-chart" class="icon-small"></i> Analytics & AI <span class="tab-count" id="count-other">0</span>
+                </button>
+            </div>
+        </section>
+
+        <!-- Works & Projects Grid -->
+        <section>
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4">
+                <!-- Projects injected by JavaScript -->
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="hidden ui-empty-state glass-card space-y-4 mt-8">
+                <div class="ui-empty-icon">
+                    <i data-lucide="folder-open" class="w-8 h-8"></i>
+                </div>
+                <div class="space-y-1 mb-4">
+                    <h3 style="font-size: 1.15rem; color: var(--text-light); font-weight: 600;">No matching projects found</h3>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">Try adjusting your search query or selecting a different category filter.</p>
+                </div>
+                <button id="resetFiltersBtn" class="btn-action btn-primary mt-4">
+                    Reset All Filters
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal-backdrop">
+        <div class="modal-box" id="modalContainer">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <span id="modalCategoryBadge" class="modal-badge">Category</span>
+                    <h3 id="modalTitle" class="modal-title">Project Title</h3>
+                    <span id="modalDate" class="modal-date">Date • Reading Time</span>
+                </div>
+                <button id="closeModalBtn" class="close-modal-btn">
+                    <i data-lucide="x" style="width: 18px; height: 18px;"></i>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                
+
+                <div>
+                    <h4 class="modal-section-title">Summary</h4>
+                    <p id="modalDescription"></p>
+                </div>
+
+                <div>
+                    <h4 class="modal-section-title">Technology Stack</h4>
+                    <div id="modalTechStack" class="tags-wrapper"></div>
+                </div>
+
+                <div class="modal-takeaway-box">
+                    <span class="modal-section-title" style="display: block; font-size: 0.8rem;"> Key Takeaway / Origin</span>
+                    <p id="modalOrigin" style="font-size: 0.8rem;"></p>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <span id="modalType" class="modal-type-label">Type: Project</span>
+                <div id="modalActions" class="modal-actions"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <p>SK | Works. Portfolio. Archive.</p>
+        <p class="footer-subtext"> © 2026 GitHub Pages </p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        // Portfolio Dataset
+        const projectsData = [
+            {
+                id: 'ubuntu',
+                title: 'Ubuntu to USB Tutorial',
+                category: 'blog-posts',
+                categoryLabel: 'Blog Post',
+                origin: 'personal',
+                type: 'Personal Work',
+                date: '2025-03-21',
+                formattedDate: 'March 2025',
+                readingTime: '30 min project',
+                excerpt: 'A walkthrough on how to transform your USB-A into a bootable computer with Ubuntu software',
+                description: 'Starting on your computer, download the necessary software provided in the table and follow each step that guides you from post-installation to the boot up stage where you will get to see Ubuntu`s signature crown wallpaper appear. Once complete, you will have access to their app store and everything, all ready to download and use right from your flash drive!',
+                tags: ['Linux', 'Rufus', 'USB-A', 'Ubuntu'],
+                color: 'from-accent-rose to-accent-purple',
+                links: { post: 'blog/project1.html'},
+                svgType: 'blog'
+            },
+			{
+                id: 'zepp',
+                title: 'My First App For ZEPP',
+                category: 'blog-posts',
+                categoryLabel: 'Blog Post',
+                origin: 'personal',
+                type: 'Personal Work',
+                date: '2026-07-18',
+                formattedDate: 'July 2026',
+                readingTime: '10 min read',
+                excerpt: 'A walkthrough on how to set up your development environment all the way to publishing for Zepp OS',
+                //description: 'Utilizes 2D graphics and physics to bounce off the walls. Sensor integration sends haptic vibration feedback during gameplay. The app maintains cross version compatibility and manages user states locally. ',
+                //tags: ['node.js & npm', 'Zeus CLI', 'LocalStorage'],
+				 description: 'I outline the fundementals of developing Zepp OS smartwatch applications for Amazfit devices. We are using JavaScript, Zepp UI widget framework, and the Zeus CLI for this project. Important steps include project initialization using the Zeus CLI, knowing which pages to edit, pushing to the sim for testing, how to resolve common bugs, and packaging the final app.',
+                tags: ['node.js & npm', 'Zeus CLI', 'JavaScript'],
+                color: 'from-accent-rose to-accent-purple',
+                links: { post: 'blog/project2.html'},
+                svgType: 'zepp'
+            },
+			 {
+                id: 'jigsaw',
+                title: 'My Jigsaw Photo Album',
+                category: 'web-programming',
+                categoryLabel: 'Web Programming',
+                origin: 'personal',
+                type: 'Personal Work',
+                date: '2026-09-09',
+                formattedDate: 'Sept 2026',
+                readingTime: 'Codebase',
+                excerpt: 'An interactive jigsaw puzzle that features a vibrant gallery of my own nature photography',
+                description: 'Merging drag & drop, clustering, and grid-snapping capabilities into a 6 x 8 jigsaw puzzle board with each piece rendered by Scalable Vector Graphics (SVG). The images update based on a slideshow and has a dynamic metadata table, as well as a grand finale completion animation.',
+                tags: ['SVG', 'JSON', 'CSS', 'HTML5', 'DOM API'],
+                color: 'from-brand-500 to-indigo-600',
+                links: { github: 'jigsaw/jigsaw.html'},
+                svgType: 'markdown'
+            }
+			];
+
+        // Categories Map
+        const categories = [
+            { id: 'all', label: 'All Works' },
+            { id: 'web-programming', label: 'Web Programming' },
+            { id: 'research-papers', label: 'Research Papers' },
+            { id: 'infographics', label: 'Infographics' },
+            { id: 'blog-posts', label: 'Blog Posts' },
+            { id: 'experiments', label: 'Experiments' },
+            { id: 'other', label: 'Analytics & Misc' }
+        ];
+
+        // State Variables
+        let activeCategory = 'all';
+        let activeOrigin = 'all';
+        let searchQuery = '';
+        let sortBy = 'newest';
+
+        // DOM Initialization
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeTheme();
+            updateTabCounts();
+            filterAndRenderProjects();
+            setupEventListeners();
+            lucide.createIcons();
+        });
+
+        // Theme Toggle Logic
+        function initializeTheme() {
+            const themeToggleBtn = document.getElementById('themeToggle');
+            themeToggleBtn.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+
+        // Update Category Tab Count Badges
+        function updateTabCounts() {
+            const totalCount = projectsData.length;
+            document.getElementById('totalCount').textContent = totalCount;
+
+            const categoryCounts = {};
+            projectsData.forEach(p => {
+                categoryCounts[p.category] = (categoryCounts[p.category] || 0) + 1;
+            });
+
+            categories.forEach(cat => {
+                const badge = document.getElementById(`count-${cat.id}`);
+                if (badge) {
+                    badge.textContent = cat.id === 'all' ? totalCount : (categoryCounts[cat.id] || 0);
+                }
+            });
+        }
+
+        // Filter & Render Logic
+        function filterAndRenderProjects() {
+            let filtered = projectsData.filter(p => {
+                const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+                const matchesOrigin = activeOrigin === 'all' || p.origin === activeOrigin;
+                const query = searchQuery.toLowerCase().trim();
+                const matchesSearch = query === '' || 
+                    p.title.toLowerCase().includes(query) ||
+                    p.excerpt.toLowerCase().includes(query) ||
+                    p.tags.some(t => t.toLowerCase().includes(query));
+
+                return matchesCategory && matchesOrigin && matchesSearch;
+            });
+
+            // Sorting
+            filtered.sort((a, b) => {
+                if (sortBy === 'newest') return new Date(b.date) - new Date(a.date);
+                if (sortBy === 'oldest') return new Date(a.date) - new Date(b.date);
+                if (sortBy === 'title') return a.title.localeCompare(b.title);
+                if (sortBy === 'featured') {
+                    const aFeatured = a.origin === 'personal' ? 1 : 0;
+                    const bFeatured = b.origin === 'personal' ? 1 : 0;
+                    if (aFeatured !== bFeatured) return bFeatured - aFeatured;
+                    return new Date(b.date) - new Date(a.date);
+                }
+                return 0;
+            });
+
+            document.getElementById('visibleCount').textContent = filtered.length;
+
+            const grid = document.getElementById('projectsGrid');
+            const emptyState = document.getElementById('emptyState');
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                grid.innerHTML = filtered.map(p => createCardHTML(p)).join('');
+            }
+            
+            lucide.createIcons({
+                nameAttr: 'data-lucide',
+                root: document.getElementById('projectsGrid')
+            });
+        }
+
+        // Helper to Generate Card Component HTML
+        function createCardHTML(project) {
+            const svgGraphic = getSvgGraphic(project.svgType);
+            
+            return `
+                <article data-id="${project.id}" class="project-card-item project-card glass-card rounded-2xl overflow-hidden flex flex-col justify-between cursor-pointer glow-hover relative group">
+                    
+                    <!-- Card Header Cover -->
+                    <div>
+                        <div class="h-44 w-full bg-gradient-to-br ${project.color} p-4 relative overflow-hidden flex items-center justify-center">
+                            <div class="absolute inset-0 bg-slate-100/20 dark:bg-slate-950/20 group-hover:bg-transparent transition-colors"></div>
+                            
+                            <!-- Category Badge -->
+                            <div class="absolute top-3 left-3 z-10 flex items-center space-x-1.5 px-2.5 py-1 rounded-lg bg-slate-900/80 backdrop-blur-md text-[11px] font-semibold text-white border border-black/10 dark:border-white/10">
+                                <span>${project.categoryLabel}</span>
+                            </div>
+
+                            <!-- Work Type Tag -->
+                            <div class="absolute top-3 right-3 z-10 px-2 py-0.5 rounded-md bg-white/20 backdrop-blur-md text-[10px] font-mono text-white">
+                                ${project.type}
+                            </div>
+
+                            <!-- Mock SVG Illustration -->
+                            <div class="relative z-0 opacity-85 group-hover:scale-105 transition-transform duration-300 w-full h-full flex items-center justify-center">
+                                ${svgGraphic}
+                            </div>
+                        </div>
+
+                        <!-- Card Body Details -->
+                        <div class="p-5 space-y-3">
+                            <div class="flex items-center justify-between text-xs font-mono" style="color: var(--text-muted);">
+                                <span>${project.formattedDate}</span>
+                                <span>${project.readingTime}</span>
+                            </div>
+
+                            <h3 class="text-lg font-bold group-hover:text-brand-500 transition-colors line-clamp-2 leading-snug" style="color: var(--text-light);">
+                                ${project.title}
+                            </h3>
+
+                            <p class="text-xs sm:text-sm line-clamp-2 leading-relaxed" style="color: var(--text-muted);">
+                                ${project.excerpt}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Card Footer: Tag Badges & Action -->
+                    <div class="p-5 pt-0 space-y-4">
+                        <div class="tags-wrapper">
+                            ${project.tags.map(tag => `
+                                <span class="tag-pill">#${tag}</span>
+                            `).join('')}
+                        </div>
+
+                        <div class="pt-3 border-t flex items-center justify-between text-xs font-semibold text-brand-500 group-hover:text-brand-400" style="border-color: var(--border-dim);">
+                            <span style="color: var(--accent-lime);">Open Preview</span>
+                            <i data-lucide="arrow-up-right" style="color: var(--accent-lime);" class="w-4 h-4 transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        // SVG Graphic Generators for Cards
+        function getSvgGraphic(type) {
+            switch(type) {
+                case 'neural':
+                    return `<svg class="w-28 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><circle cx="20" cy="30" r="5"/><circle cx="50" cy="15" r="5"/><circle cx="50" cy="45" r="5"/><circle cx="80" cy="30" r="5"/><path d="M25 30 L45 15 M25 30 L45 45 M55 15 L75 30 M55 45 L75 30" stroke-width="1.5"/></svg>`;
+                case 'crypto':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="30" y="20" width="40" height="30" rx="4" stroke-width="2"/><path d="M40 20 V14 A10 10 0 0 1 60 14 V20" stroke-width="2"/><circle cx="50" cy="32" r="3" fill="white"/></svg>`;
+                case 'zepp':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="35" y="10" width="30" height="40" rx="8" stroke-width="2"/><path d="M40 30 Q45 20 50 30 T60 30" stroke-width="2"/><circle cx="50" cy="42" r="2" fill="white"/></svg>`;
+                case 'infographic':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><path d="M10 50 L35 25 L60 38 L90 10" stroke-width="2"/><circle cx="35" cy="25" r="3" fill="white"/><circle cx="60" cy="38" r="3" fill="white"/><circle cx="90" cy="10" r="3" fill="white"/></svg>`;
+                case 'blog':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><path d="M20 15 H80 M20 28 H60 M20 41 H70" stroke-width="2.5" stroke-linecap="round"/></svg>`;
+                case 'audio':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="white"><rect x="15" y="20" width="6" height="20" rx="3"/><rect x="30" y="10" width="6" height="40" rx="3"/><rect x="45" y="25" width="6" height="15" rx="3"/><rect x="60" y="15" width="6" height="30" rx="3"/><rect x="75" y="22" width="6" height="18" rx="3"/></svg>`;
+                default:
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="20" y="15" width="60" height="30" rx="4" stroke-width="2"/></svg>`;
+            }
+        }
+
+        // Event Listeners Setup
+        function setupEventListeners() {
+            const searchInput = document.getElementById('searchInput');
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                filterAndRenderProjects();
+            });
+
+            const sortSelect = document.getElementById('sortSelect');
+            sortSelect.addEventListener('change', (e) => {
+                sortBy = e.target.value;
+                filterAndRenderProjects();
+            });
+
+            const categoryTabs = document.getElementById('categoryTabs');
+            categoryTabs.addEventListener('click', (e) => {
+                const btn = e.target.closest('.tab-btn');
+                if (!btn) return;
+
+                categoryTabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                activeCategory = btn.getAttribute('data-category');
+                filterAndRenderProjects();
+            });
+
+            const originSwitch = document.getElementById('originSwitch');
+            originSwitch.addEventListener('click', (e) => {
+                const btn = e.target.closest('.origin-btn');
+                if (!btn) return;
+
+                originSwitch.querySelectorAll('.origin-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                activeOrigin = btn.getAttribute('data-origin');
+                filterAndRenderProjects();
+            });
+
+            document.getElementById('projectsGrid').addEventListener('click', (e) => {
+                const card = e.target.closest('.project-card-item');
+                if (card) {
+                    const projectId = card.getAttribute('data-id');
+                    openModal(projectId);
+                }
+            });
+
+            document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
+            document.getElementById('closeModalBtn').addEventListener('click', closeModal);
+            
+            document.getElementById('projectModal').addEventListener('click', (e) => {
+                if (e.target.id === 'projectModal') closeModal();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeModal();
+            });
+        }
+
+        function resetFilters() {
+            activeCategory = 'all';
+            activeOrigin = 'all';
+            searchQuery = '';
+            sortBy = 'newest';
+            
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sortSelect').value = 'newest'; 
+
+            const categoryTabs = document.getElementById('categoryTabs');
+            categoryTabs.querySelectorAll('.tab-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-category') === 'all');
+            });
+
+            const originSwitch = document.getElementById('originSwitch');
+            originSwitch.querySelectorAll('.origin-btn').forEach(b => {
+                b.classList.toggle('active', b.getAttribute('data-origin') === 'all');
+            });
+
+            filterAndRenderProjects();
+        }
+
+        // Modal Handler
+        function openModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+
+            document.getElementById('modalCategoryBadge').textContent = project.categoryLabel;
+            document.getElementById('modalTitle').textContent = project.title;
+            document.getElementById('modalDate').textContent = `${project.formattedDate} • ${project.readingTime}`;
+            document.getElementById('modalDescription').textContent = project.description;
+            //document.getElementById('modalGraphic').innerHTML = getSvgGraphic(project.svgType);
+            document.getElementById('modalOrigin').textContent = project.excerpt;
+            document.getElementById('modalType').textContent = `Classification: ${project.type}`;
+
+            const techContainer = document.getElementById('modalTechStack');
+            techContainer.innerHTML = project.tags.map(t => `
+                <span class="tag-pill">#${t}</span>
+            `).join('');
+
+            const actionsContainer = document.getElementById('modalActions');
+            let buttonsHTML = '';
+            if (project.links.demo) {
+                buttonsHTML += `<a href="${project.links.demo}" target="_blank" class="btn-action btn-primary"><i data-lucide="external-link" style="width:14px;"></i> Demo</a>`;
+            }
+            if (project.links.paper) {
+                buttonsHTML += `<a href="${project.links.paper}" target="_blank" class="btn-action btn-primary"><i data-lucide="file-text" style="width:14px;"></i> Paper</a>`;
+            }
+            if (project.links.post) {
+                buttonsHTML += `<a href="${project.links.post}" target="_blank" class="btn-action btn-primary"><i data-lucide="book-open" style="width:14px;"></i> Read</a>`;
+            }
+            if (project.links.github) {
+                buttonsHTML += `<a href="${project.links.github}" target="_blank" class="btn-action btn-secondary"><i data-lucide="braces" style="width:14px;"></i> Code</a>`;
+            }
+            actionsContainer.innerHTML = buttonsHTML;
+
+            const modal = document.getElementById('projectModal');
+            modal.classList.add('active');
+            
+            lucide.createIcons({
+                nameAttr: 'data-lucide',
+                root: document.getElementById('modalContainer')
+            });
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('projectModal');
+            modal.classList.remove('active');
+        }
+    </script>
+</body>
+</html>
+

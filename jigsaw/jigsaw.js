@@ -87,11 +87,6 @@ async function prepareImages() {
 
 // PART 3: PUZZLE BOARD INITIALIZATION & SVG GENERATION
 let puzzleBoard = document.getElementById("puzzleBoard");
-if (puzzleBoard) {
-  puzzleBoard.style.position = "relative";
-  puzzleBoard.style.zIndex = "1000";
-}
-
 let zCounter = 1;
 
 // Drag & cluster state variables

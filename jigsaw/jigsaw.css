@@ -17,7 +17,7 @@ html, body, div, span, h1, h2, p, img, ul, li, figure, figcaption, header, secti
 body {
    line-height: 1;
    width: 1000px;
-   background-image: url('imgs/wood-bg.jpg');
+   background-image: url('wood-bg1.jpg');
    background-repeat: repeat;
    background-image-size: 150px;
    margin: 0 auto;

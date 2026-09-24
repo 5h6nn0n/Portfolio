@@ -1,21 +1,21 @@
-// PART 1: GLOBAL CONFIGURATION & STATE
+// GLOBAL CONFIGURATION & STATE
 let lightboxTitle = "My Jigsaw Photo Album";
 let slidesTitle = "Photo Gallery";
 let imgCount = 0;
-let currentDecryptedUrl = null;
-let allGeneratedBlobs = [];
-let currentImg = 0; // 0-based indexing for array mapping
+let currentImg = 0; 
 let lbCounter;
 let lbImages;
 
-// Encrypted sources 
-  const encryptedSources = [
-   { path: "https://my-portfolio.s-katolsky.workers.dev/jigsaw/bee.enc", key: "F71E5544AAF4EF0674D76D534BA82661DC36FF1D60CFAF061244912ACDEA3FB8" },
+// Stores the single, permanent Blob URLs
+let preloadedBlobs = []; 
+
+const encryptedSources = [
+  { path: "https://my-portfolio.s-katolsky.workers.dev/jigsaw/bee.enc", key: "F71E5544AAF4EF0674D76D534BA82661DC36FF1D60CFAF061244912ACDEA3FB8" },
   { path: "https://my-portfolio.s-katolsky.workers.dev/jigsaw/deer.enc", key: "5D0112B955E0B4F0597D8F88F034E8F144D860CE3D6F421D0F3A57A8A70D26C3" },
   { path: "https://my-portfolio.s-katolsky.workers.dev/jigsaw/eclipse.enc", key: "9CAB60DDA632803C13792F9D8F1D1B017B57D9DAAD15829F61F78A89BFF2FE20" }
 ];
 
-// PART 2: DECRYPTION & MEMORY MANAGEMENT
+// BULK DECRYPTION
 async function decryptImage(encUrl, hexKey) {
   const response = await fetch(encUrl);
   if (!response.ok) {
@@ -32,64 +32,43 @@ async function decryptImage(encUrl, hexKey) {
     { name: "AES-CBC", iv: iv }, cryptoKey, ciphertext
   );
 
-  //return URL.createObjectURL(new Blob([decrypted], { type: 'image/jpg' }));
-  let blobUrl = URL.createObjectURL(new Blob([decrypted], { type: 'image/jpg' }));
-  allGeneratedBlobs.push(blobUrl);
-  return blobUrl;
-}
-
-async function loadActiveImage(index) {
-	
-	  updatePuzzleImage("");
-
-  // 1. Revoke previous Blob URL to prevent RAM leaks
-  if (currentDecryptedUrl) {
-    URL.revokeObjectURL(currentDecryptedUrl);
-    currentDecryptedUrl = null;
-  }
- 
-  // 2. Fetch & decrypt active piece
-  const source = encryptedSources[index];
-  currentDecryptedUrl = await decryptImage(source.path, source.key);
-
-
-while (allGeneratedBlobs.length > 1) {
-    let oldBlob = allGeneratedBlobs.shift(); // Grabs the oldest blob
-    URL.revokeObjectURL(oldBlob);            // Destroys it from Sources tab
-  }
-
-  // 3. Update active Lightbox DOM element
-  if (lbImages && lbImages.firstElementChild) {
-    lbImages.firstElementChild.src = currentDecryptedUrl;
-  }
-
-  // 4. Update Lightbox Counter (1-based for UI display)
-  if (lbCounter) {
-    lbCounter.textContent = (index + 1) + " / " + imgCount;
-  }
-
-  // 5. Sync Puzzle Engine & Metadata
-  updatePuzzleImage(currentDecryptedUrl);
-  updateMetadataForImage(index);
-  resetPuzzleBoard();
+  return URL.createObjectURL(new Blob([decrypted], { type: 'image/jpg' }));
 }
 
 async function prepareImages() {
   imgCount = encryptedSources.length;
   if (imgCount === 0) return;
-  
+
+  // Load all images into memory exactly once up-front
+  for (let i = 0; i < imgCount; i++) {
+    const source = encryptedSources[i];
+    preloadedBlobs[i] = await decryptImage(source.path, source.key);
+  }
+
   createLightbox();
   setupGallery();
-  
   currentImg = 0;
   await loadActiveImage(0);
 }
 
-// PART 3: PUZZLE BOARD INITIALIZATION & SVG GENERATION
+async function loadActiveImage(index) {
+  const activeUrl = preloadedBlobs[index];
+
+  // Update Lightbox Counter
+  if (lbCounter) {
+    lbCounter.textContent = (index + 1) + " / " + imgCount;
+  }
+
+  // Sync Puzzle Engine w Metadata
+  updatePuzzleImage(activeUrl);
+  updateMetadataForImage(index);
+  resetPuzzleBoard();
+}
+
+// PUZZLE BOARD INITIALIZATION, SVG GENERATION
 let puzzleBoard = document.getElementById("puzzleBoard");
 let zCounter = 1;
 
-// Drag & cluster state variables
 let activeGroup = null;
 let dragAnchor = null;
 let dragStartX = 0;
@@ -153,12 +132,12 @@ if (puzzleBoard) {
   for (let i = 0; i < 48; i++) {
      let origRow = Math.floor(i / cols);
      let origCol = i % cols;
-     
+
      let topDir = origRow === 0 ? 0 : -horizontalEdges[origRow - 1][origCol];
      let rightDir = origCol === cols - 1 ? 0 : verticalEdges[origRow][origCol];
      let bottomDir = origRow === rows - 1 ? 0 : horizontalEdges[origRow][origCol];
      let leftDir = origCol === 0 ? 0 : -verticalEdges[origRow][origCol - 1];
-     
+
      let d = `M ${origCol * pieceSize} ${origRow * pieceSize}` +
              getTopEdge(topDir) +
              getRightEdge(rightDir) +
@@ -178,7 +157,7 @@ if (puzzleBoard) {
      let scatterRow = Math.floor(scatterIdx / cols);
      let initTx = (scatterCol - origCol) * pieceSize;
      let initTy = (scatterRow - origRow) * pieceSize;
-     
+
      piece.setAttribute("transform", `translate(${initTx}, ${initTy})`);
 
      let defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
@@ -194,12 +173,12 @@ if (puzzleBoard) {
      piece.appendChild(defs);
 
      let svgImage = document.createElementNS("http://www.w3.org/2000/svg", "image");
-     svgImage.setAttribute("href", ""); // Populated dynamically via updatePuzzleImage
+     svgImage.setAttribute("href", ""); 
      svgImage.setAttribute("width", "800");
      svgImage.setAttribute("height", "600");
      svgImage.setAttribute("clip-path", `url(#${clipPathId})`);
      piece.appendChild(svgImage);
-     
+
      let seamHider = document.createElementNS("http://www.w3.org/2000/svg", "path");
      seamHider.setAttribute("d", d);
      seamHider.setAttribute("fill", "none");
@@ -212,13 +191,12 @@ if (puzzleBoard) {
   }
 }
 
-// PART 4: PIECE INTERACTION AND SNAP LOGIC
+// PIECE INTERACTION AND SNAP LOGIC
 let svgScaleX = 1;
 let svgScaleY = 1;
 
 function grabPiece(e) {
    if (window.puzzleFinished) return;
-   
    activeGroup = e.target.closest("g");
    if (!activeGroup) return;
 
@@ -259,7 +237,7 @@ function movePiece(e) {
    let newTy = dragStartY + diffY;
    let transformStr = `translate(${newTx}, ${newTy})`;
    let cluster = activeGroup.cluster;
-   
+
    for (let i = 0; i < cluster.length; i++) {
       cluster[i].setAttribute("transform", transformStr);
    }
@@ -282,7 +260,6 @@ function dropPiece(e) {
    let finalTx = 0;
    let finalTy = 0;
    let targetCluster = null;
-
    let anchor = activeGroup.cluster[0];
    let tr = getTranslate(anchor);
 
@@ -340,12 +317,11 @@ function dropPiece(e) {
          p.setAttribute("transform", `translate(${Math.round(pPos.x)}, ${Math.round(pPos.y)})`);
       });
    }
-   
    activeGroup = null;
    dragAnchor = null;
 }
 
-// PART 5: COMPLETION & FINALE
+// GRAND FINALE
 function checkPuzzleCompletion() {
    let allPieces = document.querySelectorAll("#puzzleBoard g");
    if (allPieces.length === 0) return;
@@ -354,7 +330,7 @@ function checkPuzzleCompletion() {
    if (!firstCluster || firstCluster.length !== 48) return;
 
    let isComplete = Array.from(allPieces).every(p => p.cluster === firstCluster);
-   
+
    if (isComplete && !window.puzzleFinished) {
       window.puzzleFinished = true;
 
@@ -422,7 +398,6 @@ function triggerGrandFinale() {
          95% { stroke-dashoffset: 0; opacity: 1; }
          100% { stroke-dashoffset: 0; opacity: 0; }
       }
-
       #grandFinaleGlow path {
          animation: weaveWhiteTrail 10s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       }
@@ -451,10 +426,9 @@ function updatePuzzleImage(blobUrl) {
 function resetPuzzleBoard() {
    window.puzzleFinished = false;
    if (puzzleBoard) puzzleBoard.style.filter = "";
-   
+
    let finaleGlow = document.getElementById("grandFinaleGlow");
    if (finaleGlow) finaleGlow.remove();
-
    intList.sort(() => 0.5 - Math.random());
 
    let allPieces = document.querySelectorAll("#puzzleBoard g");
@@ -473,12 +447,12 @@ function resetPuzzleBoard() {
    });
 }
 
-// PART 6: LIGHTBOX CONTROLS
+// LIGHTBOX CONTROLS
 function createLightbox() {
    let lightBox = document.getElementById("lightbox");
    if (!lightBox) return; 
    lightBox.innerHTML = "";
-   
+
    let lbTitle = document.createElement("h1");
    lbCounter = document.createElement("div");
    let lbPrev = document.createElement("div");
@@ -521,37 +495,34 @@ function createLightbox() {
    lightBox.appendChild(lbImages);
    lbImages.id = "lbImages";   
 
-   // Create blank <img> tags for node rotation without pre-fetching images
+   // Assign preloaded URLs directly 
    for (let i = 0; i < imgCount; i++) {
       let img = document.createElement("img");
       img.alt = `Puzzle ${i + 1}`;
-      img.src = ""; 
+      img.src = preloadedBlobs[i]; 
       lbImages.appendChild(img);
    }
 }
 
 async function showNext() {
   if (lbImages && lbImages.firstElementChild) {
-    lbImages.firstElementChild.src = "";
+    // rotate the node
     lbImages.appendChild(lbImages.firstElementChild);
   }
-
   currentImg = (currentImg + 1) % imgCount;
   await loadActiveImage(currentImg);
 }
 
 async function showPrev() {
-
   if (lbImages && lbImages.firstElementChild) {
-    lbImages.firstElementChild.src = "";
+    //  rotate the node
     lbImages.insertBefore(lbImages.lastElementChild, lbImages.firstElementChild);
   }
-
   currentImg = (currentImg - 1 + imgCount) % imgCount;
   await loadActiveImage(currentImg);
 }
 
-// PART 7: GALLERY CONTROLS
+// GALLERY CONTROLS
 function setupGallery() {
    let galleryBox = document.getElementById("gallery");
    if (!galleryBox) return; 
@@ -561,54 +532,50 @@ function setupGallery() {
    let currentSlide = 1;
    let runShow = true;
    let showRunning;
-   
+
    let galleryTitle = document.createElement("h1");
    galleryTitle.id = "galleryTitle";
    galleryTitle.textContent = typeof slidesTitle !== "undefined" ? slidesTitle : "Gallery";
    galleryBox.appendChild(galleryTitle);
-   
+
    let slideCounter = document.createElement("div");
    slideCounter.id = "slideCounter";
    slideCounter.textContent = currentSlide + "/" + imageCount;
    galleryBox.appendChild(slideCounter);
-   
+
    let leftBox = document.createElement("div");
    leftBox.id = "leftBox";
    leftBox.innerHTML = "&#9664;";
    leftBox.onclick = moveToLeft;   
    galleryBox.appendChild(leftBox);
-   
+
    let rightBox = document.createElement("div");
    rightBox.id = "rightBox";
    rightBox.innerHTML = "&#9654;";  
    rightBox.onclick = moveToRight;   
    galleryBox.appendChild(rightBox);
-   
+
    let playPause = document.createElement("div");
    playPause.id = "playPause";
    playPause.innerHTML = "&#9199;";
    playPause.onclick = startStopShow;
    galleryBox.appendChild(playPause);
-   
+
    let slideBox = document.createElement("div");
    slideBox.id = "slideBox";
    galleryBox.appendChild(slideBox);
-   
+
+   // Assign preloaded URLs directly 
    for (let i = 0; i < imageCount; i++) {
       let image = document.createElement("img");
-      image.src = ""; 
+      image.src = preloadedBlobs[i]; 
       image.alt = `Slide ${i + 1}`;
       slideBox.appendChild(image);
    }
 
-   function moveToRight() {
-      showNext();
-   }
-   
-   function moveToLeft() {
-      showPrev();
-   }   
-   
+   function moveToRight() { showNext(); }
+   function moveToLeft() { showPrev(); }   
+
    function startStopShow() {
       if (runShow) {
          showRunning = window.setInterval(moveToRight, 2000);
@@ -620,20 +587,19 @@ function setupGallery() {
    }
 }
 
-// PART 8: PROTECTION HANDLERS
+// PROTECTION HANDLERS
 document.addEventListener("contextmenu", e => {
    if (e.target.closest("#slideBox, #lbImages, #puzzleBoard")) {
       e.preventDefault();
    }
 });
-
 document.addEventListener("dragstart", e => {
    if (e.target.closest("#slideBox, #lbImages") || e.target.tagName.toLowerCase() === "image") {
       e.preventDefault();
    }
 });
 
-// PART 9: METADATA LOADER
+// METADATA LOADER
 let allMetadata = [];
 
 function loadMetadata() {
@@ -654,12 +620,12 @@ function updateMetadataForImage(imageIndex) {
    if (!container || !allMetadata.length) return;
    let currentData = allMetadata[imageIndex] || allMetadata[0];
    container.innerHTML = "";
-   
+
    let entries = Object.entries(currentData).filter(([key]) => {
       let lowerKey = key.toLowerCase();
       return lowerKey !== "id" && lowerKey !== "image";
    });
-   
+
    entries.slice(0, 8).forEach(([key, value]) => {
       let div = document.createElement("div");
       div.className = "meta-item";

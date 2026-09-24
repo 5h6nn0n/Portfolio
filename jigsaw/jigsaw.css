@@ -23,6 +23,7 @@ body {
    margin: 0 auto;
    font-family: Verdana, Geneva, sans-serif; 
    padding: 25px;
+   zoom: 0.75;
 }
 
 header {

@@ -25,7 +25,6 @@
       padding: 20px;
       font-family: system-ui, -apple-system, sans-serif;
       background-color: var(--bg-card);
-      /* Prevents users from highlighting UI text */
       user-select: none; 
       -webkit-user-select: none;
     }
@@ -33,8 +32,8 @@
     .pdf-wrapper {
       position: relative;
       width: 100%;
-      max-width: 1000px; /* Constrains the max width so it's not "in your face" */
-      margin: 0 auto; /* Centers the wrapper on the page */
+      max-width: 1000px;
+      margin: 0 auto;
       min-height: 60vh;
       background: linear-gradient(to bottom right, #ffffff, #f1f5f9);
       border-radius: 16px;
@@ -43,7 +42,6 @@
       box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
     }
 
-    /* Loading Screen Overlay */
     .loader-container {
       position: absolute;
       top: 0;
@@ -55,7 +53,7 @@
       align-items: center;
       justify-content: center;
       background: rgba(255, 255, 255, 0.85);
-      backdrop-filter: blur(4px); /* Adds a premium frosted glass effect */
+      backdrop-filter: blur(4px); 
       z-index: 10;
       transition: opacity 0.5s ease, visibility 0.5s ease;
     }
@@ -70,7 +68,7 @@
       width: 40px;
       height: 40px;
       border: 3px solid #e2e8f0;
-      border-top: 3px solid #0f172a; /* Sleek dark accent */
+      border-top: 3px solid #0f172a; 
       border-radius: 50%;
       animation: spin 1s linear infinite;
       margin-bottom: 16px;
@@ -89,11 +87,11 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 32px; /* Adds nice breathing room between pages */
+      gap: 32px; 
       padding: 40px 20px;
     }
     .portfolio-reader canvas {
-      max-width: 800px; /* Keeps the document at a comfortable reading size */
+      max-width: 800px;
       width: 100%;
       height: auto !important;
       border-radius: 4px;
@@ -143,8 +141,8 @@
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  -webkit-touch-callout: none; /* Disables long-press callout menus on mobile Safari */
-  pointer-events: none; /* Prevents direct interaction with the canvas element */
+  -webkit-touch-callout: none; 
+  pointer-events: none; 
 }
   </style>
 <style>

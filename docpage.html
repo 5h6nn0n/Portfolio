@@ -1,0 +1,353 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Doc page</title> 
+
+<style>
+:root {
+  --bg-dark: #0F1815;
+  --text-light: #EBE5D8;
+  --accent-lime: #D98352; 
+  --accent-orange: #E05A47;
+  --bg-card: #172420; 
+  --text-muted: #A3A393;
+  --border-dim: rgba(217, 131, 82, 0.25);
+  --code-bg: #0A110F;
+  
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-code: 'Space Mono', monospace;
+}
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-card);
+      /* Prevents users from highlighting UI text */
+      user-select: none; 
+      -webkit-user-select: none;
+    }
+
+    .pdf-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 1000px; /* Constrains the max width so it's not "in your face" */
+      margin: 0 auto; /* Centers the wrapper on the page */
+      min-height: 60vh;
+      background: linear-gradient(to bottom right, #ffffff, #f1f5f9);
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+      overflow: hidden;
+      box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    }
+
+    /* Loading Screen Overlay */
+    .loader-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(4px); /* Adds a premium frosted glass effect */
+      z-index: 10;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .loader-container.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    /* Spinner */
+    .spinner {
+      width: 40px;
+      height: 40px;
+      border: 3px solid #e2e8f0;
+      border-top: 3px solid #0f172a; /* Sleek dark accent */
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 16px;
+    }
+
+    .loader-text {
+      color: #475569;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    /* PDF Container */
+    .portfolio-reader {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px; /* Adds nice breathing room between pages */
+      padding: 40px 20px;
+    }
+    .portfolio-reader canvas {
+      max-width: 800px; /* Keeps the document at a comfortable reading size */
+      width: 100%;
+      height: auto !important;
+      border-radius: 4px;
+      box-shadow: 0 12px 24px -6px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    }
+
+    /* Basic Footer Styles */
+.site-footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-dim);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+#date {
+  color: var(--accent-lime);
+  font-weight: 600;
+}
+   .site-footer a {
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .site-footer a:hover {
+      color: var(--accent-lime);
+    }
+
+    /* Animations */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; }
+      50% { opacity: 1; }
+    }
+	
+	.portfolio-reader,
+.portfolio-reader canvas {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none; /* Disables long-press callout menus on mobile Safari */
+  pointer-events: none; /* Prevents direct interaction with the canvas element */
+}
+  </style>
+<style>
+
+	.font-code {
+            font-family: var(--font-code);
+        }
+
+        /* Container Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header Navigation */
+        .site-header {
+            border-bottom: 1px solid var(--border-dim);
+            background: rgba(15, 24, 21, 0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            padding: 1rem 0;
+			display: flex;
+
+        }
+
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-between: space-between;
+            gap: 1rem;
+
+        }
+
+        .brand-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--text-light);
+
+        }
+
+        .brand-avatar {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--accent-lime), var(--accent-orange));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-dark);
+            font-weight: 900;
+            font-family: var(--font-heading);
+            box-shadow: 0 4px 12px rgba(224, 90, 71, 0.2);
+        }
+
+        .brand-text {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+
+        }
+
+        .brand-text span {
+            color: var(--accent-lime);
+        }
+
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            background-color: rgba(217, 131, 82, 0.1);
+            border: 1px solid var(--border-dim);
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: .9rem;
+            font-weight: 500;
+			width: 150px;
+        }
+
+        .back-home-btn:hover {
+            background-color: var(--accent-lime);
+            color: var(--bg-dark);
+            border-color: var(--accent-lime);
+			            transition: all 0.2s ease;
+
+        }
+
+       
+	
+	</style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head> 
+ 
+<body>
+  <header class="site-header">
+        <div class="container nav-wrapper">
+            <a href="#" class="brand-link">
+                <div class="brand-avatar">SK</div>
+                <div class="brand-text">5h6nn0n<span>.github.io</span></div>
+            </a>           
+			</div>
+			 <a href="archive.html" class="back-home-btn">
+                <span>View All Projects</span>
+            </a>
+    </header>
+
+  <main id="top"> 
+    <div class="pdf-wrapper">
+      
+      <div id="pdf-loader" class="loader-container">
+        <div class="spinner"></div>
+        <span class="loader-text">Fetching assignment...</span>
+      </div>
+
+	  <div id="pdf-container" class="portfolio-reader" oncontextmenu="return false;"></div>
+
+    </div>
+
+    <script>
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      
+	  const urlParams = new URLSearchParams(window.location.search);
+const requestedDoc = urlParams.get('doc');
+
+// dictionary linking URL parameters to exact R2 bucket paths
+const documents = {
+  'mktg3': 'assignment/infographic/MarketingFinalProject.pdf',
+  'essay2': 'assignments/second-essay.pdf',
+  'history': 'assignments/history-midterm.pdf'
+};
+
+// Look up the requested doc, or default to a fallback if it doesn't exist
+const pdfPath = documents[requestedDoc] || 'assignments/default.pdf';
+const pdfUrl = 'https://my-portfolio.s-katolsky.workers.dev/' + pdfPath;
+	  
+	  
+      const container = document.getElementById('pdf-container');
+      const loader = document.getElementById('pdf-loader');
+
+      // Fetch and render the PDF
+      pdfjsLib.getDocument(pdfUrl).promise.then(pdf => {
+        let pagesRendered = 0;
+        
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          pdf.getPage(pageNum).then(page => {
+            const viewport = page.getViewport({ scale: 1.5 });
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+            
+            canvas.dataset.pageNumber = pageNum; 
+            
+            const wrapper = document.createElement('div');
+            wrapper.style.width = '100%';
+            wrapper.style.display = 'flex';
+            wrapper.style.justifyContent = 'center';
+            wrapper.appendChild(canvas);
+            
+            container.appendChild(wrapper);
+
+            const items = Array.from(container.children);
+            items.sort((a, b) => {
+              const numA = parseInt(a.firstChild.dataset.pageNumber);
+              const numB = parseInt(b.firstChild.dataset.pageNumber);
+              return numA - numB;
+            });
+            items.forEach(item => container.appendChild(item));
+
+            page.render({
+              canvasContext: context,
+              viewport: viewport
+            }).promise.then(() => {
+              pagesRendered++;
+              
+              if (pagesRendered === 1) {
+                loader.classList.add('hidden');
+              }
+            });
+          });
+        }
+      }).catch(error => {
+        console.error('Error loading PDF:', error);
+        loader.innerHTML = '<span style="color: #ef4444;">Failed to load document.</span>';
+      });
+    </script>
+  </main>
+
+
+<footer  class="site-footer"> 
+		<p><a href="index.html">Go to Home</a></p>
+		<div id="date">
+		<script>document.getElementById("date").innerHTML = `&copy; ${new Date().getFullYear()} GitHub Pages `; </script>
+		</div>
+		<p> <a href="#top">Back to top ↑</a></p>
+	</footer>
+  
+</body>
+</html>

@@ -7,6 +7,8 @@
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+	<script src="projectsData.js"></script>
+
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -947,80 +949,6 @@
 
     <!-- SCRIPT -->
     <script>
-        // Portfolio Dataset
-        const projectsData = [
-            {
-                id: 'ubuntu',
-                title: 'Ubuntu to USB Tutorial',
-                category: 'blog-posts',
-                categoryLabel: 'Blog Post',
-                origin: 'personal',
-                type: 'Personal Work',
-                date: '2025-03-21',
-                formattedDate: 'March 2025',
-                readingTime: '30 min project',
-                excerpt: 'A walkthrough on how to transform your USB-A into a bootable computer with Ubuntu software',
-                description: 'Starting on your computer, download the necessary software provided in the table and follow each step that guides you from post-installation to the boot up stage where you will get to see Ubuntu`s signature crown wallpaper appear. Once complete, you will have access to their app store and everything, all ready to download and use right from your flash drive!',
-                tags: ['Linux', 'Rufus', 'USB-A', 'Ubuntu'],
-                color: 'from-accent-rose to-accent-purple',
-                links: { post: 'blog/project1.html'},
-                svgType: 'blog'
-            },
-			{
-                id: 'zepp',
-                title: 'My First App For ZEPP',
-                category: 'blog-posts',
-                categoryLabel: 'Blog Post',
-                origin: 'personal',
-                type: 'Personal Work',
-                date: '2026-07-18',
-                formattedDate: 'July 2026',
-                readingTime: '10 min read',
-                excerpt: 'A walkthrough on how to set up your development environment all the way to publishing for Zepp OS',
-                //description: 'Utilizes 2D graphics and physics to bounce off the walls. Sensor integration sends haptic vibration feedback during gameplay. The app maintains cross version compatibility and manages user states locally. ',
-                //tags: ['node.js & npm', 'Zeus CLI', 'LocalStorage'],
-				 description: 'I outline the fundementals of developing Zepp OS smartwatch applications for Amazfit devices. We are using JavaScript, Zepp UI widget framework, and the Zeus CLI for this project. Important steps include project initialization using the Zeus CLI, knowing which pages to edit, pushing to the sim for testing, how to resolve common bugs, and packaging the final app.',
-                tags: ['node.js & npm', 'Zeus CLI', 'JavaScript'],
-                color: 'from-accent-rose to-accent-purple',
-                links: { post: 'blog/project2.html'},
-                svgType: 'zepp'
-            },
-			 {
-                id: 'jigsaw',
-                title: 'My Jigsaw Photo Album',
-                category: 'web-programming',
-                categoryLabel: 'Web Programming',
-                origin: 'personal',
-                type: 'Personal Work',
-                date: '2026-09-09',
-                formattedDate: 'Sept 2026',
-                readingTime: 'Codebase',
-                excerpt: 'An interactive jigsaw puzzle that features a vibrant gallery of my own nature photography',
-                description: 'Merging drag & drop, clustering, and grid-snapping capabilities into a 6 x 8 jigsaw puzzle board with each piece rendered by Scalable Vector Graphics (SVG). The images update based on a slideshow and has a dynamic metadata table, as well as a grand finale completion animation.',
-                tags: ['SVG', 'JSON', 'CSS', 'HTML5', 'DOM API'],
-                color: 'from-brand-500 to-indigo-600',
-                links: { github: 'jigsaw/jigsaw.html'},
-                svgType: 'markdown'
-            },
-			 {
-                id: 'mktg3',
-                title: 'Marketing Strategy Plan',
-                category: 'infographics',
-                categoryLabel: 'Infographics & Visuals',
-                origin: 'academic',
-                type: 'Academic Work',
-                date: '2024-05-01',
-                formattedDate: 'May 2024',
-                readingTime: '8 Min',
-                excerpt: 'The process that plans from product to payment',
-                description: 'In this document, I outline the market justification, value proposition, target market, and marketing mix for an outdoor clothing product line I named Sub0 (pronounced “Sub-zero”).',
-                tags: ['Product', 'Price', 'Place', 'Promotion'],
-                color: 'from-accent-amber to-accent-rose',
-                links: { post: 'docpage.html?doc=mktg3'},
-                svgType: 'infographic'
-            }
-			];
-
         // Categories Map
         const categories = [
             { id: 'all', label: 'All Works' },

@@ -71,7 +71,7 @@ const projectsData = [
             },
 			 {
                 id: 'mktg3-case',
-                title: 'Market Segmentation in Prince Sports',
+                title: 'Prince Sport Market Segmentation',
                 category: 'case-study',
                 categoryLabel: 'Case Study',
                 origin: 'academic',
@@ -79,11 +79,193 @@ const projectsData = [
                 date: '2024-03-17',
                 formattedDate: 'March 2024',
                 readingTime: '15 Min',
-                excerpt: 'Prince Sport effectively groups their products into segments to expand their brand',
-                description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince Sports company.',
-                tags: ['5 Forces Model', 'Product Segmentation'],
+                excerpt: 'Prince Sport groups products into segments to organize their brand and target consumer reach',
+                description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
+                tags: ['5 Forces', 'Product Segmentation', 'Sales'],
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=mktg3-case'},
                 svgType: 'infographic'
+            },
+			 {
+                id: 'redress',
+                title: 'Redressing Fast Fashion',
+                category: 'case-study',
+                categoryLabel: 'Case Study',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-11-09',
+                formattedDate: 'Nov 2024',
+                readingTime: '15 Min',
+                excerpt: 'Redress took the traditional take,make, waste linear model into a circular process.',
+                description: 'Rredress is a non-government organization (NGO) based out of Hong Kong that siphoned a sustainability movement by raising awareness of the enviromental issues plagueing the fast fashion industry through clever marketing tactics, such as educational competitions and high-value collaborations.',
+                tags: ['case'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: '#'},
+                svgType: 'infographic'
             }
 			];
+			
+			
+			
+			
+			
+		/*
+		 const projectsData = [
+            {
+                id: 'spotlight',
+                title: 'Neural Vis: Real-Time Transformer Attention Maps',
+                category: 'web-dev',
+                categoryLabel: 'Web Development',
+                type: 'Personal Work',
+                date: '2026-02-15',
+                formattedDate: 'Feb 2026',
+                readingTime: '5 min live demo',
+                excerpt: 'An interactive WebGL dashboard bridging deep learning research with browser performance to visualize multi-head self-attention.',
+                description: 'Neural Vis converts complex tensor outputs from modern Transformer models into digestible 3D visual graphs directly in the browser using WebGL and WebGPU pipelines. Built as an open-source tool for AI explainability.',
+                tags: ['PyTorch', 'Three.js', 'TypeScript', 'WebGPU'],
+                color: 'from-brand-500 to-indigo-600',
+                badgeColor: 'text-brand-500 bg-brand-500/10 border-brand-500/20',
+                links: {
+                    demo: '#',
+                    github: '#'
+                },
+                svgType: 'neural'
+            },
+            {
+                id: 'paper-crypto',
+                title: 'Post-Quantum Lattice-Based Key Exchange Protocols',
+                category: 'research',
+                categoryLabel: 'Research & Papers',
+                type: 'Academic / Capstone',
+                date: '2025-11-10',
+                formattedDate: 'Nov 2025',
+                readingTime: '18 min read',
+                excerpt: 'A benchmark analysis evaluating lattice cryptosystems against classical ECDH on low-power IoT microcontrollers.',
+                description: 'This paper evaluates CRYSTALS-Kyber implementation efficiency across constrained microcontrollers. Published as part of my final university honors thesis and presented at local security symposiums.',
+                tags: ['Cryptography', 'C/C++', 'Microcontrollers', 'AES-GCM'],
+                color: 'from-accent-purple to-indigo-600',
+                badgeColor: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                links: {
+                    paper: '#',
+                    github: '#'
+                },
+                svgType: 'crypto'
+            },
+            {
+                id: 'web-zepp',
+                title: 'Zepp OS Micro Analytics & Health Tracker Dashboard',
+                category: 'web-dev',
+                categoryLabel: 'Web Development',
+                type: 'Personal Work',
+                date: '2026-01-20',
+                formattedDate: 'Jan 2026',
+                readingTime: '4 min demo',
+                excerpt: 'Ultra-lightweight biometric web client built for smartwatches and embedded web views using custom Canvas rendering.',
+                description: 'Designed to process streaming BLE health data with minimal energy footprint. Utilizes custom HTML5 Canvas rendering engine and offline IndexedDB sync.',
+                tags: ['Zepp OS', 'JavaScript', 'Canvas API', 'Tailwind'],
+                color: 'from-brand-500 to-accent-emerald',
+                badgeColor: 'text-brand-500 bg-brand-500/10 border-brand-500/20',
+                links: {
+                    demo: '#',
+                    github: '#'
+                },
+                svgType: 'zepp'
+            },
+            {
+                id: 'infographic-ai',
+                title: 'Evolution of Large Language Models Architecture (2017-2026)',
+                category: 'infographics',
+                categoryLabel: 'Infographics & Visuals',
+                type: 'Personal Work',
+                date: '2026-03-01',
+                formattedDate: 'Mar 2026',
+                readingTime: 'Visual Map',
+                excerpt: 'A high-resolution visual roadmap detailing model parameter scaling, MoE architectures, and context window expansions.',
+                description: 'An interactive SVG vector landscape mapping key architectural leaps from the original Vaswani Transformer to modern Mixture-of-Experts (MoE) and state-space models.',
+                tags: ['Data Viz', 'SVG', 'Information Design', 'Illustrator'],
+                color: 'from-accent-amber to-accent-rose',
+                badgeColor: 'text-accent-amber bg-accent-amber/10 border-accent-amber/20',
+                links: {
+                    view: '#'
+                },
+                svgType: 'infographic'
+            },
+            {
+                id: 'blog-academic-transition',
+                title: 'Unlearning Academia: Shifting from CS Papers to Production Code',
+                category: 'blog',
+                categoryLabel: 'Blog & Thought Leadership',
+                type: 'Personal Work',
+                date: '2026-02-28',
+                formattedDate: 'Feb 2026',
+                readingTime: '8 min read',
+                excerpt: 'Reflections on transitioning from academic deadline-driven research code to maintainable, tested production software.',
+                description: 'An essay addressing the psychological and technical shifts required when moving from university research codebases to building consumer-ready software products.',
+                tags: ['Career', 'Software Engineering', 'Reflections'],
+                color: 'from-accent-rose to-accent-purple',
+                badgeColor: 'text-accent-rose bg-accent-rose/10 border-accent-rose/20',
+                links: {
+                    post: '#'
+                },
+                svgType: 'blog'
+            },
+            {
+                id: 'exp-audio',
+                title: 'WebAudio Synth: Generative Ambient Soundscapes',
+                category: 'experiments',
+                categoryLabel: 'Experiments',
+                type: 'Personal Work',
+                date: '2026-01-05',
+                formattedDate: 'Jan 2026',
+                readingTime: 'Audio Interactive',
+                excerpt: 'An algorithmic audio generator running purely in the browser using Web Audio API and Brownian noise loops.',
+                description: 'An experimental web app exploring algorithmic composition and procedural audio synthesis. Features interactive frequency nodes and spatialized soundscapes.',
+                tags: ['Web Audio API', 'JavaScript', 'DSP', 'CSS Grid'],
+                color: 'from-accent-emerald to-brand-500',
+                badgeColor: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                links: {
+                    demo: '#'
+                },
+                svgType: 'audio'
+            },
+            {
+                id: 'paper-distributed',
+                title: 'Consensus Latency in Edge Computing Mesh Networks',
+                category: 'research',
+                categoryLabel: 'Research & Papers',
+                type: 'Academic / Coursework',
+                date: '2025-05-18',
+                formattedDate: 'May 2025',
+                readingTime: '14 min read',
+                excerpt: 'Empirical measurement of RAFT consensus variant overhead across heterogeneous node clusters.',
+                description: 'Undergraduate distributed systems term paper analyzing network partitioning recovery times across simulated edge nodes.',
+                tags: ['Distributed Systems', 'Go', 'Docker', 'Benchmarking'],
+                color: 'from-accent-purple to-brand-600',
+                badgeColor: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                links: {
+                    paper: '#'
+                },
+                svgType: 'network'
+            },
+            {
+                id: 'web-cms',
+                title: 'Markdown-Native Portfolio Engine',
+                category: 'web-dev',
+                categoryLabel: 'Web Development',
+                type: 'Personal Work',
+                date: '2026-02-01',
+                formattedDate: 'Feb 2026',
+                readingTime: 'Codebase',
+                excerpt: 'A static site generation pipeline tailored for researchers who write in LaTeX and Markdown with math rendering.',
+                description: 'Custom SSG engine built with Node.js that parses LaTeX formulas via KaTeX and auto-generates responsive tag grids for blog posts.',
+                tags: ['Node.js', 'KaTeX', 'Tailwind CSS', 'SSG'],
+                color: 'from-brand-600 to-accent-indigo',
+                badgeColor: 'text-brand-500 bg-brand-500/10 border-brand-500/20',
+                links: {
+                    github: '#'
+                },
+                svgType: 'markdown'
+            }
+        ];
+		
+		*/

@@ -70,7 +70,7 @@ const projectsData = [
                 svgType: 'infographic'
             },
 			 {
-                id: 'mktg3-case',
+                id: 'mktg3-prince',
                 title: 'Prince Sport Market Segmentation',
                 category: 'case-study',
                 categoryLabel: 'Case Study',
@@ -83,11 +83,11 @@ const projectsData = [
                 description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
                 color: 'from-accent-purple to-brand-600',
-                links: { post: 'docpage.html?doc=mktg3-case'},
-                svgType: 'infographic'
+                links: { post: 'docpage.html?doc=mktg3-prince'},
+                svgType: 'neural'
             },
 			 {
-                id: 'redress',
+                id: 'mgmt3-redress',
                 title: 'Redressing Fast Fashion',
                 category: 'case-study',
                 categoryLabel: 'Case Study',
@@ -96,11 +96,45 @@ const projectsData = [
                 date: '2024-11-09',
                 formattedDate: 'Nov 2024',
                 readingTime: '15 Min',
-                excerpt: 'Redress took the traditional take,make, waste linear model into a circular process.',
+                excerpt: 'Redress transformed the traditional take, make, waste production model into a circular process',
                 description: 'Rredress is a non-government organization (NGO) based out of Hong Kong that siphoned a sustainability movement by raising awareness of the enviromental issues plagueing the fast fashion industry through clever marketing tactics, such as educational competitions and high-value collaborations.',
-                tags: ['case'],
+                tags: ['Public Relations', 'Triple Bottom Line'],
                 color: 'from-accent-purple to-brand-600',
-                links: { post: '#'},
+                links: { post: 'docpage.html?doc=mgmt3-redress'},
+                svgType: 'neural'
+            },
+			 {
+                id: 'engl228-kpis',
+                title: 'Internal Business Proposal',
+                category: 'case-study',
+                categoryLabel: 'Case Study',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-11-14',
+                formattedDate: 'Nov 2024',
+                readingTime: '15 Min',
+                excerpt: 'Exploring several Key Performance Indicators (KPIs) to better track American Eagle inventory',
+                description: 'This document is a proposed resolution to the inefficiency dilemma from a recently conducted business process analysis. At the time of my observation, American Eagle Outfitters constantly runs out of stock without reflecting this status in time, leaving many customers dissatisfied over retroactive cancelations. The KPIs outlined for inspection are demand forecasts, sales to stock ratio, backorder rate, and inventory shrinkage. By identifying the bottlenecks involved and later acknowledging these issues in a system update, the given KPIs will help improve productivity of operations.',
+                tags: ['ERP', 'Backorder', 'Synchronous updates'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=engl228-kpis'},
+                svgType: 'neural'
+            },
+			 {
+                id: 'qba2-final',
+                title: 'Quantitative Business Analysis',
+                category: 'analytics',
+                categoryLabel: 'Analytics',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-05-01',
+                formattedDate: 'May 2024',
+                readingTime: '8 Min',
+                excerpt: 'Conducting exploratory data analysis (EDA) on population test and regression problem results',
+                description: 'In this document, I walkthrough the process to hand-solve two analytics problems: a population test of means (includes the null hypothesis, alternate hypothesis, and decision rule) and a simple regression analysis (incudes choosing the goodness of fit measure and calculating the sum of squares). Then, I check my results against the data solver plug-in from Excel. Each problem contains a explanation of the results, as well as a concluding summary to compare and contract these observations.',
+                tags: ['Excel', 'Hypothesis Testing', 'Regression'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'infographic'
             }
 			];
@@ -110,6 +144,7 @@ const projectsData = [
 			
 			
 		/*
+		This project is 100% human made (no AI was utilized for any step in its creation).
 		 const projectsData = [
             {
                 id: 'spotlight',

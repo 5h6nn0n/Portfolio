@@ -217,7 +217,7 @@ const projectsData = [
                 readingTime: '5 Min Activity',
                 excerpt: 'Interactive username and password input fields to establish a qualifying password',
                 description:  '#',
-                tags: ['REGEX', 'JavaScript', 'Front-End Dev'],
+                tags: ['REGEX', 'JavaScript', 'Form Validation'],
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=web1-exam2'},
                 svgType: 'markdown'

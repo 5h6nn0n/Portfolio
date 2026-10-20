@@ -149,7 +149,7 @@ const projectsData = [
                 readingTime: '8 Min',
                 excerpt: 'Newsletter that outlines the best HRM practices for effective professional communication',
                 description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
-                tags: ['Cross-functional', 'Leadership', 'Graphics Design'],
+                tags: ['Cross-function', 'Leadership', 'Graphics Design'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=tm3-newsletter'},
                 svgType: 'infographic'
@@ -200,7 +200,7 @@ const projectsData = [
                 readingTime: '25 Min Read',
                 excerpt: 'Reflecting on our team process that contributed to our first place performance metrics',
                 description:  '#',
-                tags: ['KPI Forecasting', 'SWOT', 'Supply & Demand'],
+                tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'

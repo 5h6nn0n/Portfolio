@@ -136,6 +136,57 @@ const projectsData = [
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'infographic'
+            },
+			{
+                id: 'tm3-newsletter',
+                title: 'Professional Communications',
+                category: 'infographics',
+                categoryLabel: 'Infographics',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2025-12-01',
+                formattedDate: 'Dec 2025',
+                readingTime: '8 Min',
+                excerpt: 'Newsletter that outlines the best practices for effective professional communitcation',
+                description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
+                tags: ['Leadership', 'HRM', 'Graphics Design'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=tm3-newsletter'},
+                svgType: 'infographic'
+            },
+			{
+                id: 'global-econ',
+                title: 'Sweden Infographic & Analysis',
+                category: 'infographics',
+                categoryLabel: 'Infographics',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-10-07',
+                formattedDate: 'Oct 2024',
+                readingTime: '10 Min',
+                excerpt: 'The demographics, employment, and international trade statistics of Sweden',
+                description:  'This infographic project highlights the demographics, employment, and international trade statistics of a country named Sweden, located in the Northern European region of Scandinavia. As of the reasearch to date, Sweden operates in a trade surplus and is curently headed towards a recession after recovering from historic levels of inflation endured in the Covid-19 era.',
+                tags: ['VISME', 'Global Economics & Trade', 'Govt'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=global-econ'},
+                svgType: 'infographic'
+            },
+			{
+                id: 'game-theory',
+                title: 'Ultimatum Game Research',
+                category: 'case-study',
+                categoryLabel: 'Case Study',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2025-12-12',
+                formattedDate: 'Dec 2025',
+                readingTime: '15 Min',
+                excerpt: 'Study on how respondants approach various offers based on ethics and identity of proposer',
+                description:  '#Research study and litterature review',
+                tags: ['Negotiate', 'Behavioral Econ', 'Game Theory'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=game-theory'},
+                svgType: 'neural'
             }
 			];
 			

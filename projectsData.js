@@ -206,6 +206,23 @@ const projectsData = [
                 svgType: 'neural'
             },
 			{
+                id: 'web1-exam1',
+                title: 'Efficient Table | Exam 1',
+                category: 'web-programming',
+                categoryLabel: 'Web Programming',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-00-00',
+                formattedDate: 'xxx 2024',
+                readingTime: '5 Min Activity',
+                excerpt: 'Displays movie data collected from IMDB in a table with images to visualize the score',
+                description:  'The movie data collected for the titles, ratings, summaries, and IMDB links to each movie are stored in simple arrays. An if/else conditional sorts which image to display, corresponding to its rotton tomatos score. Everything is displayed via a singular for loop that contains both, the html tags and array variables.',
+                tags: ['Arrays', 'JavaScript', 'Front-End Dev'],
+                color: 'from-accent-purple to-brand-600',
+                links: { code: '#'},
+                svgType: 'markdown'
+            },
+			{
                 id: 'web1-exam2',
                 title: 'Qualifying Password | Exam 2',
                 category: 'web-programming',
@@ -219,7 +236,24 @@ const projectsData = [
                 description:  '#',
                 tags: ['REGEX', 'JavaScript', 'Form Validation'],
                 color: 'from-accent-purple to-brand-600',
-                links: { post: 'docpage.html?doc=web1-exam2'},
+                links: { code: '#'},
+                svgType: 'markdown'
+            },
+			{
+                id: 'web1-exam3',
+                title: 'Cookie Form | Exam 3',
+                category: 'web-programming',
+                categoryLabel: 'Web Programming',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-00-00',
+                formattedDate: 'xxx 2024',
+                readingTime: '5 Min Activity',
+                excerpt: 'Account form that reads, writes, and checks for cookie data',
+                description:  'Writes data to cookie, establish its lifespan / expiration date, and inspects/decodes the temporaraily stored data. When the page is refreshed, the code first checks if any cookies have already been set. Inputs are supposed to be retained from the previous form entries. Browser cookies must be accepted for this page to work as intended.',
+                tags: ['Web Storage', 'JavaScript', 'Form Validation'],
+                color: 'from-accent-purple to-brand-600',
+                links: { code: '#'},
                 svgType: 'markdown'
             }
 	

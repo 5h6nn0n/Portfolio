@@ -204,7 +204,25 @@ const projectsData = [
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'
+            },
+			{
+                id: 'web1-exam2',
+                title: 'Qualifying Password | Exam 2',
+                category: 'web-programming',
+                categoryLabel: 'Web Programming',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-07-17',
+                formattedDate: 'July 2024',
+                readingTime: '5 Min Activity',
+                excerpt: 'Interactive username and password input fields to establish a qualifying password',
+                description:  '#',
+                tags: ['REGEX', 'JavaScript', 'Front-End Dev'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=web1-exam2'},
+                svgType: 'markdown'
             }
+	
 			];
 			
 			

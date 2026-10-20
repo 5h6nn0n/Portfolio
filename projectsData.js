@@ -104,7 +104,7 @@ const projectsData = [
                 svgType: 'neural'
             },
 			 {
-                id: 'engl228-kpis',
+                id: 'compii-kpis',
                 title: 'Internal Business Proposal',
                 category: 'case-study',
                 categoryLabel: 'Case Study',
@@ -117,7 +117,7 @@ const projectsData = [
                 description: 'This document is a proposed resolution to the inefficiency dilemma from a recently conducted business process analysis. At the time of my observation, American Eagle Outfitters constantly runs out of stock without reflecting this status in time, leaving many customers dissatisfied over retroactive cancelations. The KPIs outlined for inspection are demand forecasts, sales to stock ratio, backorder rate, and inventory shrinkage. By identifying the bottlenecks involved and later acknowledging these issues in a system update, the given KPIs will help improve productivity of operations.',
                 tags: ['ERP', 'Backorder', 'Synchronous updates'],
                 color: 'from-accent-purple to-brand-600',
-                links: { post: 'docpage.html?doc=engl228-kpis'},
+                links: { post: 'docpage.html?doc=compii-kpis'},
                 svgType: 'neural'
             },
 			 {
@@ -150,7 +150,7 @@ const projectsData = [
                 excerpt: 'Newsletter that outlines the best practices for effective professional communitcation',
                 description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
                 tags: ['Leadership', 'HRM', 'Graphics Design'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=tm3-newsletter'},
                 svgType: 'infographic'
             },
@@ -167,7 +167,7 @@ const projectsData = [
                 excerpt: 'The demographics, employment, and international trade statistics of Sweden',
                 description:  'This infographic project highlights the demographics, employment, and international trade statistics of a country named Sweden, located in the Northern European region of Scandinavia. As of the reasearch to date, Sweden operates in a trade surplus and is curently headed towards a recession after recovering from historic levels of inflation endured in the Covid-19 era.',
                 tags: ['VISME', 'Global Economics & Trade', 'Govt'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=global-econ'},
                 svgType: 'infographic'
             },
@@ -180,10 +180,10 @@ const projectsData = [
                 type: 'Academic Work',
                 date: '2025-12-12',
                 formattedDate: 'Dec 2025',
-                readingTime: '15 Min',
+                readingTime: '25 Min Read',
                 excerpt: 'Study on how respondants approach various offers based on ethics and identity of proposer',
                 description:  '#Research study and litterature review',
-                tags: ['Negotiate', 'Behavioral Econ', 'Game Theory'],
+                tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=game-theory'},
                 svgType: 'neural'

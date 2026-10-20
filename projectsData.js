@@ -147,9 +147,9 @@ const projectsData = [
                 date: '2025-12-01',
                 formattedDate: 'Dec 2025',
                 readingTime: '8 Min',
-                excerpt: 'Newsletter that outlines the best practices for effective professional communitcation',
+                excerpt: 'Newsletter that outlines the best HRM practices for effective professional communitcation',
                 description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
-                tags: ['Leadership', 'HRM', 'Graphics Design'],
+                tags: ['Cross-functional', 'Leadership', 'Graphics Design'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=tm3-newsletter'},
                 svgType: 'infographic'

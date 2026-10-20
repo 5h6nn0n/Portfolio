@@ -147,7 +147,7 @@ const projectsData = [
                 date: '2025-12-01',
                 formattedDate: 'Dec 2025',
                 readingTime: '8 Min',
-                excerpt: 'Newsletter that outlines the best HRM practices for effective professional communitcation',
+                excerpt: 'Newsletter that outlines the best HRM practices for effective professional communication',
                 description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
                 tags: ['Cross-functional', 'Leadership', 'Graphics Design'],
                 color: 'from-accent-amber to-accent-rose',
@@ -186,6 +186,23 @@ const projectsData = [
                 tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
                 color: 'from-accent-purple to-brand-600',
                 links: { post: 'docpage.html?doc=game-theory'},
+                svgType: 'neural'
+            },
+			{
+                id: 'mktg-mgmt',
+                title: 'Simmulation Reflection Paper',
+                category: 'case-study',
+                categoryLabel: 'Case Study',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2025-04-30',
+                formattedDate: 'April 2025',
+                readingTime: '25 Min Read',
+                excerpt: 'Reflecting on our team process that contributed to our first place performance metrics',
+                description:  '#',
+                tags: ['KPI Forecasting', 'SWOT', 'Supply & Demand'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'
             }
 			];

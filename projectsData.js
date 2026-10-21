@@ -101,7 +101,7 @@ const projectsData = [
                 tags: ['Public Relations', 'Triple Bottom Line'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mgmt3-redress'},
-                svgType: 'neural'
+                svgType: 'A'
             },
 			 {
                 id: 'compii-kpis',
@@ -118,7 +118,7 @@ const projectsData = [
                 tags: ['ERP', 'Backorder', 'Synchronous updates'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=compii-kpis'},
-                svgType: 'neural'
+                svgType: 'B'
             },
 			 {
                 id: 'qba2-final',
@@ -135,7 +135,7 @@ const projectsData = [
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
                 color: 'bg-gradient-to-br from-red-750 via-accent-rose to-red-650',
                 links: { post: 'docpage.html?doc=qba2-final'},
-                svgType: 'infographic'
+                svgType: 'C'
             },
 			{
                 id: 'tm3-newsletter',
@@ -152,7 +152,7 @@ const projectsData = [
                 tags: ['Culture', 'Leadership', 'Graphics Design'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=tm3-newsletter'},
-                svgType: 'infographic'
+                svgType: 'D'
             },
 			{
                 id: 'global-econ',
@@ -186,7 +186,7 @@ const projectsData = [
                 tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=game-theory'},
-                svgType: 'neural'
+                svgType: 'E'
             },
 			{
                 id: 'mktg-mgmt',
@@ -220,7 +220,7 @@ const projectsData = [
                 tags: ['Arrays', 'JavaScript', 'Front-End Dev'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
-                svgType: 'markdown'
+                svgType: 'F'
             },
 			{
                 id: 'web1-exam2',
@@ -237,7 +237,7 @@ const projectsData = [
                 tags: ['REGEX', 'JavaScript', 'Form Validation'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
-                svgType: 'markdown'
+                svgType: 'Crypto'
             },
 			{
                 id: 'web1-exam3',

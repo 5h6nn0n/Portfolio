@@ -301,7 +301,7 @@ const projectsData = [
                 formattedDate: 'June 2024',
                 readingTime: '10 Min',
                 excerpt: 'Converting between Hex, Decimal, and Binary',
-                description:  'I created a table to organize my responses of which includes the radix (if used), position number/value, binary number, calculate the bit equivalent (if required), and adding up the result for each problem. The conversions include binary to decimal, decimal to binary, hex to decimal, and decimal to hex. Each problem is handsolved with a detailed walkthrough of the steps. Additionally, I have memorized the hex to binary sequence used in some of these calculations.',
+                description:  'I created a table to organize my responses of which includes the radix (if used), position, binary number, calculate the bit equivalent (if required), and adding up the result for each problem. The conversions include binary to decimal, decimal to binary, hex to decimal, and decimal to hex. Each problem is handsolved with a detailed walkthrough of the steps. Additionally, I have memorized the hex to binary sequence used in some of these calculations.',
                 tags: ['CCNA', 'Hex', 'Binary Digits & String'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-conversion'},

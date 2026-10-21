@@ -1223,10 +1223,13 @@ case 'F':
   <circle cx="61" cy="25" r="3" fill="white" stroke="none"/>
 </svg>`;
 
-<!-- Minimal Abstract Country Outline -->
+<!-- Minimal Country Outline -->
 case 'J':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M47 5 L54 9 L53 15 L59 21 L55 27 L57 33 L51 39 L50 45 L44 53 L41 47 L43 40 L38 34 L41 28 L37 22 L42 16 L41 10 Z"/>
+  <path d="M28 14 L38 10 L45 14 L54 11 L63 17 L72 16 L79 23 L73 29 L79 35 L69 40 L63 49 L54 45 L49 37 L41 39 L35 32 L27 30 L22 22 Z"/>
+  <path d="M38 10 L36 20 L45 25 L41 39"/>
+  <path d="M45 25 L59 22 L73 29"/>
+  <path d="M49 37 L63 34 L69 40"/>
 </svg>`;
 
 					
@@ -1262,6 +1265,39 @@ case 'M':
   <path d="M15 17 L20 43 L36 35"/>
   <circle cx="48" cy="22" r="3" fill="white" stroke="none"/>
   <circle cx="49" cy="42" r="3" fill="white" stroke="none"/>
+</svg>`;
+
+
+
+
+					<!-- Segmentation — Abstract Partitioned Geometry -->
+case 'N':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 13 L42 13 L42 29 L16 29 Z"/>
+  <path d="M48 13 L77 13 L77 23"/>
+  <path d="M48 29 L61 29 L61 47 L34 47"/>
+  <path d="M67 35 L84 35 L84 47 L67 47 Z"/>
+  <path d="M16 35 L26 35 L26 47 L16 47 Z"/>
+</svg>`;
+
+<!-- Tracking — Abstract Sequential Motion -->
+case 'O':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M13 42 C25 42 27 18 40 18 S55 42 67 30 S80 13 88 13"/>
+  <path d="M78 13 H88 V23"/>
+  <circle cx="13" cy="42" r="3" fill="white" stroke="none"/>
+  <circle cx="40" cy="18" r="3" fill="white" stroke="none"/>
+  <circle cx="67" cy="30" r="3" fill="white" stroke="none"/>
+</svg>`;
+
+<!-- H₀ Testing — Abstract Null and Alternative -->
+case 'P':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M13 39 C22 39 25 21 34 21 S46 39 55 39"/>
+  <path d="M45 21 C54 21 57 39 66 39 S79 21 88 21"/>
+  <path d="M50 10 V50" stroke-dasharray="3 5" opacity="0.7"/>
+  <circle cx="34" cy="21" r="3" fill="white" stroke="none"/>
+  <circle cx="66" cy="39" r="3" fill="white" stroke="none"/>
 </svg>`;
                 default:
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="20" y="15" width="60" height="30" rx="4" stroke-width="2"/></svg>`;

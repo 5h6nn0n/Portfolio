@@ -133,7 +133,7 @@ const projectsData = [
                 excerpt: 'Conducting exploratory data analysis (EDA) on population test and regression problem results',
                 description: 'In this document, I walkthrough the process to hand-solve two analytics problems: a population test of means (includes the null hypothesis, alternate hypothesis, and decision rule) and a simple regression analysis (incudes choosing the goodness of fit measure and calculating the sum of squares). Then, I check my results against the data solver plug-in from Excel. Each problem contains a explanation of the results, as well as a concluding summary to compare and contract these observations.',
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'from-red-300 to-red-700',
                 links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'infographic'
             },
@@ -201,7 +201,7 @@ const projectsData = [
                 excerpt: 'Reflecting on our team process that contributed to our first place performance metrics',
                 description:  '#',
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
-                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'
             },
@@ -269,7 +269,7 @@ const projectsData = [
                 excerpt: 'Time value of money calculations using fixed annual rates with N, I, PV, FV, PMT variables',
                 description:  'This document solves Part 1: Student loan payment planning in sections A, B, and C. Part 1 centers around finding the annual expense and monthy payment required for owing a loan of X amount that is accruing X interest and within X number of years (your goal). Part 2 involved using personal financial figures, so I scrapped it from the cloud version of this worksheet.',
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
                 svgType: 'markdown'
             }

@@ -212,7 +212,7 @@ const projectsData = [
                 categoryLabel: 'Web Programming',
                 origin: 'academic',
                 type: 'Academic Work',
-                date: '2024-06-00',
+                date: '2024-06-01',
                 formattedDate: 'June 2024',
                 readingTime: '5 Min Activity',
                 excerpt: 'Displays movie data collected from IMDB in a table with images to visualize the score',

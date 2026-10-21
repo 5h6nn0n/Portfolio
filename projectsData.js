@@ -82,7 +82,7 @@ const projectsData = [
                 excerpt: 'Prince Sport groups products into segments to organize their brand and target consumer reach',
                 description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=mktg3-prince'},
                 svgType: 'neural'
             },
@@ -99,7 +99,7 @@ const projectsData = [
                 excerpt: 'Redress transformed the traditional take, make, waste production model into a circular process',
                 description: 'Rredress is a non-government organization (NGO) based out of Hong Kong that siphoned a sustainability movement by raising awareness of the enviromental issues plagueing the fast fashion industry through clever marketing tactics, such as educational competitions and high-value collaborations.',
                 tags: ['Public Relations', 'Triple Bottom Line'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=mgmt3-redress'},
                 svgType: 'neural'
             },
@@ -116,7 +116,7 @@ const projectsData = [
                 excerpt: 'Exploring several Key Performance Indicators (KPIs) to better track American Eagle inventory',
                 description: 'This document is a proposed resolution to the inefficiency dilemma from a recently conducted business process analysis. At the time of my observation, American Eagle Outfitters constantly runs out of stock without reflecting this status in time, leaving many customers dissatisfied over retroactive cancelations. The KPIs outlined for inspection are demand forecasts, sales to stock ratio, backorder rate, and inventory shrinkage. By identifying the bottlenecks involved and later acknowledging these issues in a system update, the given KPIs will help improve productivity of operations.',
                 tags: ['ERP', 'Backorder', 'Synchronous updates'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=compii-kpis'},
                 svgType: 'neural'
             },
@@ -149,7 +149,7 @@ const projectsData = [
                 readingTime: '8 Min',
                 excerpt: 'Newsletter that outlines the best HRM practices for effective professional communication',
                 description:  'This document contains written and embedded media to explain profession communications from a human resource perspective. Together, we can uphold consistent standards of effective communication practices to reflect our shared goals and commitments so that teams can thrive in diverse, cross-functional environments.',
-                tags: ['Cross-function', 'Leadership', 'Graphics Design'],
+                tags: ['Culture', 'Leadership', 'Graphics Design'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=tm3-newsletter'},
                 svgType: 'infographic'
@@ -184,7 +184,7 @@ const projectsData = [
                 excerpt: 'Study on how respondants approach various offers based on ethics and identity of proposer',
                 description:  '#Research study and litterature review',
                 tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=game-theory'},
                 svgType: 'neural'
             },
@@ -201,7 +201,7 @@ const projectsData = [
                 excerpt: 'Reflecting on our team process that contributed to our first place performance metrics',
                 description:  '#',
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'
             },

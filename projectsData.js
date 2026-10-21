@@ -50,7 +50,7 @@ const projectsData = [
                 tags: ['SVG', 'JSON', 'CSS', 'HTML5', 'DOM API'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: 'jigsaw/jigsaw.html'},
-                svgType: 'markdown'
+                svgType: 'H'
             },
 			 {
                 id: 'mktg3-final',
@@ -101,7 +101,7 @@ const projectsData = [
                 tags: ['Public Relations', 'Triple Bottom Line'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mgmt3-redress'},
-                svgType: 'A'
+                svgType: 'G'
             },
 			 {
                 id: 'compii-kpis',
@@ -169,7 +169,7 @@ const projectsData = [
                 tags: ['VISME', 'Global Economics & Trade', 'Govt'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=global-econ'},
-                svgType: 'infographic'
+                svgType: 'J'
             },
 			{
                 id: 'game-theory',
@@ -203,7 +203,7 @@ const projectsData = [
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
-                svgType: 'neural'
+                svgType: 'I'
             },
 			{
                 id: 'web1-exam1',
@@ -237,7 +237,7 @@ const projectsData = [
                 tags: ['REGEX', 'JavaScript', 'Form Validation'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
-                svgType: 'Crypto'
+                svgType: 'crypto'
             },
 			{
                 id: 'web1-exam3',
@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'markdown'
+                svgType: 'A'
             }
 	
 			];

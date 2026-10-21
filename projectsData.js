@@ -82,7 +82,7 @@ const projectsData = [
                 excerpt: 'Prince Sport groups products into segments to organize their brand and target consumer reach',
                 description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
                 links: { post: 'docpage.html?doc=mktg3-prince'},
                 svgType: 'neural'
             },
@@ -99,7 +99,7 @@ const projectsData = [
                 excerpt: 'Redress transformed the traditional take, make, waste production model into a circular process',
                 description: 'Rredress is a non-government organization (NGO) based out of Hong Kong that siphoned a sustainability movement by raising awareness of the enviromental issues plagueing the fast fashion industry through clever marketing tactics, such as educational competitions and high-value collaborations.',
                 tags: ['Public Relations', 'Triple Bottom Line'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
                 links: { post: 'docpage.html?doc=mgmt3-redress'},
                 svgType: 'neural'
             },
@@ -116,7 +116,7 @@ const projectsData = [
                 excerpt: 'Exploring several Key Performance Indicators (KPIs) to better track American Eagle inventory',
                 description: 'This document is a proposed resolution to the inefficiency dilemma from a recently conducted business process analysis. At the time of my observation, American Eagle Outfitters constantly runs out of stock without reflecting this status in time, leaving many customers dissatisfied over retroactive cancelations. The KPIs outlined for inspection are demand forecasts, sales to stock ratio, backorder rate, and inventory shrinkage. By identifying the bottlenecks involved and later acknowledging these issues in a system update, the given KPIs will help improve productivity of operations.',
                 tags: ['ERP', 'Backorder', 'Synchronous updates'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
                 links: { post: 'docpage.html?doc=compii-kpis'},
                 svgType: 'neural'
             },
@@ -184,7 +184,7 @@ const projectsData = [
                 excerpt: 'Study on how respondants approach various offers based on ethics and identity of proposer',
                 description:  '#Research study and litterature review',
                 tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
                 links: { post: 'docpage.html?doc=game-theory'},
                 svgType: 'neural'
             },
@@ -201,7 +201,7 @@ const projectsData = [
                 excerpt: 'Reflecting on our team process that contributed to our first place performance metrics',
                 description:  '#',
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
-                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
+                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
                 svgType: 'neural'
             },
@@ -269,7 +269,7 @@ const projectsData = [
                 excerpt: 'Time value of money calculations using fixed annual rates with N, I, PV, FV, PMT variables',
                 description:  'This document solves Part 1: Student loan payment planning in sections A, B, and C. Part 1 centers around finding the annual expense and monthy payment required for owing a loan of X amount that is accruing X interest and within X number of years (your goal). Part 2 involved using personal financial figures, so I scrapped it from the cloud version of this worksheet.',
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
-                color: 'from-accent-purple to-brand-600',
+                color: 'text-accent-purple bg-accent-purple/10 border-accent-purple/20',
                 links: { post: 'docpage.html?doc=finactivity2'},
                 svgType: 'markdown'
             }

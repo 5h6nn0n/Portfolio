@@ -169,7 +169,7 @@ const projectsData = [
                 tags: ['VISME', 'Global Economics & Trade', 'Govt'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=global-econ'},
-                svgType: 'L'
+                svgType: 'J'
             },
 			{
                 id: 'game-theory',

@@ -84,7 +84,7 @@ const projectsData = [
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg3-prince'},
-                svgType: 'neural'
+                svgType: 'N'
             },
 			 {
                 id: 'mgmt3-redress',
@@ -135,7 +135,7 @@ const projectsData = [
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
                 color: 'bg-gradient-to-br from-red-750 via-accent-rose to-red-650',
                 links: { post: 'docpage.html?doc=qba2-final'},
-                svgType: 'M'
+                svgType: 'P'
             },
 			{
                 id: 'tm3-newsletter',
@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'K'
+                svgType: 'O'
             }
 	
 			];

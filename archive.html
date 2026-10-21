@@ -1134,6 +1134,65 @@
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><path d="M20 15 H80 M20 28 H60 M20 41 H70" stroke-width="2.5" stroke-linecap="round"/></svg>`;
                 case 'audio':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="white"><rect x="15" y="20" width="6" height="20" rx="3"/><rect x="30" y="10" width="6" height="40" rx="3"/><rect x="45" y="25" width="6" height="15" rx="3"/><rect x="60" y="15" width="6" height="30" rx="3"/><rect x="75" y="22" width="6" height="18" rx="3"/></svg>`;
+
+					
+<!-- A: Abstract — Modular Geometry -->
+	case 'A':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M18 15 L40 15 L40 30 L18 30 Z"/>
+  <path d="M46 8 L66 8 L66 23 L46 23 Z"/>
+  <path d="M46 31 L66 31 L66 46 L46 46 Z"/>
+  <path d="M72 20 L84 20 L84 40 L72 40 Z"/>
+  <path d="M18 38 L34 38 L34 46 L18 46 Z"/>
+</svg>`;
+<!-- B: Abstract — Flowing Intersections -->
+case 'B':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
+  <path d="M12 15 C30 15 30 45 48 45 S66 15 88 15"/>
+  <path d="M12 30 C30 30 30 8 48 8 S66 30 88 30"/>
+  <path d="M12 45 C30 45 30 22 48 22 S66 45 88 45"/>
+  <circle cx="48" cy="22" r="3"/>
+</svg>`;
+
+<!-- C: Abstract — Orbital Geometry -->
+	case 'C':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5">
+  <ellipse cx="50" cy="30" rx="34" ry="12" transform="rotate(-28 50 30)"/>
+  <ellipse cx="50" cy="30" rx="34" ry="12" transform="rotate(28 50 30)"/>
+  <circle cx="50" cy="30" r="5" fill="white" stroke="none"/>
+  <circle cx="22" cy="16" r="2.5" fill="white" stroke="none"/>
+  <circle cx="78" cy="44" r="2.5" fill="white" stroke="none"/>
+</svg>`;
+
+<!-- D: Abstract — Rhythmic Waveforms -->
+	case 'D':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
+  <path d="M10 30 C18 8 26 8 34 30 S50 52 58 30 S74 8 82 30 S90 45 94 30"/>
+  <path d="M10 20 C18 42 26 42 34 20 S50 0 58 20 S74 42 82 20 S90 5 94 20" opacity="0.65"/>
+  <path d="M10 40 C18 18 26 18 34 40 S50 60 58 40 S74 18 82 40 S90 55 94 40" opacity="0.4"/>
+</svg>`;
+
+<!-- E: Abstract — Layered Contours -->
+	case 'E':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round">
+  <path d="M14 30 L28 12 L50 8 L72 18 L86 30 L72 42 L50 52 L28 46 Z"/>
+  <path d="M25 30 L36 19 L50 16 L65 23 L75 30 L65 37 L50 44 L36 40 Z"/>
+  <path d="M38 30 L44 25 L52 24 L60 30 L52 36 L44 35 Z"/>
+</svg>`;
+
+case 'F':
+                    return `<!-- F: Abstract — Dynamic Nodes and Vectors -->
+<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 44 L34 16 L54 38 L76 12 L88 32"/>
+  <path d="M15 44 L54 38 L88 32"/>
+  <path d="M34 16 L76 12"/>
+  <circle cx="15" cy="44" r="3" fill="white" stroke="none"/>
+  <circle cx="34" cy="16" r="3" fill="white" stroke="none"/>
+  <circle cx="54" cy="38" r="3" fill="white" stroke="none"/>
+  <circle cx="76" cy="12" r="3" fill="white" stroke="none"/>
+  <circle cx="88" cy="32" r="3" fill="white" stroke="none"/>
+</svg>`;
+					
                 default:
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="20" y="15" width="60" height="30" rx="4" stroke-width="2"/></svg>`;
             }

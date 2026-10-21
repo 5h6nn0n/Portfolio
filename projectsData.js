@@ -50,7 +50,7 @@ const projectsData = [
                 tags: ['SVG', 'JSON', 'CSS', 'HTML5', 'DOM API'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: 'jigsaw/jigsaw.html'},
-                svgType: 'H'
+                svgType: 'A'
             },
 			 {
                 id: 'mktg3-final',
@@ -203,7 +203,7 @@ const projectsData = [
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
-                svgType: 'infographic'
+                svgType: 'I'
             },
 			{
                 id: 'web1-exam1',

@@ -133,7 +133,7 @@ const projectsData = [
                 excerpt: 'Conducting exploratory data analysis (EDA) on population test and regression problem results',
                 description: 'In this document, I walkthrough the process to hand-solve two analytics problems: a population test of means (includes the null hypothesis, alternate hypothesis, and decision rule) and a simple regression analysis (incudes choosing the goodness of fit measure and calculating the sum of squares). Then, I check my results against the data solver plug-in from Excel. Each problem contains a explanation of the results, as well as a concluding summary to compare and contract these observations.',
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
-                color: 'from-rose-850 via-red-400 to-rose-600',
+                color: 'bg-gradient-to-br from-red-600 via-red-400 to-red-800',
                 links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'infographic'
             },

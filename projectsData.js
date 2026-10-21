@@ -67,7 +67,7 @@ const projectsData = [
                 tags: ['Product', 'Price', 'Place', 'Promotion'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=mktg3-final'},
-                svgType: 'infographic'
+                svgType: 'F'
             },
 			 {
                 id: 'mktg3-prince',
@@ -135,7 +135,7 @@ const projectsData = [
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
                 color: 'bg-gradient-to-br from-red-750 via-accent-rose to-red-650',
                 links: { post: 'docpage.html?doc=qba2-final'},
-                svgType: 'C'
+                svgType: 'I'
             },
 			{
                 id: 'tm3-newsletter',
@@ -203,7 +203,7 @@ const projectsData = [
                 tags: ['KPI Forecast', 'SWOT', 'Supply & Demand'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg-mgmt'},
-                svgType: 'I'
+                svgType: 'infographic'
             },
 			{
                 id: 'web1-exam1',
@@ -220,7 +220,7 @@ const projectsData = [
                 tags: ['Arrays', 'JavaScript', 'Front-End Dev'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
-                svgType: 'F'
+                svgType: 'markdown'
             },
 			{
                 id: 'web1-exam2',
@@ -237,7 +237,7 @@ const projectsData = [
                 tags: ['REGEX', 'JavaScript', 'Form Validation'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
-                svgType: 'crypto'
+                svgType: 'markdown'
             },
 			{
                 id: 'web1-exam3',
@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'A'
+                svgType: 'crypto'
             }
 	
 			];

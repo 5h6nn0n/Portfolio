@@ -38,7 +38,7 @@ const projectsData = [
 			 {
                 id: 'jigsaw',
                 title: 'My Jigsaw Photo Album',
-                category: 'web-programming',
+                category: 'programming',
                 categoryLabel: 'Web Programming',
                 origin: 'personal',
                 type: 'Personal Work',
@@ -208,7 +208,7 @@ const projectsData = [
 			{
                 id: 'web1-exam1',
                 title: 'Efficient Table | Exam 1',
-                category: 'web-programming',
+                category: 'programming',
                 categoryLabel: 'Web Programming',
                 origin: 'academic',
                 type: 'Academic Work',
@@ -225,7 +225,7 @@ const projectsData = [
 			{
                 id: 'web1-exam2',
                 title: 'Qualifying Password | Exam 2',
-                category: 'web-programming',
+                category: 'programming',
                 categoryLabel: 'Web Programming',
                 origin: 'academic',
                 type: 'Academic Work',
@@ -242,7 +242,7 @@ const projectsData = [
 			{
                 id: 'web1-exam3',
                 title: 'Cookie Form | Exam 3',
-                category: 'web-programming',
+                category: 'programming',
                 categoryLabel: 'Web Programming',
                 origin: 'academic',
                 type: 'Academic Work',

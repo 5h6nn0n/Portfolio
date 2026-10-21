@@ -135,7 +135,7 @@ const projectsData = [
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
                 color: 'bg-gradient-to-br from-red-750 via-accent-rose to-red-650',
                 links: { post: 'docpage.html?doc=qba2-final'},
-                svgType: 'I'
+                svgType: 'M'
             },
 			{
                 id: 'tm3-newsletter',
@@ -169,7 +169,7 @@ const projectsData = [
                 tags: ['VISME', 'Global Economics & Trade', 'Govt'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=global-econ'},
-                svgType: 'J'
+                svgType: 'L'
             },
 			{
                 id: 'game-theory',
@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'crypto'
+                svgType: 'K'
             }
 	
 			];

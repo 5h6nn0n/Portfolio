@@ -272,6 +272,40 @@ const projectsData = [
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
                 svgType: 'K'
+            },
+	{
+                id: 'ccna-ipaddress',
+                title: 'IP Address Worksheet',
+                category: 'worksheets',
+                categoryLabel: 'Worksheet',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-00-00',
+                formattedDate: 'Summer 2024',
+                readingTime: '10 Min',
+                excerpt: '#',
+                description:  'I made a table to organize my responses of which includes the network, broadcast, first usable host, last usable host, and number of usable hosts for each example ip address. I also find the subnet mask and its dotted decimal version using binary calculations. Each problem is handsolved and shows a detailed walkthrough of the steps.',
+                tags: ['CCNA', 'Subnet', 'IPv4', 'Dotted Decimal'],
+                color: 'from-teal-400 to-sky-400',
+                links: { post: 'docpage.html?doc=ccna-ipaddress'},
+                svgType: 'K'
+            },
+	{
+                id: 'ccna-conversion',
+                title: 'Number Conversion',
+                category: 'worksheets',
+                categoryLabel: 'Worksheet',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-00-00',
+                formattedDate: 'Summer 2024',
+                readingTime: '10 Min',
+                excerpt: 'Converting between Hex, Decimal, and Binary',
+                description:  'I made a matrix table to organize my responses of which includes the radix (if used), position number/value, binary number, calculate the bit equivalent (if required), and adding up the result for each problem. The conversions include binary to decimal, decimal to binary, hex to decimal, and decimal to hex.  Each problem is handsolved with a detailed walkthrough of the steps. Additionally, I have memorized the hex to binary sequence used in some of these calculations.',
+                tags: ['CCNA', 'Hex', 'Binary Strings'],
+                color: 'from-teal-400 to-sky-400',
+                links: { post: 'docpage.html?doc=ccna-conversion'},
+                svgType: 'K'
             }
 	
 			];

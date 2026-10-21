@@ -67,7 +67,7 @@ const projectsData = [
                 tags: ['Product', 'Price', 'Place', 'Promotion'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=mktg3-final'},
-                svgType: 'infographic'
+                svgType: 'neural'
             },
 			 {
                 id: 'mktg3-prince',
@@ -133,7 +133,7 @@ const projectsData = [
                 excerpt: 'Conducting exploratory data analysis (EDA) on population test and regression problem results',
                 description: 'In this document, I walkthrough the process to hand-solve two analytics problems: a population test of means (includes the null hypothesis, alternate hypothesis, and decision rule) and a simple regression analysis (incudes choosing the goodness of fit measure and calculating the sum of squares). Then, I check my results against the data solver plug-in from Excel. Each problem contains a explanation of the results, as well as a concluding summary to compare and contract these observations.',
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
-                color: 'bg-gradient-to-br from-red-750 via-rose-400 to-red-650',
+                color: 'from-red-800 to-rose-400 to-red-650',
                 links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'P'
             },
@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'O'
+                svgType: 'K'
             }
 	
 			];

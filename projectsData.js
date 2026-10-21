@@ -67,7 +67,7 @@ const projectsData = [
                 tags: ['Product', 'Price', 'Place', 'Promotion'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { post: 'docpage.html?doc=mktg3-final'},
-                svgType: 'F'
+                svgType: 'infographic'
             },
 			 {
                 id: 'mktg3-prince',
@@ -80,7 +80,7 @@ const projectsData = [
                 formattedDate: 'March 2024',
                 readingTime: '15 Min',
                 excerpt: 'Prince Sport groups products into segments to organize their brand and target consumer reach',
-                description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
+                description: 'Prince Sport sells tennis equipment for novice hobbyists, casual intermediate, and pro championship level players. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
                 color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg3-prince'},

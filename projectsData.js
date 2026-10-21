@@ -251,9 +251,26 @@ const projectsData = [
                 readingTime: '5 Min Activity',
                 excerpt: 'Account form that reads, writes, and checks for cookie data',
                 description:  'Writes data to cookie, establish its lifespan / expiration date, and inspects/decodes the temporaraily stored data. When the page is refreshed, the code first checks if any cookies have already been set. Inputs are supposed to be retained from the previous form entries. Browser cookies must be accepted for this page to work as intended.',
-                tags: ['Web Storage', 'JavaScript', 'Form Validation'],
+                tags: ['Web Storage', 'JavaScript', 'Set Cookies'],
                 color: 'from-accent-purple to-brand-600',
                 links: { code: '#'},
+                svgType: 'markdown'
+            },
+			{
+                id: 'finactivity2',
+                title: 'Student Loan Planning',
+                category: 'worksheets',
+                categoryLabel: 'Worksheet',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2025-00-00',
+                formattedDate: 'xxx 2025',
+                readingTime: '6 Min Activity',
+                excerpt: 'Time value of money calculations using annual rates with N, I, PV, FV, and PMT as variables',
+                description:  'This document solves Part 1: Student loan payment planning in sections A, B, and C. Part 1 centers around finding the annual expense and monthy payment required for oweing a loan of X amount that is accruing X interest and within X number of years (your goal). Part 2 involved using personal financial figures, so I scrapped it from the cloud version of this worksheet',
+                tags: ['Excel PMT', 'Personal Financial Planning'],
+                color: 'from-accent-purple to-brand-600',
+                links: { post: 'docpage.html?doc=finactivity2'},
                 svgType: 'markdown'
             }
 	

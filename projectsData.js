@@ -266,7 +266,7 @@ const projectsData = [
                 date: '2025-00-00',
                 formattedDate: 'xxx 2025',
                 readingTime: '6 Min Activity',
-                excerpt: 'Time value of money calculations using fixed annual rates with N, I, PV, FV, and PMT as variables',
+                excerpt: 'Time value of money calculations using fixed annual rates with N, I, PV, FV, PMT variables',
                 description:  'This document solves Part 1: Student loan payment planning in sections A, B, and C. Part 1 centers around finding the annual expense and monthy payment required for owing a loan of X amount that is accruing X interest and within X number of years (your goal). Part 2 involved using my own personal financial figures, so I scrapped it from the cloud version of this worksheet.',
                 tags: ['Excel PMT', 'Personal Finance', 'Investments'],
                 color: 'from-accent-purple to-brand-600',

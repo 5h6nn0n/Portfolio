@@ -1226,10 +1226,43 @@ case 'F':
 <!-- Minimal Abstract Country Outline -->
 case 'J':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-  <path d="M43 5 L54 9 L58 17 L55 24 L61 31 L56 39 L53 48 L45 56 L40 49 L39 41 L34 34 L37 26 L33 19 L38 12 Z"/>
-  <path d="M43 15 L48 21 L44 28 L49 35 L44 43" opacity="0.65"/>
+  <path d="M47 5 L54 9 L53 15 L59 21 L55 27 L57 33 L51 39 L50 45 L44 53 L41 47 L43 40 L38 34 L41 28 L37 22 L42 16 L41 10 Z"/>
 </svg>`;
+
 					
+<!-- Abstract Converging Paths -->
+	
+case 'K':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 14 C28 14 32 24 43 30"/>
+  <path d="M16 46 C28 46 32 36 43 30"/>
+  <path d="M43 30 C56 30 62 16 79 16"/>
+  <path d="M43 30 C56 30 62 44 79 44"/>
+  <circle cx="43" cy="30" r="4" fill="white" stroke="none"/>
+  <circle cx="79" cy="16" r="3" fill="white" stroke="none"/>
+  <circle cx="79" cy="44" r="3" fill="white" stroke="none"/>
+</svg>
+
+<!-- Offset Arcs and Intervals -->
+case 'L':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round">
+  <path d="M15 43 A18 18 0 0 1 33 13"/>
+  <path d="M39 47 A24 24 0 0 1 63 9"/>
+  <path d="M68 43 A15 15 0 0 1 83 28"/>
+  <path d="M24 29 L31 35"/>
+  <path d="M53 25 L60 31"/>
+  <path d="M76 15 L82 21"/>
+</svg>
+
+<!-- Asymmetric Geometric Balance -->
+case 'M':
+                    return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 17 L35 9 L48 22 L36 35 Z"/>
+  <path d="M48 22 L68 13 L84 29 L70 48 L49 42 L36 35"/>
+  <path d="M15 17 L20 43 L36 35"/>
+  <circle cx="48" cy="22" r="3" fill="white" stroke="none"/>
+  <circle cx="49" cy="42" r="3" fill="white" stroke="none"/>
+</svg>
                 default:
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white"><rect x="20" y="15" width="60" height="30" rx="4" stroke-width="2"/></svg>`;
             }

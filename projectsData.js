@@ -82,7 +82,7 @@ const projectsData = [
                 excerpt: 'Prince Sport groups products into segments to organize their brand and target consumer reach',
                 description: 'Prince Sports sells tennis equipment. In this document, I outline the 5 environmental Forces, industry growth, promotional activities, ditribution and sales, and international reach of Prince sporting company.',
                 tags: ['5 Forces', 'Product Segmentation', 'Sales'],
-                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mktg3-prince'},
                 svgType: 'neural'
             },
@@ -99,7 +99,7 @@ const projectsData = [
                 excerpt: 'Redress transformed the traditional take, make, waste production model into a circular process',
                 description: 'Rredress is a non-government organization (NGO) based out of Hong Kong that siphoned a sustainability movement by raising awareness of the enviromental issues plagueing the fast fashion industry through clever marketing tactics, such as educational competitions and high-value collaborations.',
                 tags: ['Public Relations', 'Triple Bottom Line'],
-                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=mgmt3-redress'},
                 svgType: 'neural'
             },
@@ -116,7 +116,7 @@ const projectsData = [
                 excerpt: 'Exploring several Key Performance Indicators (KPIs) to better track American Eagle inventory',
                 description: 'This document is a proposed resolution to the inefficiency dilemma from a recently conducted business process analysis. At the time of my observation, American Eagle Outfitters constantly runs out of stock without reflecting this status in time, leaving many customers dissatisfied over retroactive cancelations. The KPIs outlined for inspection are demand forecasts, sales to stock ratio, backorder rate, and inventory shrinkage. By identifying the bottlenecks involved and later acknowledging these issues in a system update, the given KPIs will help improve productivity of operations.',
                 tags: ['ERP', 'Backorder', 'Synchronous updates'],
-                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=compii-kpis'},
                 svgType: 'neural'
             },
@@ -133,7 +133,7 @@ const projectsData = [
                 excerpt: 'Conducting exploratory data analysis (EDA) on population test and regression problem results',
                 description: 'In this document, I walkthrough the process to hand-solve two analytics problems: a population test of means (includes the null hypothesis, alternate hypothesis, and decision rule) and a simple regression analysis (incudes choosing the goodness of fit measure and calculating the sum of squares). Then, I check my results against the data solver plug-in from Excel. Each problem contains a explanation of the results, as well as a concluding summary to compare and contract these observations.',
                 tags: ['Excel', 'Hypothesis Testing', 'Regression'],
-                color: 'from-red-300 to-red-700',
+                color: 'from-red-400 via-rose-600 to-rose-950',
                 links: { post: 'docpage.html?doc=qba2-final'},
                 svgType: 'infographic'
             },
@@ -184,7 +184,7 @@ const projectsData = [
                 excerpt: 'Study on how respondants approach various offers based on ethics and identity of proposer',
                 description:  '#Research study and litterature review',
                 tags: ['Sales', 'Behavioral Econ', 'Game Theory'],
-                color: 'text-accent-emerald bg-accent-emerald/10 border-accent-emerald/20',
+                color: 'from-emerald-400 to-amber-300',
                 links: { post: 'docpage.html?doc=game-theory'},
                 svgType: 'neural'
             },

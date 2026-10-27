@@ -20,19 +20,20 @@
 
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
-  font-family: var(--font-body);
-  line-height: 1.6;
-  margin: 0;  
-  padding: 2.5rem 18rem 2.5rem 3rem; 
-}
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    margin: 0;  
+    padding: clamp(2rem, 3vh, 4rem) clamp(16rem, 20vw, 24rem) clamp(2rem, 3vh, 4rem) clamp(6rem, 12vw, 16rem); 
+  }
 
-main {
-    max-width: 900px;
+  main {
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 30px;
-}
+    padding: clamp(40px, 6vh, 80px) clamp(20px, 4vw, 60px);
+  }
 
 h1 {
   font-family: var(--font-heading);
@@ -189,54 +190,35 @@ a:hover {
   transform: translateY(-2px);
 }
 
-/* Vintage Retro Box / Container Component
-.vintage-card, 
-.cmd-block, 
-.you-will-need li {
-  background: linear-gradient(180deg, #2D333A 0%, #202429 100%);
-  border: 1px solid var(--border-dim);
-  border-radius: 8px; 
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 
-              0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-
-.vintage-card:hover,
-.cmd-block:hover {
-  border-color: var(--accent-teal);
-  transform: translateY(-2px);
-}
- */
-
 
 /* NAV BAR  ON THE SIDE OF PAGE */
 .project-nav {
-  position: fixed;
-  top: 50%;
-  right: 2.5rem;
-  transform: translateY(-50%);
-  width: 13rem;           
-  max-height: 24rem;    
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding-left: 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.80rem;
-  border-left: 2px solid var(--border-dim);
-  scrollbar-width: thin;
-  scrollbar-color: var(--accent-lime) transparent;
-}
+    position: fixed;
+    top: 50%;
+    right: clamp(1.5rem, 3vw, 4rem);
+    transform: translateY(-50%);
+    width: clamp(13rem, 16vw, 18rem);          
+    max-height: clamp(24rem, 60vh, 45rem);    
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-left: clamp(1rem, 1.5vw, 1.5rem);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.80rem, 1.5vh, 1.2rem);
+    border-left: 2px solid var(--border-dim);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-lime) transparent;
+  }
 
-.project-nav a {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 500;
-  white-space: normal;    
-  transition: all 0.2s ease;
-  border-bottom: none;
-}
+  .project-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: clamp(0.85rem, 1.1vw, 1.1rem);
+    font-weight: 500;
+    white-space: normal;    
+    transition: all 0.2s ease;
+    border-bottom: none;
+  }
 
 .project-nav a:hover {
   color: var(--accent-lime);
@@ -315,9 +297,7 @@ a:hover {
   transform: scale(1.02);
 }
 
-/* ==========================================
-   PHOTO 1: 4:5 Aspect Ratio 
-   ========================================== */
+/* PHOTO 1: 4:5 Aspect Ratio */
 .pic-4-5 {
   border-radius: 16px;
   border: 6px dotted #B24A2A; 
@@ -328,9 +308,7 @@ a:hover {
   margin-top: -90px;
 }
 
-/* ==========================================
-   PHOTO 2: 9:16 Aspect Ratio
-   ========================================== */
+/* PHOTO 2: 9:16 Aspect Ratio */
 .pic-9-16 {
   margin: -30px auto;
   border-radius: 40% / 15%; 
@@ -343,9 +321,7 @@ a:hover {
    margin-top: -60px;
 }
 
-/* ==========================================
-   PHOTO 3: 1:1 Aspect Ratio
-   ========================================== */
+/* PHOTO 3: 1:1 Aspect Ratio */
 .pic-cat {
   width: 200px;
   border-radius: 50%; 
@@ -457,16 +433,12 @@ tr:hover td {
 }
 
 }
-/* powercommand
-[Convert]::ToBase64String([IO.File]::ReadAllBytes("folder/pics/input.jpeg")) | Out-File "output.txt"
-*/
 
 
 
 
-/* ==========================================================================
-   MOBILE & TABLET RESPONSIVENESS (Screens <= 900px)
-   ========================================================================== */
+
+/*  MOBILE & TABLET RESPONSIVENESS */
 @media (max-width: 500px) {
  /* Base Mobile Layout */
 body {
@@ -648,17 +620,17 @@ a {
  
   .explore {
     display: flex !important;
-    flex-wrap: nowrap !important; /* Prevents icons/links from wrapping under multi-line text */
+    flex-wrap: nowrap !important; 
     align-items: center !important;
     justify-content: flex-start !important;
     gap: 0.75rem !important;
-    overflow-x: auto !important; /* Horizontal scroll if icons exceed screen width */
+    overflow-x: auto !important; 
     padding-bottom: 0.5rem !important;
   }
 
   .explore img, 
   .explore .icon {
-    flex-shrink: 0 !important; /* Prevents icons from squishing when text wraps */
+    flex-shrink: 0 !important;
     width: 32px !important;
     height: 32px !important;
   }
@@ -704,10 +676,9 @@ a {
     background-color: rgba(255, 255, 255, 0.02) !important;
   }
 
-  /* 2. FORCE PERMANENT VISIBILITY FOR WEBKIT SCROLLBARS (iOS Safari & Android Chrome) */
   table::-webkit-scrollbar {
     -webkit-appearance: none !important;
-    height: 8px !important; /* Slightly thicker height ensures visibility without tapping */
+    height: 8px !important; 
     display: block !important;
   }
 
@@ -718,7 +689,7 @@ a {
   }
 
   table::-webkit-scrollbar-thumb {
-    background: var(--accent-lime) !important; /* Copper accent */
+    background: var(--accent-lime) !important; 
     border-radius: 4px !important;
     min-width: 40px !important;
   }

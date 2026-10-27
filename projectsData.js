@@ -317,7 +317,7 @@ const projectsData = [
                 date: '2026-10-27',
                 formattedDate: 'Oct 2026',
                 readingTime: '5 min read',
-                excerpt: 'Reflecting on my recent experience of entering in the cyber challenge, from attack discovery to threat mitigation.',
+                excerpt: 'Reflecting on my recent cyber challenge experience, from attack discovery to threat mitigation.',
                 description: 'I recently tackled a cybersecurity simulation that showed how a tiny data leak can snowball into a full system takeover. The scenario followed an attacker using open source intelligence to steal credentials and move between systems on a network. By inspecting event logs and security queries, I got to play detective and track the digital footprints left behind. The experience served as a great reminder of why protecting our public data matters so much.',
                 tags: ['OSNIT', 'Dorking', 'AWS CLI', 'Event Logs'],
                 color: 'from-accent-rose to-accent-purple',

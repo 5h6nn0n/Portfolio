@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Posts & Projects — Works Archive</title>
-    
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
 	<script src="projectsData.js"></script>
 
@@ -40,14 +38,11 @@
             }
         }
     </script>
-    
-    <!-- Google Fonts & Lucide Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,400&family=Outfit:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- STYLES -->
     <style>
         :root {
             --bg-dark: #0F1815;
@@ -103,7 +98,6 @@
             }
         }
 
-        /* Typography */
         h1, h2, h3, h4, .font-heading {
             font-family: var(--font-heading);
             font-weight: 700;
@@ -114,7 +108,6 @@
             font-family: var(--font-code);
         }
 
-        /* Container Layout */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -122,7 +115,6 @@
             padding: 0 1.5rem;
         }
 
-        /* Header Navigation */
         .site-header {
             border-bottom: 1px solid var(--border-dim);
             background: rgba(15, 24, 21, 0.92);
@@ -223,7 +215,6 @@
             border-color: var(--accent-lime);
         }
 
-        /* Robust Theme Toggle Visibility via Pure CSS */
         html.dark #themeIconSun { display: none !important; }
         html.dark #themeIconMoon { display: block !important; }
         html:not(.dark) #themeIconSun { display: block !important; }
@@ -250,8 +241,7 @@
             color: #ffffff;
             border-color: var(--accent-lime);
         }
-
-        /* Hero / Header Section */
+		
         .archive-hero {
             padding: 2rem 0 1.5rem 0;
             border-bottom: 1px solid var(--border-dim);
@@ -499,7 +489,6 @@
             transform: translateY(-1px);
         }
 
-        /* Buttons shared by Modal & Empty State */
         .btn-action {
             display: inline-flex;
             align-items: center;
@@ -535,7 +524,6 @@
             color: var(--accent-lime);
         }
 
-        /* Grid Section & Cards */
         .projects-grid {
             display: grid;
             grid-template-cols: 1fr;
@@ -579,7 +567,6 @@
         .icon-small { width: 14px; height: 14px; }
         .accent-lime-color { color: var(--accent-lime); }
 
-        /* Empty State */
         .ui-empty-state {
             padding: 4rem 0;
             text-align: center;
@@ -600,7 +587,6 @@
             color: var(--accent-lime);
         }
 
-        /* Modal Classes */
         .modal-backdrop {
             position: fixed;
             inset: 0;
@@ -756,7 +742,6 @@
 
         .hidden { display: none !important; }
 
-        /* Site Footer */
         .site-footer {
             margin-top: 3rem;
             padding-top: 1.5rem;
@@ -781,30 +766,22 @@
     <!-- Navigation Header -->
     <header class="site-header sticky top-0 z-40 glass-nav w-full">
         <div class="container nav-wrapper max-w-7xl mx-auto h-16 flex items-center justify-between">
-            <!-- Brand / Logo -->
             <a href="#" class="brand-link">
                 <div class="brand-avatar">SK</div>
                 <div class="brand-text">5h6nn0n<span>.github.io</span></div>
             </a>
-            
-            <!-- Archive & Showcase Badge (Always Visible Now) -->
             <div class="flex items-center space-x-3">
                 <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full header-archive-badge">
                     Archive & Showcase
                 </span>
             </div>
-
-            <!-- Quick Navigation & Theme Toggle -->
             <div class="flex items-center space-x-3 sm:space-x-4">
-                <!-- Available for Collaboration Pill (Always Visible Now) -->
                 <div class="flex items-center space-x-1 text-sm font-medium" style="color: var(--text-muted);">
                     <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs header-collab-pill">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
                         Available for Collaboration
                     </span>
                 </div>
-                
-                <!-- Dark / Light Theme Toggle -->
                 <button id="themeToggle" class="p-2.5 rounded-xl transition-colors focus:outline-none theme-btn" aria-label="Toggle Theme">
                     <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
                     <i data-lucide="sun" id="themeIconSun" class="w-4 h-4"></i>
@@ -820,35 +797,26 @@
 
     <!-- Main Container -->
     <main class="container flex-grow max-w-7xl w-full mx-auto py-8 space-y-8">
-        
-        <!-- Hero Header -->
         <section class="archive-hero">
             <div class="hero-title-group">
-               
                 <h1 class="hero-title">All Posts & Projects</h1>
                 <p class="hero-desc">
                     A consolidated repository of my research papers, web tools, embedded hardware projects, and technical writeups related to business, software engineering and computer science.
                 </p>
             </div>
         </section>
-
-        <!-- Controls Section -->
         <section class="controls-section">
             <div class="toolbar-top">
                 <div class="results-counter">
                     <i data-lucide="layers" class="accent-lime-color icon-small"></i>
                     Showing <span class="results-count-badge" id="visibleCount">0</span> of <span id="totalCount">0</span> works
                 </div>
-
                 <div class="toolbar-right">
-                    <!-- Personal vs Academic Origin Filter -->
                     <div class="origin-switch" id="originSwitch">
                         <button class="origin-btn active" data-origin="all">All</button>
                         <button class="origin-btn" data-origin="personal">Personal Work</button>
                         <button class="origin-btn" data-origin="academic">Academic</button>
                     </div>
-
-                    <!-- Sort Dropdown -->
                     <div class="sort-box">
                         <span class="sort-label">Sort:</span>
                         <select id="sortSelect" class="sort-select">
@@ -858,16 +826,12 @@
                             <option value="featured">Featured</option>
                         </select>
                     </div>
-
-                    <!-- Search Box -->
                     <div class="search-box">
                         <i data-lucide="search" class="search-icon"></i>
                         <input type="text" id="searchInput" class="search-input" placeholder="Search title, tech, tag...">
                     </div>
                 </div>
             </div>
-
-            <!-- Category Filter Tabs -->
             <div class="filter-tabs" id="categoryTabs">
                 <button class="tab-btn active" data-category="all" id="all-works">
                     <i data-lucide="layout-grid" class="icon-small"></i> All Works <span class="tab-count" id="count-all">0</span>
@@ -895,10 +859,7 @@
 
         <!-- Works & Projects Grid -->
         <section>
-            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4">
-                <!-- Projects injected by JavaScript -->
-            </div>
-
+            <div id="projectsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-4"> </div>
             <!-- Empty State -->
             <div id="emptyState" class="hidden ui-empty-state glass-card space-y-4 mt-8">
                 <div class="ui-empty-icon">
@@ -913,7 +874,6 @@
                 </button>
             </div>
         </section>
-
     </main>
 
     <!-- Project Detail Modal -->
@@ -931,24 +891,19 @@
             </div>
 
             <div class="modal-body">
-                
-
                 <div>
                     <h4 class="modal-section-title">Summary</h4>
                     <p id="modalDescription"></p>
                 </div>
-
                 <div>
                     <h4 class="modal-section-title">Concept & Technology Stack</h4>
                     <div id="modalTechStack" class="tags-wrapper"></div>
                 </div>
-
                 <div class="modal-takeaway-box">
                     <span class="modal-section-title" style="display: block; font-size: 0.8rem;"> Key Takeaway</span>
                     <p id="modalOrigin" style="font-size: 0.8rem;"></p>
                 </div>
             </div>
-
             <div class="modal-footer">
                 <span id="modalType" class="modal-type-label">Type: Project</span>
                 <div id="modalActions" class="modal-actions"></div>
@@ -956,7 +911,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <p>SK | Works. Portfolio. Archive.</p>
         <p class="footer-subtext"> © 2026 GitHub Pages </p>
@@ -1148,7 +1102,7 @@
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="white"><rect x="15" y="20" width="6" height="20" rx="3"/><rect x="30" y="10" width="6" height="40" rx="3"/><rect x="45" y="25" width="6" height="15" rx="3"/><rect x="60" y="15" width="6" height="30" rx="3"/><rect x="75" y="22" width="6" height="18" rx="3"/></svg>`;
 
 					
-<!-- A: Abstract — Modular Geometry -->
+<!-- A:  Geometry -->
 	case 'A':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
   <path d="M18 15 L40 15 L40 30 L18 30 Z"/>
@@ -1157,7 +1111,7 @@
   <path d="M72 20 L84 20 L84 40 L72 40 Z"/>
   <path d="M18 38 L34 38 L34 46 L18 46 Z"/>
 </svg>`;
-<!-- B: Abstract — Flowing Intersections -->
+<!-- B: Intersections -->
 case 'B':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
   <path d="M12 15 C30 15 30 45 48 45 S66 15 88 15"/>
@@ -1166,7 +1120,7 @@ case 'B':
   <circle cx="48" cy="22" r="3"/>
 </svg>`;
 
-<!-- C: Abstract — Orbital Geometry -->
+<!-- C: Orbital  -->
 	case 'C':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5">
   <ellipse cx="50" cy="30" rx="34" ry="12" transform="rotate(-28 50 30)"/>
@@ -1176,7 +1130,7 @@ case 'B':
   <circle cx="78" cy="44" r="2.5" fill="white" stroke="none"/>
 </svg>`;
 
-<!-- D: Abstract — Rhythmic Waveforms -->
+<!-- D: Waveforms -->
 	case 'D':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round">
   <path d="M10 30 C18 8 26 8 34 30 S50 52 58 30 S74 8 82 30 S90 45 94 30"/>
@@ -1184,7 +1138,7 @@ case 'B':
   <path d="M10 40 C18 18 26 18 34 40 S50 60 58 40 S74 18 82 40 S90 55 94 40" opacity="0.4"/>
 </svg>`;
 
-<!-- E: Abstract — Layered Contours -->
+<!-- E: Layered -->
 	case 'E':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.5" stroke-linejoin="round">
   <path d="M14 30 L28 12 L50 8 L72 18 L86 30 L72 42 L50 52 L28 46 Z"/>
@@ -1205,8 +1159,7 @@ case 'F':
   <circle cx="88" cy="32" r="3" fill="white" stroke="none"/>
 </svg>`;
 
-
-					<!-- Continuous Rotational Flow -->
+					<!--  Rotational Flow -->
 						case 'G':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M35 12 A21 21 0 0 1 72 22"/>
@@ -1216,14 +1169,14 @@ case 'F':
   <path d="M27 33 A21 21 0 0 1 29 21"/>
 </svg>`;
 
-<!--  Abstract Interlocking Forms -->
+<!--  Interlocking Forms -->
 	case 'H':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M17 15 H38 C34 6 49 4 49 15 H70 V29 C81 24 85 39 70 40 V51 H49 C53 40 38 39 38 51 H17 Z"/>
   <path d="M49 15 V26 M49 40 V51" opacity="0.65"/>
 </svg>`;
 
-<!-- Abstract Projected Trajectory -->
+<!-- Projected Trajectory -->
 	case 'I':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M12 47 L29 38 L44 41 L61 25"/>
@@ -1235,7 +1188,7 @@ case 'F':
   <circle cx="61" cy="25" r="3" fill="white" stroke="none"/>
 </svg>`;
 
-<!-- Minimal Country Outline -->
+<!--  Country Outline -->
 case 'J':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
   <path d="M25 32 C25 19 35 12 50 12 C65 12 75 19 75 32"/>
@@ -1245,7 +1198,7 @@ case 'J':
 </svg>`;
 
 					
-<!-- Abstract Converging Paths -->
+<!--  Converging Paths -->
 	
 case 'K':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
@@ -1258,7 +1211,7 @@ case 'K':
   <circle cx="79" cy="44" r="3" fill="white" stroke="none"/>
 </svg>`;
 
-<!-- Offset Arcs and Intervals -->
+<!-- OffsetIntervals -->
 case 'L':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round">
   <path d="M15 43 A18 18 0 0 1 33 13"/>
@@ -1269,7 +1222,7 @@ case 'L':
   <path d="M76 15 L82 21"/>
 </svg>`;
 
-<!-- Asymmetric Geometric Balance -->
+<!-- Asymmetric Balance -->
 case 'M':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M15 17 L35 9 L48 22 L36 35 Z"/>
@@ -1280,9 +1233,7 @@ case 'M':
 </svg>`;
 
 
-
-
-					<!-- Segmentation — Abstract Partitioned Geometry -->
+					<!--  Partition -->
 case 'N':
                     return `<svg class="w-28 h-24" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
   <rect x="14" y="10" width="29" height="22" rx="8"/>
@@ -1292,7 +1243,7 @@ case 'N':
   <circle cx="66" cy="39" r="2.5" fill="white"/>
   <circle cx="77" cy="39" r="2.5" fill="white"/></svg>`;
 
-<!-- Tracking — Abstract Sequential Motion -->
+<!-- Tracking -->
 case 'O':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M13 42 C25 42 27 18 40 18 S55 42 67 30 S80 13 88 13"/>
@@ -1302,7 +1253,7 @@ case 'O':
   <circle cx="67" cy="30" r="3" fill="white" stroke="none"/>
 </svg>`;
 
-<!-- H₀ Testing — Abstract Null and Alternative -->
+<!-- Null and Alternative -->
 case 'P':
                     return `<svg class="w-24 h-20" viewBox="0 0 100 60" fill="none" stroke="white" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
   <path d="M13 39 C22 39 25 21 34 21 S46 39 55 39"/>
@@ -1334,10 +1285,8 @@ case 'P':
             categoryTabs.addEventListener('click', (e) => {
                 const btn = e.target.closest('.tab-btn');
                 if (!btn) return;
-
                 categoryTabs.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 activeCategory = btn.getAttribute('data-category');
                 filterAndRenderProjects();
             });
@@ -1346,10 +1295,8 @@ case 'P':
             originSwitch.addEventListener('click', (e) => {
                 const btn = e.target.closest('.origin-btn');
                 if (!btn) return;
-
                 originSwitch.querySelectorAll('.origin-btn').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
-
                 activeOrigin = btn.getAttribute('data-origin');
                 filterAndRenderProjects();
             });
@@ -1364,11 +1311,9 @@ case 'P':
 
             document.getElementById('resetFiltersBtn').addEventListener('click', resetFilters);
             document.getElementById('closeModalBtn').addEventListener('click', closeModal);
-            
             document.getElementById('projectModal').addEventListener('click', (e) => {
                 if (e.target.id === 'projectModal') closeModal();
             });
-
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape') closeModal();
             });
@@ -1454,6 +1399,7 @@ brandLink.addEventListener('click', () => {
 brandLink.addEventListener('animationend', () => {
   brandLink.classList.remove('wiggle');
 });
+	</script>
 <script type="text/javascript">
 var sc_project=13362112; 
 var sc_invisible=0; 

@@ -309,7 +309,7 @@ const projectsData = [
             },
 	 {
                 id: 'uscc',
-                title: 'US Cyber Challenge',
+                title: 'US Cyber Challenge (USCC)',
                 category: 'blog-posts',
                 categoryLabel: 'Blog Post',
                 origin: 'personal',

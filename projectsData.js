@@ -372,7 +372,7 @@ const projectsData = [
                 readingTime: 'codebase',
                 excerpt: 'Here is some information that website collect about your device',
                 description: 'I provide tabs to jump to sections on browser properties, screen dimentions (measured in pixels), a list of 10 web safety tips, and 3 references for further reading. I gave my cascading style sheet a cool looking cyber vibe.',
-                tags: ['Fingerprinting', 'Geolocation', 'Online Safety'],
+                tags: ['Device Fingerprinting', 'Geolocation', 'Safety'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/chapter5/index.html'},
                 svgType: 'blog'

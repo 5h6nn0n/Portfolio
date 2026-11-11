@@ -324,6 +324,25 @@ const projectsData = [
                 links: { post: 'blog/project3.html'},
                 svgType: 'blog'
             },
+{
+                id: 'cismanual',
+                title: 'Capstone User Manual',
+                category: 'infographics',
+                categoryLabel: 'Infographics',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2026-04-26',
+                formattedDate: 'April 2026',
+                readingTime: '10 min read',
+                excerpt: 'As-built document so end users can get the most out of our reporting system project',
+                description: 'This user guide deconstructs organizational processes and serves as a summary of its core features, inputs, system state changes, and expected outputs. Al-Nur Mosque Reporting System by team Web Wizards, sponsored and designed for a 50-member organization with 3 levels of user role classification, aims to help securely and efficiently track attendance, participation, share important updates throughout the organization. Its central function is to agrreggate data for reporting purposes. This final step of the agile process signifies that the project is complete, accepted, and ready for client handoff.',
+                tags: ['', ''],
+                color: 'from-accent-rose to-accent-purple',
+                links: { post: 'docpage.html?doc=cismanual', code: '#'},
+                svgType: 'blog'
+            },
+	
+	
 	
 			];
 			

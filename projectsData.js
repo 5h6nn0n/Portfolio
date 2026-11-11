@@ -341,6 +341,23 @@ const projectsData = [
                 links: { post: 'docpage.html?doc=cismanual', code: '#'},
                 svgType: 'blog'
             },
+	{
+                id: 'iris_cnn',
+                title: 'Convolutional Neural Network (iris)',
+                category: 'analytics',
+                categoryLabel: 'Machine Learning & Deep Learning',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2026-04-26',
+                formattedDate: 'April 2026',
+                readingTime: '5 min setup',
+                excerpt: 'Image classifier on the Iris kaggle dataset',
+                description: '#',
+                tags: ['', ''],
+                color: 'from-accent-rose to-accent-purple',
+                links: { post: 'https://hub.docker.com/r/5h6nn0n/iris_cnn'},
+                svgType: 'blog'
+            },
 	
 	
 	

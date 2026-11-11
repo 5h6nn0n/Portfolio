@@ -338,7 +338,7 @@ const projectsData = [
                 description: 'This user guide deconstructs organizational processes and serves as a summary of its core features, inputs, system state changes, and expected outputs. Al-Nur Mosque Reporting System by team Web Wizards, sponsored and designed for a 50-member organization with 3 levels of user role classification, aims to help securely and efficiently track attendance, participation, share important updates throughout the organization. Its central function is to agrreggate data for reporting purposes. This final step of the agile process signifies that the project is complete, accepted, and ready for client handoff.',
                 tags: ['Procedural Drafting', 'Task Oriented', 'SDLC'],
                 color: 'from-accent-amber to-accent-rose',
-                links: { post: 'docpage.html?doc=cismanual', github: 'https://github.com/zohahkhan/CapstoneProject'},
+                links: { github: 'https://github.com/zohahkhan/CapstoneProject', post: 'docpage.html?doc=cismanual'},
                 svgType: 'blog'
             },
 	{
@@ -356,6 +356,25 @@ const projectsData = [
                 tags: ['Docker', 'Python', 'Unsupervised Learning'],
                 color: 'from-red-600 to-red-780',
                 links: { post: 'https://hub.docker.com/r/5h6nn0n/iris_cnn'},
+                svgType: 'blog'
+            },
+
+
+	{
+                id: 'websec',
+                title: 'Web Security Ch.5',
+                category: 'programming',
+                categoryLabel: 'Web Programming',
+                origin: 'academic',
+                type: 'Academic Work',
+                date: '2024-00-00',
+                formattedDate: 'xxx 2024',
+                readingTime: 'codebase',
+                excerpt: 'Here is some information that website collect about your device',
+                description: 'I provide tabs to jump to sections on browser properties, screen dimentions (measured in pixels), a list of 10 web safety tips, and 3 references for further reading. I gave my cascading style sheet a cool looking cyber vibe.',
+                tags: ['Fingerprinting', 'Geolocation', 'Online Safety'],
+                color: 'from-brand-500 to-indigo-600',
+                links: { github: '/chapter5/index.html'},
                 svgType: 'blog'
             },
 	

@@ -322,7 +322,7 @@ const projectsData = [
                 tags: ['OSINT', 'Dorking', 'AWS CLI', 'Event Logs'],
                 color: 'from-accent-rose to-accent-purple',
                 links: { post: 'blog/project3.html'},
-                svgType: 'blog'
+                svgType: 'log'
             },
 {
                 id: 'cismanual',
@@ -339,7 +339,7 @@ const projectsData = [
                 tags: ['Procedural Drafting', 'Task Oriented', 'SDLC'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { github: 'https://github.com/zohahkhan/CapstoneProject', post: 'docpage.html?doc=cismanual'},
-                svgType: 'blog'
+                svgType: 'ar'
             },
 	{
                 id: 'iris_cnn',
@@ -356,7 +356,7 @@ const projectsData = [
                 tags: ['Docker', 'Python', 'Unsupervised Learning'],
                 color: 'from-red-600 to-red-780',
                 links: { post: 'https://hub.docker.com/r/5h6nn0n/iris_cnn'},
-                svgType: 'blog'
+                svgType: 'iris'
             },
 
 
@@ -375,7 +375,7 @@ const projectsData = [
                 tags: ['Device Fingerprinting', 'Geolocation', 'Safety'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/chapter5/index.html'},
-                svgType: 'blog'
+                svgType: 'lock'
             },
 	
 	

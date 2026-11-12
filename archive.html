@@ -90,13 +90,13 @@
             -webkit-font-smoothing: antialiased;
             transition: background-color 0.3s ease, color 0.3s ease;
             padding: 1.5rem 1.5rem; 
-			width: 60%;
+			width: 100%;
         }
 
         @media (min-width: 768px) {
             body {
                 padding: 2.5rem 3.5rem 2.5rem 3rem;
-				width: 99%;
+				width: 100%;
             }
         }
 
@@ -121,11 +121,12 @@
             border-bottom: 1px solid var(--border-dim);
             background: rgba(15, 24, 21, 0.92);
             backdrop-filter: blur(12px);
-            position: sticky;
+            position: relative;
             top: 0;
             z-index: 40;
             padding: 1rem 0;
             display: flex;
+			width: 60%;
         }
 
         html:not(.dark) .site-header,
@@ -138,6 +139,7 @@
             align-items: center;
             justify-content: space-between;
             gap: 1rem;
+			width: 60%;
         }
 
         .brand-link {
@@ -623,6 +625,10 @@
             transition: transform 0.3s ease;
             display: flex;
             flex-direction: column;
+        }
+		 @media (max-width: 600px) {
+            .modal-box {  max-width: 95%;
+            max-height: 80%; }
         }
 
         .modal-backdrop.active .modal-box {

@@ -116,11 +116,7 @@
             padding: 0 1.5rem;
 			 
         }
-		@media (max-width: 650px) {
-            .container {
-                 flex-box: wrap;
-				width: 50%;
-            }
+		
 
         .site-header {
             border-bottom: 1px solid var(--border-dim);
@@ -132,7 +128,12 @@
             padding: 1rem 0;
             display: flex;
         }
- 
+ @media (max-width: 650px) {
+            .container, .site-header {
+                 flex-box: wrap;
+				width: 50%;
+				position: relative;
+            }
 		
         }
 
@@ -633,12 +634,14 @@
             flex-direction: column;
         }
 
+		/*
 		@media (max-width: 650px) {
             .modal-box {
 				height: 85%;
 				width: 95%;
             }
-
+*/
+		
         .modal-backdrop.active .modal-box {
             transform: scale(1);
         }

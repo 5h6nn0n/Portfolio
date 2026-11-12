@@ -288,7 +288,7 @@ const projectsData = [
                 tags: ['CCNA', 'Subnet', 'IPv4', 'Dotted Decimal'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-ipaddress'},
-                svgType: 'ip'
+                svgType: 'subnet'
             },
 	{
                 id: 'ccna-conversion',
@@ -305,7 +305,7 @@ const projectsData = [
                 tags: ['CCNA', 'Hex', 'Binary Digits & String'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-conversion'},
-                svgType: 'hex'
+                svgType: 'ip'
             },
 	 {
                 id: 'uscc',

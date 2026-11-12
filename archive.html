@@ -109,7 +109,7 @@
         .font-code {
             font-family: var(--font-code);
         }
-
+/*
         .container {
             width: 100%;
            // max-width: 1200px;
@@ -135,7 +135,23 @@
 				width: 50%;
             }
         }
+*/
+		.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
 
+.site-header {
+    border-bottom: 1px solid var(--border-dim);
+    background: rgba(15, 24, 21, 0.92);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: 0.75rem 0;
+}
+		
         html:not(.dark) .site-header,
         html:not(.dark) .glass-nav {
             background: rgba(247, 245, 240, 0.92);
@@ -775,7 +791,7 @@
 </head>
 <body class="selection:bg-brand-500 selection:text-white"  oncontextmenu="return false;">
 
-    <!-- Navigation Header -->
+    <!-- Navigation Header
     <header class="site-header sticky top-0 z-40 glass-nav w-full">
         <div class="container nav-wrapper max-w-7xl mx-auto h-16 flex items-center justify-between">
             <a href="#" class="brand-link">
@@ -806,6 +822,40 @@
             </a>
         </div>
     </header>
+	-->
+
+	<header class="site-header sticky top-0 z-40 glass-nav w-full">
+    <div class="container nav-wrapper max-w-7xl mx-auto min-h-16 md:h-16 flex flex-wrap items-center justify-between gap-x-4 gap-y-2">
+        <a href="#" class="brand-link">
+            <div class="brand-avatar">me</div>
+            <div class="brand-text">user<span>.github.io</span></div>
+        </a>
+        
+        <div class="flex items-center space-x-3">
+            <span class="inline-block px-2.5 py-0.5 text-xs font-semibold rounded-full header-archive-badge">
+                Archive &amp; Showcase
+            </span>
+        </div>
+        
+        <div class="flex items-center space-x-3 sm:space-x-4">
+            <div class="flex items-center space-x-1 text-sm font-medium" style="color: var(--text-muted);">
+                <span class="inline-flex items-center px-2.5 py-1 rounded-md text-xs header-collab-pill">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span>
+                    Available for Collaboration
+                </span>
+            </div>
+            <button id="themeToggle" class="p-2.5 rounded-xl transition-colors focus:outline-none theme-btn" aria-label="Toggle Theme">
+                <i data-lucide="moon" id="themeIconMoon" class="w-4 h-4"></i>
+                <i data-lucide="sun" id="themeIconSun" class="w-4 h-4"></i>
+            </button>
+        </div>
+
+        <a href="index.html" class="back-home-btn">
+            <i data-lucide="arrow-left" class="w-4 h-4"></i>
+            <span>Portfolio</span>
+        </a>
+    </div>
+</header>
 
     <!-- Main Container -->
     <main class="container flex-grow max-w-7xl w-full mx-auto py-8 space-y-8">

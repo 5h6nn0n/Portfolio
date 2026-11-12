@@ -288,7 +288,7 @@ const projectsData = [
                 tags: ['CCNA', 'Subnet', 'IPv4', 'Dotted Decimal'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-ipaddress'},
-                svgType: 'K'
+                svgType: 'gd'
             },
 	{
                 id: 'ccna-conversion',
@@ -322,7 +322,7 @@ const projectsData = [
                 tags: ['OSINT', 'Dorking', 'AWS CLI', 'Event Logs'],
                 color: 'from-accent-rose to-accent-purple',
                 links: { post: 'blog/project3.html'},
-                svgType: 'log'
+                svgType: 'os'
             },
 {
                 id: 'cismanual',
@@ -375,7 +375,7 @@ const projectsData = [
                 tags: ['Device Fingerprinting', 'Geolocation', 'Safety'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/chapter5/index.html'},
-                svgType: 'lock'
+                svgType: 'fp'
             },
 	
 	

@@ -288,7 +288,7 @@ const projectsData = [
                 tags: ['CCNA', 'Subnet', 'IPv4', 'Dotted Decimal'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-ipaddress'},
-                svgType: 'gd'
+                svgType: 'K'
             },
 	{
                 id: 'ccna-conversion',
@@ -339,7 +339,7 @@ const projectsData = [
                 tags: ['Procedural Drafting', 'Task Oriented', 'SDLC'],
                 color: 'from-accent-amber to-accent-rose',
                 links: { github: 'https://github.com/zohahkhan/CapstoneProject', post: 'docpage.html?doc=cismanual'},
-                svgType: 'ar'
+                svgType: 'gd'
             },
 	{
                 id: 'iris_cnn',
@@ -375,7 +375,7 @@ const projectsData = [
                 tags: ['Device Fingerprinting', 'Geolocation', 'Safety'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/chapter5/index.html'},
-                svgType: 'fp'
+                svgType: 'lock'
             },
 	
 	

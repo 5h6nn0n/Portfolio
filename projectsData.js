@@ -271,7 +271,7 @@ const projectsData = [
                 tags: ['Excel PMT', 'Personal Finance', 'Invest'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=finactivity2'},
-                svgType: 'y'
+                svgType: 'z'
             },
 	{
                 id: 'ccna-ipaddress',
@@ -288,7 +288,7 @@ const projectsData = [
                 tags: ['CCNA', 'Subnet', 'IPv4', 'Dotted Decimal'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-ipaddress'},
-                svgType: 'x'
+                svgType: 'w'
             },
 	{
                 id: 'ccna-conversion',
@@ -305,7 +305,7 @@ const projectsData = [
                 tags: ['CCNA', 'Hex', 'Binary Digits & String'],
                 color: 'from-teal-400 to-sky-400',
                 links: { post: 'docpage.html?doc=ccna-conversion'},
-                svgType: 'w'
+                svgType: 'y'
             },
 	 {
                 id: 'uscc',

@@ -622,7 +622,7 @@
             position: relative;
             width: 100%;
             max-width: 650px;
-            max-height: 90vh;
+            
             background-color: var(--bg-card);
             border: 1px solid var(--border-dim);
             border-radius: 16px;
@@ -635,11 +635,14 @@
         }
 
 		
-		@media (max-width: 600px) {
+		@media (min-width: 650px) {
+            .modal-box {
+				max-height: 90vh;
+            }
+@media (max-width: 600px) {
             .modal-box {
 				height: 80%;
             }
-
 		
         .modal-backdrop.active .modal-box {
             transform: scale(1);

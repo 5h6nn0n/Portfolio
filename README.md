@@ -2,7 +2,7 @@
 
 A responsive web portfolio and searchable project archive hosted on GitHub Pages.
 
-**Live Site:** https://5h6nn0n.github.io
+**Live Site:** [https://5h6nn0n.github.io](https://5h6nn0n.github.io/Portfolio/index.html)
 
 ## Key Features
 

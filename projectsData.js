@@ -377,7 +377,24 @@ const projectsData = [
                 links: { github: '/Portfolio/chapter5/index.html'},
                 svgType: 'lock'
             },
-	
+
+	{
+                id: 'contact',
+                title: 'Contact Me Form!',
+                category: 'programming',
+                categoryLabel: 'Web Programming',
+                origin: 'personal',
+                type: 'Personal Work',
+                date: '2026-11-12',
+                formattedDate: 'Nov 2026',
+                readingTime: 'codebase',
+                excerpt: 'Visitors can now send me direct messages out of their own convenience',
+                description: 'I use trusted front-end email service EmailJS. The form uses post method to ensure that no data gets transmitted in the url.',
+                tags: ['EmailJS', 'Form Handling', 'CSS/HTML'],
+                color: 'from-brand-500 to-indigo-600',
+                links: { github: '/Portfolio/contact.html'},
+                svgType: 'K'
+            },
 	
 	
 			];

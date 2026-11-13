@@ -1,0 +1,173 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Portfolio | Contact</title>
+	<link rel="stylesheet" href="style_form.css">
+</head>
+
+<style>
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  color: #777;
+}
+
+.field input {
+  display: block;
+  min-width: 250px;
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  display: block;
+  padding: 6px 30px;
+  font-size: 14px;
+  background-color: #4460AA;
+  color: #fff;
+  border: none
+}
+</style>
+
+<body>
+<!-- Parallel Double-Line Frame with Repeating Vine Runners -->
+  <div class="page-frame" aria-hidden="true"></div>
+
+  <!-- Hidden SVG Symbol for Vine Corner -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="gothic-vine-corner">
+        <!-- Main scrolling stems -->
+        <path d="M8 8 C32 8, 54 19, 86 11 C96 9, 104 16, 99 25 C94 33, 83 30, 85 21" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M8 8 C8 32, 19 54, 11 86 C9 96, 16 104, 25 99 C33 94, 30 83, 21 85" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- Parallel inner tendrils -->
+        <path d="M15 15 C28 24, 38 24, 42 15" fill="none" stroke="#EBE5D8" stroke-opacity="0.45" stroke-width="1.1"/>
+        <path d="M15 15 C24 28, 24 38, 15 42" fill="none" stroke="#EBE5D8" stroke-opacity="0.45" stroke-width="1.1"/>
+        <!-- Corner spear leaf (Solid) -->
+        <path d="M10 10 C19 12, 25 18, 23 23 C18 25, 12 19, 10 10 Z" fill="currentColor"/>
+        <!-- Top branch: alternating solid and sheer leaves -->
+        <path d="M29 12 C35 4, 45 4, 48 10 C42 14, 35 14, 29 12 Z" fill="currentColor"/>
+        <path d="M47 14 C52 22, 61 24, 65 19 C59 15, 53 14, 47 14 Z" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1"/>
+        <path d="M58 14 C64 6, 74 7, 76 13 C70 17, 63 17, 58 14 Z" fill="currentColor"/>
+        <!-- Left branch: alternating solid and sheer leaves -->
+        <path d="M12 29 C4 35, 4 45, 10 48 C14 42, 14 35, 12 29 Z" fill="currentColor"/>
+        <path d="M14 47 C22 52, 24 61, 19 65 C15 59, 14 53, 14 47 Z" fill="currentColor" fill-opacity="0.28" stroke="currentColor" stroke-width="1"/>
+        <path d="M14 58 C6 64, 7 74, 13 76 C17 70, 17 63, 14 58 Z" fill="currentColor"/>
+        <!-- Coral accent berries -->
+        <circle cx="88" cy="22" r="2.2" fill="#E05A47"/>
+        <circle cx="22" cy="88" r="2.2" fill="#E05A47"/>
+      </g>
+    </defs>
+  </svg>
+
+  <svg class="vine-corner vine-corner--tl" viewBox="0 0 110 110" aria-hidden="true"><use href="#gothic-vine-corner"/></svg>
+  <svg class="vine-corner vine-corner--tr" viewBox="0 0 110 110" aria-hidden="true"><use href="#gothic-vine-corner"/></svg>
+  <svg class="vine-corner vine-corner--bl" viewBox="0 0 110 110" aria-hidden="true"><use href="#gothic-vine-corner"/></svg>
+  <svg class="vine-corner vine-corner--br" viewBox="0 0 110 110" aria-hidden="true"><use href="#gothic-vine-corner"/></svg>
+  <!-- Main Focal Form -->
+  <main class="form-wrapper">
+    <header class="form-header">
+      <h1>Inquiries</h1>
+      <p>Send a direct message regarding projects, collaborations, or general questions. I will get back to you within 2 days!</p>
+      <div class="header-divider" aria-hidden="true"><span></span></div>
+    </header>
+	
+<form id="form" method="POST">
+
+ <div class="field">
+    <label for="name">Full Name *</label>
+    <input type="text" name="name" id="name" title="Name is required" required>
+	 </div>
+	 <div class="field">
+    <label for="email">Email *</label>
+    <input type="email" name="email" id="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+    title="Please enter a valid email address (name@domain.com)" oninput="this.setCustomValidity('')" required>
+  </div>
+  <div class="field">
+    <label for="title">Subject *</label>
+    <input type="text" name="title" id="title" title="What is this inquiry about?" required>
+  </div>
+    <div class="field">
+    <label for="message">Message Body *</label>
+	<textarea type="text" name="message" id="message"  rows="5" placeholder="Write your message..." title="Message needs content!!!" required></textarea>
+</div>
+  </div>
+  <div class="field">
+    <label for="time">Scheduled time</label>
+    <input type="datetime-local" name="time" id="time">
+  </div>  
+  <div class="field">
+    <label for="address">Location</label>
+    <input type="text" name="address" id="address">
+  </div>
+ 
+  <div class="field">
+    <label for="phone">Phone Number</label>
+    <input type="tel" name="phone" id="phone" pattern="[0-9+\-() ]{7,20}" oninput="this.value = this.value.replace(/[^0-9+\-() ]/g, '')">
+  </div>
+
+  <!--  <input type="submit" class="submit-btn" id="button" value="Send Message" >-->
+<button type="submit" class="submit-btn" id="button" >Send Message</button>
+</form>
+
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@5/dist/email.min.js"></script>
+
+<script type="text/javascript">
+  emailjs.init('FaNKpjoZ1Ps8g6wIG')
+</script>
+
+
+<script>
+const btn = document.getElementById('button');
+const title = document.getElementById('title');
+const name = document.getElementById('name');
+const time = document.getElementById('time');
+const message = document.getElementById('message');
+const email = document.getElementById('email');
+const address = document.getElementById('address');
+const phone = document.getElementById('phone');
+
+document.getElementById('form').addEventListener('submit', function(event) {
+ 
+// const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+//const isValidEmail = emailRegex.test(emailInput.textContent.trim());
+
+   event.preventDefault();
+
+   btn.textContent = 'Sending...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_7tngr6q';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.textContent = 'Send Another Message';
+      title.value = '';
+      name.value = '';
+      time.value = '';
+      message.value = '';
+      email.value = '';
+      address.value = '';
+      phone.value = '';
+
+      alert('Sent!');
+    }, (err) => {
+      btn.textContent = 'Send Message';
+      alert(JSON.stringify(err));
+    });
+});
+
+</script>
+
+
+</main>
+</body>
+</html>

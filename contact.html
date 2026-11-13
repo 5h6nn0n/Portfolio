@@ -94,23 +94,25 @@ input[type="submit"] {
     <label for="title">Subject *</label>
     <input type="text" name="title" id="title" title="What is this inquiry about?" required>
   </div>
-    <div class="field">
+<div class="field">
     <label for="message">Message Body *</label>
 	<textarea type="text" name="message" id="message"  rows="5" placeholder="Write your message..." title="Message needs content!!!" required></textarea>
 </div>
   </div>
   <div class="field">
     <label for="time">Scheduled time</label>
-    <input type="datetime-local" name="time" id="time">
+    <input type="datetime-local" name="datetime" id="datetime">
   </div>  
   <div class="field">
     <label for="address">Location</label>
     <input type="text" name="address" id="address">
   </div>
- 
   <div class="field">
     <label for="phone">Phone Number</label>
     <input type="tel" name="phone" id="phone" pattern="[0-9+\-() ]{7,20}" oninput="this.value = this.value.replace(/[^0-9+\-() ]/g, '')">
+  </div>
+<div class="field">
+    <input type="hidden" name="timestamp" id="timestamp" value="">
   </div>
 
   <!--  <input type="submit" class="submit-btn" id="button" value="Send Message" >-->
@@ -129,19 +131,23 @@ input[type="submit"] {
 const btn = document.getElementById('button');
 const title = document.getElementById('title');
 const name = document.getElementById('name');
-const time = document.getElementById('time');
+const datetime = document.getElementById('datetime');
 const message = document.getElementById('message');
 const email = document.getElementById('email');
 const address = document.getElementById('address');
 const phone = document.getElementById('phone');
+const timestamp = document.getElementById('timestamp');
 
+	
+	const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    const isValidEmail = emailRegex.test(emailInput.textContent.trim());
+
+	
 document.getElementById('form').addEventListener('submit', function(event) {
- 
-// const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-//const isValidEmail = emailRegex.test(emailInput.textContent.trim());
 
+timestamp.value = new Date().toLocaleString();
+	
    event.preventDefault();
-
    btn.textContent = 'Sending...';
 
    const serviceID = 'default_service';

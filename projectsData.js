@@ -389,7 +389,7 @@ const projectsData = [
                 formattedDate: 'Nov 2026',
                 readingTime: 'codebase',
                 excerpt: 'Visitors can now send me direct messages out of their own convenience',
-                description: 'I use trusted front-end email service, EmailJS. The message dispatches through a connected Gmail OAuth account, is ecrypted in transit, and the server-side storage history is turned off. The form uses post method to ensure that no data gets transmitted in the url. Here is a place to reach out with opportinities and collaborative project ideas without getting spammed or dealing with sketchy 3rd parties.',
+                description: 'I use trusted front-end email service, EmailJS. The message dispatches through a connected Gmail OAuth account, is ecrypted in transit, and the server-side storage history is turned off. The form uses post method to ensure that no data gets transmitted in the url. Here is a place to reach out with opportunities, questions, and collaborative project ideas without having me or visitors get spammed from sketchy 3rd parties.',
                 tags: ['EmailJS', 'Rest API', 'CSS/HTML'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/contact.html'},

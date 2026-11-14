@@ -393,7 +393,7 @@ const projectsData = [
                 tags: ['EmailJS', 'Rest API', 'CSS/HTML'],
                 color: 'from-brand-500 to-indigo-600',
                 links: { github: '/Portfolio/contact.html'},
-                svgType: 'K'
+                svgType: 'log'
             },
 	
 	

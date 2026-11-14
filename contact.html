@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Portfolio | Contact</title>
+	<title>Portfolio | Contact Form</title>
 	<link rel="stylesheet" href="style_form.css">
 </head>
 
@@ -100,7 +100,7 @@ input[type="submit"] {
 </div>
   </div>
   <div class="field">
-    <label for="time">Scheduled time</label>
+    <label for="datetime">Scheduled time</label>
     <input type="datetime-local" name="datetime" id="datetime">
   </div>  
   <div class="field">
@@ -112,7 +112,7 @@ input[type="submit"] {
     <input type="tel" name="phone" id="phone" pattern="[0-9+\-() ]{7,20}" oninput="this.value = this.value.replace(/[^0-9+\-() ]/g, '')">
   </div>
 <div class="field">
-    <input type="hidden" name="timestamp" id="timestamp" value="">
+    <input type="hidden" name="timestamp" id="timestamp"/>
   </div>
 
   <!--  <input type="submit" class="submit-btn" id="button" value="Send Message" >-->
@@ -139,13 +139,13 @@ const phone = document.getElementById('phone');
 const timestamp = document.getElementById('timestamp');
 
 	
-	const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const isValidEmail = emailRegex.test(emailInput.textContent.trim());
+	//const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    //const isValidEmail = emailRegex.test(emailInput.textContent.trim());
 
 	
 document.getElementById('form').addEventListener('submit', function(event) {
 
-timestamp.value = new Date().toLocaleString();
+
 	
    event.preventDefault();
    btn.textContent = 'Sending...';
@@ -153,6 +153,12 @@ timestamp.value = new Date().toLocaleString();
    const serviceID = 'default_service';
    const templateID = 'template_7tngr6q';
 
+	const timestampInput = document.getElementById('timestamp');
+  if (timestamp) {
+    timestamp.value = new Date().toLocaleString();
+  }
+
+	
    emailjs.sendForm(serviceID, templateID, this)
     .then(() => {
       btn.textContent = 'Send Another Message';
